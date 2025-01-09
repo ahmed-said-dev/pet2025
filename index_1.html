@@ -10,6 +10,579 @@
     <title>Home V1 - Petopia – Pet Care Service Template</title>
     <link rel="shortcut icon" href="assets/images/logo/favourite_icon.svg" />
     <link rel="stylesheet" type="text/css" href="assets/css/all.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+      .header_section .box_wrap {
+        justify-content: center !important;
+      }
+      .main_menu {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .main_menu_inner {
+        width: 100%;
+      }
+      .main_menu_list {
+        width: 100%;
+        justify-content: center;
+      }
+      .header_btns_group {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .section_overlay {
+        position: relative;
+      }
+      .section_overlay::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('assets/images/overlay/EliteAssets.jpg');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.8;
+        filter: grayscale(100%);
+        z-index: -1;
+      }
+      .section_overlay::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('assets/images/overlay/shapes_overlay_1.svg');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.4;
+        z-index: -1;
+      }
+      .elite_vet_section .elite_vet_text h2 {
+        font-size: 3rem;
+        font-weight: 800;
+        color: #333;
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+        background: linear-gradient(45deg, #8E7AB5, #B784B7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .elite_vet_section .elite_vet_text h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #666;
+        margin-bottom: 1.5rem;
+        font-style: italic;
+      }
+      .elite_vet_section .elite_vet_text p {
+        font-size: 1.1rem;
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        text-align: justify;
+      }
+      .elite_vet_section .elite_vet_image {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.07);
+        transition: all 0.3s ease;
+      }
+      .elite_vet_section .elite_vet_image::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, rgba(142, 122, 181, 0.1), rgba(183, 132, 183, 0.1));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1;
+      }
+      .elite_vet_section .elite_vet_image img {
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 15px;
+        transition: all 0.5s ease;
+      }
+      .elite_vet_section .elite_vet_image:hover {
+        transform: scale(1.03);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.1);
+      }
+      .elite_vet_section .elite_vet_image:hover::before {
+        opacity: 1;
+      }
+      .elite_vet_section .elite_vet_image:hover img {
+        transform: scale(1.1);
+        filter: brightness(1.1) contrast(1.1);
+      }
+      .elite_vet_section .btn_secondary {
+        position: relative;
+        padding: 12px 30px;
+        background: linear-gradient(45deg, #8E7AB5, #B784B7);
+        color: white;
+        border: none;
+        border-radius: 30px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 20px rgba(142, 122, 181, 0.2);
+      }
+      .elite_vet_section .btn_secondary::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+        transition: all 0.5s ease;
+      }
+      .elite_vet_section .btn_secondary:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 25px rgba(142, 122, 181, 0.3);
+      }
+      .elite_vet_section .btn_secondary:hover::before {
+        left: 100%;
+      }
+      .elite_vet_section .btn_secondary:active {
+        transform: translateY(2px);
+        box-shadow: 0 5px 10px rgba(142, 122, 181, 0.2);
+      }
+      /* Medical Services Section Styles */
+      .medical_services_section {
+        overflow: hidden;
+        background: linear-gradient(180deg, #FFFEFD 0%, #F8F6FF 100%);
+        padding: 80px 0;
+        position: relative;
+      }
+      
+      .medical_services_card {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        height: 100%;
+      }
+
+      .text-navy {
+        color: #0a2463;
+      }
+      
+      .bg-navy {
+        background-color: #0a2463;
+      }
+
+      .medical_label {
+        background: #e8e5ff;
+        color: #6b4ce6;
+        padding: 8px 16px;
+        border-radius: 6px;
+        display: inline-block;
+        font-weight: 600;
+        font-size: 14px;
+        margin-bottom: 24px;
+      }
+      
+      .service_icon {
+        min-width: 64px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+      }
+      
+      .service_icon i {
+        font-size: 28px;
+        color: #ffffff;
+      }
+      
+      .service_icon.primary-icon {
+        background-color: #6b4ce6;
+      }
+      
+      .service_icon.secondary-icon {
+        background-color: #4c3ab9;
+      }
+      
+      .service_icon img {
+        filter: brightness(0) invert(1);
+      }
+
+      .service_item {
+        background: #f8f6ff;
+        padding: 24px;
+        border-radius: 16px;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+      }
+
+      .service_item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(107, 76, 230, 0.1);
+      }
+
+      .service_item:last-child {
+        margin-bottom: 0;
+      }
+      
+      .shape_top {
+        position: absolute;
+        top: 10%;
+        left: 5%;
+      }
+      
+      .shape_bottom {
+        position: absolute;
+        bottom: 10%;
+        right: 15%;
+      }
+      .medical_image_wrapper {
+        height: 580px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      }
+
+      .medical_image_wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+      .btn_purple {
+        background: #6b4ce6;
+        color: #ffffff;
+        padding: 15px 30px;
+        border-radius: 12px;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .btn_purple:hover {
+        background: #4c3ab9;
+        color: #ffffff;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(107, 76, 230, 0.2);
+      }
+
+      .btn_purple i {
+        margin-left: 8px;
+        font-size: 18px;
+      }
+      /* Video Section Styles */
+      .video_section {
+        position: relative;
+        padding: 120px 0;
+        background-image: url('assets/images/banner/patient-dog.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        overflow: hidden;
+      }
+
+      .video_section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(135deg, rgba(74, 74, 74, 0.85) 0%, rgba(142, 122, 181, 0.85) 50%, rgba(183, 132, 183, 0.85) 100%);
+        z-index: 1;
+      }
+
+      .video_section .container {
+        display: flex;
+        justify-content: flex-start;
+      }
+
+      .video_content {
+        position: relative;
+        z-index: 2;
+        color: #ffffff;
+        max-width: 600px;
+        margin-left: 100px;
+      }
+
+      .text_content {
+        position: relative;
+        padding-left: 30px;
+      }
+
+      .text_content::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 4px;
+        background-color: #ffffff;
+      }
+
+      .play_button_wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 3rem;
+        margin-left: -50px;
+      }
+
+      .play_button {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        background: #ffffff;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .play_button::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        animation: pulse 2s infinite;
+      }
+
+      .play_button i {
+        color: #8E7AB5;
+        font-size: 1.8rem;
+        margin-left: 5px;
+      }
+
+      .play_button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1.5);
+          opacity: 0;
+        }
+      }
+
+      .video_title {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: #ffffff;
+      }
+
+      .video_description {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        opacity: 0.9;
+        color: #ffffff;
+        margin-bottom: 2rem;
+      }
+
+      .read_more_btn {
+        display: inline-flex;
+        align-items: center;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .read_more_btn i {
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+      }
+
+      .read_more_btn:hover {
+        opacity: 0.9;
+      }
+
+      .read_more_btn:hover i {
+        transform: translateX(5px);
+      }
+      /* Video Modal Styles */
+      .video_modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .video_modal.active {
+        display: flex;
+        opacity: 1;
+      }
+
+      .video_modal_content {
+        position: relative;
+        width: 90%;
+        max-width: 1000px;
+        margin: auto;
+        aspect-ratio: 16/9;
+      }
+
+      .video_modal_close {
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        border: 2px solid #ffffff;
+        border-radius: 50%;
+        color: #ffffff;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .video_modal_close:hover {
+        transform: rotate(90deg);
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .video_modal iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+      /* Why Choose Us Section Styles */
+      .why_choose_section {
+        padding: 100px 0;
+        background-image: url('assets/images/background/bg5.png');
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+
+      .section_header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section_subtitle {
+        color: #00c4cf;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .section_subtitle i {
+        color: #00c4cf;
+        font-size: 1.2rem;
+      }
+
+      .section_title {
+        color: #002856;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .process_steps {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        margin-top: 40px;
+      }
+
+      .process_steps::before {
+        content: '';
+        position: absolute;
+        top: 100px;
+        left: 15%;
+        right: 15%;
+        height: 2px;
+        border: 2px dashed #e0e0e0;
+        z-index: 1;
+      }
+
+      .process_step {
+        flex: 1;
+        text-align: center;
+        padding: 0 20px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .step_icon {
+        width: 120px;
+        height: 120px;
+        background: #ffffff;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 25px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+      }
+
+      .step_icon img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+      }
+
+      .step_title {
+        color: #002856;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .step_description {
+        color: #666;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .process_step:hover .step_icon {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+      }
+    </style>
   </head>
   <body>
     <div class="body_wrap">
@@ -18,23 +591,13 @@
       </div>
       <header class="header_section header_boxed">
         <div class="container">
-          <div
-            class="box_wrap d-flex align-items-center justify-content-between"
-          >
-            <div class="site_logo">
-              <a href="index.html"
-                ><img
-                  class="logo_before"
-                  src="assets/images/logo/logo.svg"
-                  alt="Petopia Logo"
-              /></a>
-            </div>
+          <div class="box_wrap d-flex justify-content-center">
             <nav class="main_menu navbar navbar-expand-lg">
               <div
                 class="main_menu_inner collapse navbar-collapse"
                 id="main_menu_dropdown"
               >
-                <ul class="main_menu_list unorder_list_center">
+                <ul class="main_menu_list unorder_list_center d-flex align-items-center">
                   <li class="active dropdown">
                     <a
                       class="nav-link"
@@ -69,6 +632,16 @@
                       </li>
                       <li><a href="gallery.html">Our Gallery</a></li>
                     </ul>
+                  </li>
+                  <li>
+                    <div class="site_logo mx-4">
+                      <a href="index.html"
+                        ><img
+                          class="logo_before"
+                          src="assets/images/logo/Untitled-3.png"
+                          alt="Petopia Logo"
+                      /></a>
+                    </div>
                   </li>
                   <li class="dropdown">
                     <a
@@ -217,15 +790,13 @@
           <div class="container">
             <div class="banner_content">
               <h1 class="banner_title">
-                The World's Best Team for Pet Care Services
+                Expert Veterinary Care, Tailored to Your Pet's Needs
               </h1>
               <p class="banner_description">
-                Consequat nisl vel pretium lectus quam id leo in. Quis viverra
-                nibh cras pulvinar mattis. Quis hendrerit dolor magna eget est
-                lorem ipsum dolor
+                A Pioneering Veterinary Clinic, Providing Exceptional Care Every Step of the Way
               </p>
               <a class="btn btn_primary" href="service.html"
-                ><i class="fas fa-paw"></i> Our Service</a
+                ><i class="fas fa-paw"></i> Book an Appointment</a
               >
               <div class="banner_services_wrap row">
                 <div class="col">
@@ -314,7 +885,7 @@
                 stroke-linecap="round"
                 stroke-dasharray="107 107"
               />
-              <circle cx="192.243" cy="192" r="170" fill="#FFDA47" />
+              <circle cx="192.243" cy="192" r="170" fill="#8E7AB5" />
               <defs>
                 <linearGradient
                   id="shape_circle_1"
@@ -324,8 +895,8 @@
                   y2="290.853"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop offset="1" stop-color="#FFDA47" />
-                  <stop offset="1" stop-color="#FFDA47" stop-opacity="0.01" />
+                  <stop offset="1" stop-color="#B784B7" />
+                  <stop offset="1" stop-color="#B784B7" stop-opacity="0.01" />
                 </linearGradient>
               </defs>
             </svg>
@@ -347,7 +918,7 @@
                 stroke-linecap="round"
                 stroke-dasharray="107 107"
               />
-              <circle cx="192.243" cy="192" r="170" fill="#FF47A2" />
+              <circle cx="192.243" cy="192" r="170" fill="#CDF0EA" />
               <defs>
                 <linearGradient
                   id="shape_circle_2"
@@ -357,8 +928,8 @@
                   y2="290.853"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop offset="1" stop-color="#FF7DCF" />
-                  <stop offset="1" stop-color="#FF47A2" stop-opacity="0.01" />
+                  <stop offset="1" stop-color="#CDF0EA" />
+                  <stop offset="1" stop-color="#CDF0EA" stop-opacity="0.01" />
                 </linearGradient>
               </defs>
             </svg>
@@ -370,10 +941,158 @@
             <img src="assets/images/banner/cat_img_2.png" alt="Cat Image" />
           </div>
         </section>
+        <section class="medical_services_section section_space_lg position-relative">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-lg-6">
+                <div class="medical_image_wrapper">
+                  <img src="assets/images/banner/_A7A9402.jpg" alt="Medical Consultation" class="img-fluid" />
+                </div>
+              </div>
+              <div class="col-lg-6 ps-lg-5">
+                <div class="medical_services_card">
+                  <span class="medical_label">Welcome to Elite Vet</span>
+                  <h2 class="display-5 fw-bold text-navy mb-4">Your trusted pet<br>veterinary clinic</h2>
+                  <p class="text-secondary mb-5">
+                    We are committed to providing top-quality care for your pets using<br>
+                    the latest technology & under the care of the best veterinarians.
+                  </p>
+                  
+                  <div class="services_list">
+                    <div class="service_item d-flex align-items-start">
+                      <div class="service_icon primary-icon me-3">
+                        <i class="fas fa-stethoscope"></i>
+                      </div>
+                      <div class="service_content">
+                        <h5 class="fw-bold mb-2">PRIMARY VETERINARY CARE</h5>
+                        <p class="text-secondary mb-0">Our veterinary clinic offers routine check-ups and vaccinations to keep your pets healthy and happy</p>
+                      </div>
+                    </div>
+                    
+                    <div class="service_item d-flex align-items-start">
+                      <div class="service_icon secondary-icon me-3">
+                        <i class="fas fa-syringe"></i>
+                      </div>
+                      <div class="service_content">
+                        <h5 class="fw-bold mb-2">SPECIALIZED TREATMENTS</h5>
+                        <p class="text-secondary mb-0">Advanced surgical procedures and comprehensive dental care services for your beloved pets</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="text-start mt-5">
+                    <a href="about.html" class="btn_purple">
+                      Read More
+                      <i class="fas fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="shape_top">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="20" fill="#6b4ce6" opacity="0.1"/>
+            </svg>
+          </div>
+          <div class="shape_bottom">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+              <circle cx="25" cy="25" r="25" fill="#6b4ce6" opacity="0.1"/>
+            </svg>
+          </div>
+        </section>
+
+        <section class="why_choose_section">
+          <div class="container">
+            <div class="section_header">
+              <div class="section_subtitle">
+                <i class="fas fa-shield-alt"></i> WHY CHOOSE US?
+              </div>
+              <h2 class="section_title">How It Work</h2>
+            </div>
+            
+            <div class="process_steps">
+              <div class="process_step">
+                <div class="step_icon">
+                  <img src="assets/images/icons/appointment.svg" alt="Book Appointment">
+                </div>
+                <h3 class="step_title">Book an Appointment</h3>
+                <p class="step_description">Schedule a visit online, by phone, or in person.</p>
+              </div>
+
+              <div class="process_step">
+                <div class="step_icon">
+                  <img src="assets/images/icons/evaluation.svg" alt="Get Evaluated">
+                </div>
+                <h3 class="step_title">Get Evaluated</h3>
+                <p class="step_description">Meet with our healthcare professionals for diagnosis.</p>
+              </div>
+
+              <div class="process_step">
+                <div class="step_icon">
+                  <img src="assets/images/icons/treatment.svg" alt="Receive Care">
+                </div>
+                <h3 class="step_title">Receive Care</h3>
+                <p class="step_description">Follow your personalized treatment plan and support.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+                <!-- Video Section Start -->
+                <section class="video_section">
+                  <div class="container">
+                    <div class="video_content">
+                      <div class="play_button_wrapper">
+                        <div class="play_button" onclick="openVideoModal()">
+                          <i class="fas fa-play"></i>
+                        </div>
+                      </div>
+                      <div class="text_content">
+                        <h2 class="video_title">What we offer?</h2>
+                        <p class="video_description">
+                          As a leading Riyadh veterinary clinic, we offer a comprehensive range of veterinary services to keep your furry companions happy and healthy.
+                        </p>
+                        <a href="service.html" class="read_more_btn">
+                          Read more <i class="fas fa-arrow-right"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <!-- Video Section End -->
+        
+                <!-- Video Modal -->
+                <div class="video_modal" id="videoModal">
+                  <div class="video_modal_content">
+                    <button class="video_modal_close" onclick="closeVideoModal()">
+                      <i class="fas fa-times"></i>
+                    </button>
+                    <iframe id="videoFrame" src="" title="Video Player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                </div>
+        
+                <script>
+                  function openVideoModal() {
+                    const modal = document.getElementById('videoModal');
+                    const videoFrame = document.getElementById('videoFrame');
+                    videoFrame.src = 'https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1';
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                  }
+
+                  function closeVideoModal() {
+                    const modal = document.getElementById('videoModal');
+                    const videoFrame = document.getElementById('videoFrame');
+                    videoFrame.src = '';
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                  }
+                </script>
         <section class="service_section section_space_lg pb-0">
           <div class="container">
             <div class="section_title text-center">
-              <h2 class="title_text mb-0">
+              <h2 class="title_text">
                 <span class="sub_title">Our Services</span> All Pet Care
                 Services
               </h2>
@@ -588,8 +1307,7 @@
                   <h2 class="title_text">Welcome To Our Family</h2>
                   <p>
                     Tristique nulla aliquet enim tortor at auctor urna nunc.
-                    Massa enim nec dui nunc mattis enim ut tellus. Auctor augue
-                    mauris augue neque gravida in fermentum
+                    Massa enim nec dui nunc mattis enim ut tellus
                   </p>
                 </div>
                 <div class="accordion" id="faq_accordion">
@@ -1543,8 +2261,9 @@
                   </ul>
                   <p class="mb-0">
                     Ut tortor pretium viverra suspendisse potenti nullam.
-                    Venenatis urna cursus eget nunc scelerisque viverra mauris
-                    in aliquam
+                    Venenatis urna cursus eget nunc scelerisque. Nec ultrices dui
+                    sapien eget. Lectus magna fringilla urna porttitor rhoncus
+                    dolor purus
                   </p>
                   <span class="quote_icon"
                     ><i class="fas fa-quote-right"></i
@@ -1574,8 +2293,9 @@
                   </ul>
                   <p class="mb-0">
                     Ut tortor pretium viverra suspendisse potenti nullam.
-                    Venenatis urna cursus eget nunc scelerisque viverra mauris
-                    in aliquam
+                    Venenatis urna cursus eget nunc scelerisque. Nec ultrices dui
+                    sapien eget. Lectus magna fringilla urna porttitor rhoncus
+                    dolor purus
                   </p>
                   <span class="quote_icon"
                     ><i class="fas fa-quote-right"></i
@@ -1665,8 +2385,9 @@
                   </ul>
                   <p class="mb-0">
                     Ut tortor pretium viverra suspendisse potenti nullam.
-                    Venenatis urna cursus eget nunc scelerisque viverra mauris
-                    in aliquam
+                    Venenatis urna cursus eget nunc scelerisque. Nec ultrices dui
+                    sapien eget. Lectus magna fringilla urna porttitor rhoncus
+                    dolor purus
                   </p>
                   <span class="quote_icon"
                     ><i class="fas fa-quote-right"></i
@@ -1696,8 +2417,9 @@
                   </ul>
                   <p class="mb-0">
                     Ut tortor pretium viverra suspendisse potenti nullam.
-                    Venenatis urna cursus eget nunc scelerisque viverra mauris
-                    in aliquam
+                    Venenatis urna cursus eget nunc scelerisque. Nec ultrices dui
+                    sapien eget. Lectus magna fringilla urna porttitor rhoncus
+                    dolor purus
                   </p>
                   <span class="quote_icon"
                     ><i class="fas fa-quote-right"></i
@@ -1975,6 +2697,7 @@
             <img src="assets/images/shape/shape_cat.svg" alt="Cat" />
           </div>
         </section>
+
       </main>
       <footer class="footer_section">
         <div class="footer_widget_area section_space_lg">
@@ -2102,7 +2825,7 @@
               <a target="_blank" href="https://themeforest.net/user/merkulove"
                 >Merkulove</a
               >
-              © Petopia Template All rights reserved Copyrights 2022
+              &copy; Petopia Template All rights reserved Copyrights 2022
             </p>
           </div>
         </div>
