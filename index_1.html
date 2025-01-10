@@ -208,14 +208,6 @@
         color: #ffffff;
       }
       
-      .service_icon.primary-icon {
-        background-color: #6b4ce6;
-      }
-      
-      .service_icon.secondary-icon {
-        background-color: #4c3ab9;
-      }
-      
       .service_icon img {
         filter: brightness(0) invert(1);
       }
@@ -498,8 +490,8 @@
       }
 
       .section_subtitle {
-        color: #00c4cf;
-        font-size: 1.1rem;
+        color: #8E7AB5;
+        font-size: 2rem;
         font-weight: 600;
         margin-bottom: 15px;
         display: flex;
@@ -509,15 +501,27 @@
       }
 
       .section_subtitle i {
-        color: #00c4cf;
+        color: #8E7AB5;
         font-size: 1.2rem;
       }
 
       .section_title {
-        color: #002856;
+        color: #8E7AB5; /* Purple color */
         font-size: 2.5rem;
         font-weight: 700;
         margin: 0;
+      }
+
+      .additional_text {
+        color: #816985; /* Light gray */
+        font-size: 1.5rem;
+        text-align: center;
+        margin-top: 15px;
+        font-weight: 500;
+        line-height: 1.5;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .process_steps {
@@ -533,54 +537,193 @@
         top: 100px;
         left: 15%;
         right: 15%;
-        height: 2px;
-        border: 2px dashed #e0e0e0;
+        z-index: 1;
+      }
+
+      .process_steps svg {
+        position: absolute;
+        top: -20px;
+        left: 15%;
+        width: 70%;
         z-index: 1;
       }
 
       .process_step {
         flex: 1;
         text-align: center;
-        padding: 0 20px;
+        padding: 0 25px;
         position: relative;
         z-index: 2;
       }
 
       .step_icon {
-        width: 120px;
-        height: 120px;
-        background: #ffffff;
-        border-radius: 20px;
+        width: 140px;
+        height: 140px;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0 auto 25px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        margin: 45px auto 30px;
         transition: all 0.3s ease;
       }
 
+      .step_icon.with-bg {
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .step_icon i {
+        font-size: 3.5rem;
+        color: #8E7AB5;
+      }
+
       .step_icon img {
-        width: 60px;
-        height: 60px;
+        width: 140px;
+        height: 140px;
         object-fit: contain;
       }
 
       .step_title {
         color: #002856;
-        font-size: 1.5rem;
-        font-weight: 600;
-        margin-bottom: 15px;
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+        font-family: 'Poppins', sans-serif;
       }
 
       .step_description {
-        color: #666;
-        font-size: 1rem;
+        color: #6B7280;
+        font-size: 1.1rem;
         line-height: 1.6;
+        max-width: 300px;
+        margin: 0 auto;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
       }
 
       .process_step:hover .step_icon {
-        transform: translateY(-10px);
+        animation: pulse 1s infinite;
+      }
+
+      .process_step:hover .step_icon.with-bg {
         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+      }
+
+      .read_more_btn_wrapper {
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      .read_more_btn_large {
+        display: inline-flex;
+        align-items: center;
+        padding: 16px 40px;
+        background: transparent;
+        color: #8E7AB5;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border: 2px solid #8E7AB5;
+        border-radius: 5px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        z-index: 1;
+      }
+
+      .read_more_btn_large:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background: #8E7AB5;
+        transition: all 0.3s ease;
+        z-index: -1;
+      }
+
+      .read_more_btn_large:hover {
+        color: #ffffff;
+      }
+
+      .read_more_btn_large:hover:before {
+        width: 100%;
+      }
+
+      .read_more_btn_large i {
+        margin-left: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      .read_more_btn_large:hover i {
+        transform: translateX(8px);
+      }
+      .section_divider {
+        position: relative;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .section_divider::before,
+      .section_divider::after {
+        content: '';
+        position: absolute;
+        width: 40%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #8E7AB5, transparent);
+      }
+
+      .section_divider::before {
+        right: 55%;
+        transform: translateX(-20px);
+      }
+
+      .section_divider::after {
+        left: 55%;
+        transform: translateX(20px);
+      }
+
+      .section_divider .divider_icon {
+        width: 80px;
+        height: 80px;
+        background: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #8E7AB5;
+        font-size: 32px;
+        position: relative;
+        z-index: 1;
+        box-shadow: 0 0 20px rgba(142, 122, 181, 0.15);
+        animation: pulseIcon 2s infinite;
+      }
+
+      @keyframes pulseIcon {
+        0% {
+          box-shadow: 0 0 0 0 rgba(142, 122, 181, 0.4);
+        }
+        70% {
+          box-shadow: 0 0 0 15px rgba(142, 122, 181, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(142, 122, 181, 0);
+        }
       }
     </style>
   </head>
@@ -1002,44 +1145,7 @@
           </div>
         </section>
 
-        <section class="why_choose_section">
-          <div class="container">
-            <div class="section_header">
-              <div class="section_subtitle">
-                <i class="fas fa-shield-alt"></i> WHY CHOOSE US?
-              </div>
-              <h2 class="section_title">How It Work</h2>
-            </div>
-            
-            <div class="process_steps">
-              <div class="process_step">
-                <div class="step_icon">
-                  <img src="assets/images/icons/appointment.svg" alt="Book Appointment">
-                </div>
-                <h3 class="step_title">Book an Appointment</h3>
-                <p class="step_description">Schedule a visit online, by phone, or in person.</p>
-              </div>
-
-              <div class="process_step">
-                <div class="step_icon">
-                  <img src="assets/images/icons/evaluation.svg" alt="Get Evaluated">
-                </div>
-                <h3 class="step_title">Get Evaluated</h3>
-                <p class="step_description">Meet with our healthcare professionals for diagnosis.</p>
-              </div>
-
-              <div class="process_step">
-                <div class="step_icon">
-                  <img src="assets/images/icons/treatment.svg" alt="Receive Care">
-                </div>
-                <h3 class="step_title">Receive Care</h3>
-                <p class="step_description">Follow your personalized treatment plan and support.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-                <!-- Video Section Start -->
+                <!-- Video Section Start --> 
                 <section class="video_section">
                   <div class="container">
                     <div class="video_content">
@@ -1089,6 +1195,177 @@
                     document.body.style.overflow = '';
                   }
                 </script>
+
+
+
+<section class="why_choose_section">
+  <div class="container">
+    <div class="section_header">
+      <div class="section_subtitle">
+        <i class="fas fa-shield-alt"></i> WHY CHOOSE US?
+      </div>
+      <p class="additional_text">
+        As a trusted name in the Riyadh veterinary community since 2013, we've helped more than 200,000,000 pets through:
+      </p>
+    </div>
+    
+    <div class="process_steps">
+      <svg xmlns="http://www.w3.org/2000/svg" width="767" height="238" viewBox="0 0 767 238" fill="none">
+        <path d="M1 91.2512C53.0375 0.994668 207.541 -75.2978 398.619 141.318C516.319 285.356 668.984 251.301 766 141.318" stroke="#A5A5A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 10"/>
+      </svg>
+      <div class="process_step">
+        <div class="step_icon first-icon">
+          <img src="assets/images/icons/man.png" alt="Personalized Care">
+        </div>
+        <h3 class="step_title">Personalized Care</h3>
+        <p class="step_description">Tailored treatment plans for each pet.</p>
+      </div>
+
+      <div class="process_step">
+        <div class="step_icon first-icon">
+          <img src="assets/images/icons/lifeline.png" alt="Latest Technology">
+        </div>
+        <h3 class="step_title">Latest Technology</h3>
+        <p class="step_description">Cutting-edge equipment for accurate diagnosis.</p>
+      </div>
+
+      <div class="process_step">
+        <div class="step_icon first-icon">
+          <img src="assets/images/icons/doctors.png" alt="Compassionate Staff">
+        </div>
+        <h3 class="step_title">Compassionate Staff</h3>
+        <p class="step_description">A dedicated team that loves animals.</p>
+      </div>
+    </div>
+    <div class="read_more_btn_wrapper">
+      <a href="about.html" class="read_more_btn_large">
+        Read More <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="section_divider">
+  <i class="fas fa-paw divider_icon"></i>
+</div>
+
+<section class="team_section section_space_lg">
+  <div class="container">
+    <div class="section_title text-center">
+      <h2 class="title_text mb-0">
+        <span class="sub_title">Pet Care Team</span> Welcome To Our
+        Family
+      </h2>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col col-lg-3 col-md-6 col-sm-6">
+        <div class="team_item text-center">
+          <div class="item_image">
+            <img
+              src="assets/images/team/team_img_1.png"
+              alt="Team Image"
+            />
+          </div>
+          <div class="item_content">
+            <h3 class="item_title">Cameron Rogers</h3>
+            <span class="item_designation">President & CEO</span>
+            <ul class="social_links unorder_list">
+              <li>
+                <a href="#!"><i class="fab fa-facebook-f"></i></a>
+              </li>
+              <li>
+                <a href="#!"><i class="fab fa-instagram"></i></a>
+              </li>
+              <li>
+                <a href="#!"><i class="fab fa-twitter"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col col-lg-3 col-md-6 col-sm-6">
+        <div class="team_item text-center">
+          <div class="item_image">
+            <img
+              src="assets/images/team/team_img_2.png"
+              alt="Team Image"
+            />
+          </div>
+          <div class="item_content">
+            <h3 class="item_title">Irene Sotelo</h3>
+            <span class="item_designation">President & CEO</span>
+            <ul class="social_links unorder_list">
+              <li>
+                <a href="#!"><i class="fab fa-facebook-f"></i></a>
+              </li>
+              <li>
+                <a href="#!"><i class="fab fa-instagram"></i></a>
+              </li>
+              <li>
+                <a href="#!"><i class="fab fa-twitter"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col col-lg-3 col-md-6 col-sm-6">
+        <div class="team_item text-center">
+          <div class="item_image">
+            <img
+              src="assets/images/team/team_img_3.png"
+              alt="Team Image"
+            />
+          </div>
+          <div class="item_content">
+            <h3 class="item_title">Cameron Rogers</h3>
+            <span class="item_designation">President & CEO</span>
+            <ul class="social_links unorder_list">
+              <li>
+                <a href="#!"><i class="fab fa-facebook-f"></i></a>
+              </li>
+              <li>
+                <a href="#!"><i class="fab fa-instagram"></i></a>
+              </li>
+              <li>
+                <a href="#!"><i class="fab fa-twitter"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col col-lg-3 col-md-6 col-sm-6">
+        <div class="team_item text-center">
+          <div class="item_image">
+            <img
+              src="assets/images/team/team_img_4.png"
+              alt="Team Image"
+            />
+          </div>
+          <div class="item_content">
+            <h3 class="item_title">Tiontay Carroll</h3>
+            <span class="item_designation">President & CEO</span>
+            <ul class="social_links unorder_list">
+              <li>
+                <a href="#!"><i class="fab fa-facebook-f"></i></a>
+              </li>
+              <li>
+                <a href="#!"><i class="fab fa-instagram"></i></a>
+              </li>
+              <li>
+                <a href="#!"><i class="fab fa-twitter"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <a class="btn btn_primary" href="team.html"
+        ><i class="fas fa-paw"></i> Our Team</a
+      >
+    </div>
+  </div>
+</section>
         <section class="service_section section_space_lg pb-0">
           <div class="container">
             <div class="section_title text-center">
@@ -2642,11 +2919,10 @@
                 <div class="iconbox_item iconbox_overicon">
                   <div class="item_icon"><i class="fas fa-phone"></i></div>
                   <div class="item_content">
-                    <h3 class="item_title">Phone</h3>
-                    <ul class="item_info_list unorder_list_block">
-                      <li>(913) 756-3126</li>
-                      <li>(921) 557-1203</li>
-                    </ul>
+                    <h3 class="item_title">
+                      <a href="tel:(913)756-3126">(913) 756-3126</a>
+                    </h3>
+                    <p class="mb-0">Got Questions? Call us 24/7</p>
                   </div>
                 </div>
               </div>
@@ -2654,11 +2930,10 @@
                 <div class="iconbox_item iconbox_overicon">
                   <div class="item_icon"><i class="fas fa-envelope"></i></div>
                   <div class="item_content">
-                    <h3 class="item_title">Email</h3>
-                    <ul class="item_info_list unorder_list_block">
-                      <li>petopia@example.com</li>
-                      <li>petopia@email.com</li>
-                    </ul>
+                    <h3 class="item_title">
+                      <a href="mailto:petopia@example.com">petopia@example.com</a>
+                    </h3>
+                    <p class="mb-0">Get in touch with us</p>
                   </div>
                 </div>
               </div>
@@ -2668,11 +2943,10 @@
                     <i class="fas fa-map-marker-alt"></i>
                   </div>
                   <div class="item_content">
-                    <h3 class="item_title">Address</h3>
-                    <ul class="item_info_list unorder_list_block">
-                      <li>17 Parkman Place, 2122</li>
-                      <li>United States</li>
-                    </ul>
+                    <h3 class="item_title">
+                      <a href="https://www.google.com/maps/place/17+Parkman+Pl,+Boston,+MA+02122,+USA/@42.357321,-71.070444,17z/data=!3m1!4b1!4m5!3m4!1s0x89e37a0c9d6a5f6f:0x9f6f7a2a5e2c5f6f!8m2!3d42.357321!4d-71.06825">17 Parkman Place, 2122</a>
+                    </h3>
+                    <p class="mb-0">United States</p>
                   </div>
                 </div>
               </div>
