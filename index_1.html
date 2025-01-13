@@ -353,7 +353,7 @@
         width: 100%;
         height: 100%;
         top: 0;
-        left: 0;
+        left: -100%;
         background: rgba(255, 255, 255, 0.2);
         border-radius: 50%;
         animation: pulse 2s infinite;
@@ -477,253 +477,968 @@
       }
       /* Why Choose Us Section Styles */
       .why_choose_section {
-        padding: 100px 0;
-        background-image: url('assets/images/background/bg5.png');
-        background-size: cover;
-        background-position: center;
+        padding: 120px 0;
+        background: linear-gradient(90deg, #fff 50%, #E8E5FF 50%);
         position: relative;
+        overflow: hidden;
+        min-height: 800px;
       }
 
-      .section_header {
-        text-align: center;
-        margin-bottom: 60px;
-      }
-
-      .section_subtitle {
-        color: #8E7AB5;
-        font-size: 2rem;
-        font-weight: 600;
-        margin-bottom: 15px;
+      .why_choose_section .container {
         display: flex;
         align-items: center;
-        justify-content: center;
-        gap: 10px;
-      }
-
-      .section_subtitle i {
-        color: #8E7AB5;
-        font-size: 1.2rem;
-      }
-
-      .section_title {
-        color: #8E7AB5; /* Purple color */
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin: 0;
-      }
-
-      .additional_text {
-        color: #816985; /* Light gray */
-        font-size: 1.5rem;
-        text-align: center;
-        margin-top: 15px;
-        font-weight: 500;
-        line-height: 1.5;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .process_steps {
-        display: flex;
         justify-content: space-between;
-        position: relative;
-        margin-top: 40px;
+        gap: 50px;
       }
 
-      .process_steps::before {
-        content: '';
-        position: absolute;
-        top: 100px;
-        left: 15%;
-        right: 15%;
-        z-index: 1;
-      }
-
-      .process_steps svg {
-        position: absolute;
-        top: -20px;
-        left: 15%;
-        width: 70%;
-        z-index: 1;
-      }
-
-      .process_step {
-        flex: 1;
-        text-align: center;
-        padding: 0 25px;
-        position: relative;
+      .why_choose_section .section_header {
+        flex: 0 0 40%;
+        padding-right: 30px;
         z-index: 2;
+        position: relative;
       }
 
-      .step_icon {
-        width: 140px;
-        height: 140px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 45px auto 30px;
+      .why_choose_section .section_subtitle {
+        color: #FF725E;
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+        display: inline-block;
+        background: rgba(255, 114, 94, 0.1);
+        padding: 5px 15px;
+        border-radius: 5px;
+      }
+
+      .why_choose_section .section_title {
+        font-size: 3.2rem;
+        line-height: 1.2;
+        color: #27115F;
+        font-weight: 700;
+        margin-bottom: 25px;
+      }
+
+      .why_choose_section .section_description {
+        color: #666;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 30px;
+      }
+
+      .why_choose_section .all-services-btn {
+        display: inline-block;
+        padding: 15px 35px;
+        background: #FF725E;
+        color: #fff;
+        border-radius: 10px;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
         transition: all 0.3s ease;
       }
 
-      .step_icon.with-bg {
-        background: #ffffff;
+      .why_choose_section .all-services-btn:hover {
+        background: #e65e4b;
+        transform: translateY(-3px);
+      }
+
+      .why_choose_section .process_steps {
+        flex: 0 0 55%;
+        position: relative;
+        background: #7C58D3;
+        border-radius: 100px 40px 40px 100px;
+        padding: 120px 50px;
+        margin-right: -50px;
+        z-index: 1;
+        position: relative;
+        margin-right: -50px;
+        min-height: 600px;
+        display: flex;
+        align-items: center;
+      }
+
+      .why_choose_section .process_steps svg {
+        position: absolute;
+        bottom: 130px;
+        left: 0;
+        width: 100%;
+        height: auto;
+        z-index: 0;
+      }
+
+      .why_choose_section .process_step {
+        background: #fff;
         border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        padding: 30px;
+        text-align: left;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        position: relative;
+        z-index: 2;
+        transition: all 0.3s ease;
+        flex: 1;
+        min-width: 300px;
+        padding: 40px;
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        min-height: 380px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
       }
 
-      .step_icon i {
-        font-size: 3.5rem;
-        color: #8E7AB5;
+      .why_choose_section .process_step:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
       }
 
-      .step_icon img {
-        width: 140px;
-        height: 140px;
+      .why_choose_section .step_icon {
+        width: 60px;
+        height: 60px;
+        background: #F0F1FF;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      .why_choose_section .step_icon img {
+        width: 30px;
+        height: 30px;
         object-fit: contain;
       }
 
-      .step_title {
-        color: #002856;
+      .why_choose_section .step_title {
         font-size: 1.8rem;
-        font-weight: 700;
-        margin-bottom: 12px;
-        font-family: 'Poppins', sans-serif;
+        color: #333;
+        margin-bottom: 10px;
+        font-weight: 600;
       }
 
-      .step_description {
-        color: #6B7280;
-        font-size: 1.1rem;
+      .why_choose_section .step_description {
+        color: #666;
+        font-size: 1.2rem;
         line-height: 1.6;
-        max-width: 300px;
-        margin: 0 auto;
-        font-family: 'Poppins', sans-serif;
+        margin-bottom: 15px;
       }
 
-      @keyframes pulse {
-        0% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.1);
-        }
-        100% {
-          transform: scale(1);
-        }
-      }
-
-      .process_step:hover .step_icon {
-        animation: pulse 1s infinite;
-      }
-
-      .process_step:hover .step_icon.with-bg {
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-      }
-
-      .read_more_btn_wrapper {
-        text-align: center;
-        margin-top: 50px;
-      }
-
-      .read_more_btn_large {
-        display: inline-flex;
-        align-items: center;
-        padding: 16px 40px;
-        background: transparent;
-        color: #8E7AB5;
+      .why_choose_section .view-more-btn {
+        display: inline-block;
+        padding: 8px 20px;
+        background: #F0F1FF;
+        color: #6B4CE6;
+        border-radius: 20px;
         text-decoration: none;
         font-size: 1.1rem;
-        font-weight: 600;
-        border: 2px solid #8E7AB5;
-        border-radius: 5px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .why_choose_section .view-more-btn:hover {
+        background: #6B4CE6;
+        color: #fff;
+      }
+
+      @media (max-width: 991px) {
+        .why_choose_section {
+          background: #fff;
+        }
+        .why_choose_section .container {
+          flex-direction: column;
+        }
+        .why_choose_section .section_header,
+        .why_choose_section .process_steps {
+          flex: 0 0 100%;
+          margin-right: 0;
+        }
+        .why_choose_section .process_steps {
+          border-radius: 20px;
+          padding: 40px 30px;
+        }
+      }
+
+      .grid_wrapper {
+    display: flex;
+    gap: 25px;
+    margin-left: -100px;
+    position: relative;
+    z-index: 2;
+}
+
+      @media (max-width: 767px) {
+        .process_steps .grid_wrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 25px;
+          margin-left: 0px;
+          position: relative;
+          z-index: 2;
+        }
+      }
+      .team_section {
+        background: linear-gradient(180deg, #FFFFFF 0%, #F8F9FF 100%);
+        padding: 80px 0;
         position: relative;
         overflow: hidden;
-        transition: all 0.3s ease;
+      }
+
+      .team_section::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: radial-gradient(circle at 0% 0%, #F8F9FF 0%, transparent 50%);
+        opacity: 0.5;
+      }
+
+      .team_section::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        background: radial-gradient(circle at 100% 100%, #F8F9FF 0%, transparent 50%);
+        opacity: 0.5;
+      }
+
+      .team_section .container {
+        position: relative;
         z-index: 1;
       }
 
-      .read_more_btn_large:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 0%;
-        height: 100%;
-        background: #8E7AB5;
+      .team_section .section_title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .team_section .sub_title {
+        background: #6B4CE6;
+        color: #fff;
+        padding: 8px 25px;
+        border-radius: 50px;
+        font-size: 1rem;
+        display: inline-block;
+        margin-bottom: 15px;
+      }
+
+      .team_section .title_text {
+        font-size: 2.5rem;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .team_section .title_description {
+        color: #666;
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+
+      .team_item {
+        background: #fff;
+        border-radius: 15px;
+        overflow: hidden;
         transition: all 0.3s ease;
-        z-index: -1;
-      }
-
-      .read_more_btn_large:hover {
-        color: #ffffff;
-      }
-
-      .read_more_btn_large:hover:before {
-        width: 100%;
-      }
-
-      .read_more_btn_large i {
-        margin-left: 10px;
-        transition: transform 0.3s ease;
-      }
-
-      .read_more_btn_large:hover i {
-        transform: translateX(8px);
-      }
-      .section_divider {
-        position: relative;
-        height: 150px;
-        display: flex;
-        align-items: center;
+        margin-bottom: 30px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         justify-content: center;
+        flex-wrap: wrap;
+        max-width: 360PX !important;
+        height: 360px !important;
+
+      }
+
+      .team_item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .item_image {
+        position: relative;
         overflow: hidden;
       }
 
-      .section_divider::before,
-      .section_divider::after {
-        content: '';
+      .item_image img {
+        width: 50%;
+        height: 300px;
+        object-fit: cover;
+      }
+
+      .item_content {
+        padding: 25px 20px;
+        position: relative;
+      }
+
+      .item_title {
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+        color: #333;
+      }
+
+      .item_designation {
+        color: #666;
+        font-size: 1rem;
+        display: block;
+        margin-bottom: 15px;
+      }
+
+      .social_links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .social_links a {
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f5f5f5;
+        color: #666;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+      }
+
+      .social_links a:hover {
+        background: #6B4CE6;
+        color: #fff;
+      }
+
+      .contact_icon {
         position: absolute;
-        width: 40%;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, #8E7AB5, transparent);
-      }
-
-      .section_divider::before {
-        right: 55%;
-        transform: translateX(-20px);
-      }
-
-      .section_divider::after {
-        left: 55%;
-        transform: translateX(20px);
-      }
-
-      .section_divider .divider_icon {
-        width: 80px;
-        height: 80px;
+        right: 15px;
+        top: 15px;
+        width: 35px;
+        height: 35px;
         background: #fff;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #8E7AB5;
-        font-size: 32px;
-        position: relative;
-        z-index: 1;
-        box-shadow: 0 0 20px rgba(142, 122, 181, 0.15);
-        animation: pulseIcon 2s infinite;
+        color: #6B4CE6;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: all 0.3s ease;
       }
 
-      @keyframes pulseIcon {
-        0% {
-          box-shadow: 0 0 0 0 rgba(142, 122, 181, 0.4);
+      .contact_icon:hover {
+        transform: scale(1.1);
+      }
+
+      .team_section .section_content {
+        display: flex;
+        align-items: flex-start;
+        gap: 50px;
+      }
+
+      .team_section .section_text {
+        flex: 0 0 35%;
+        padding-top: 30px;
+      }
+
+      .team_section .doctors_grid {
+        flex: 0 0 65%;
+      }
+
+      .team_section .section_text .title_text {
+        font-size: 2.8rem;
+        color: #333;
+        margin-bottom: 25px;
+        text-align: left;
+      }
+
+      .team_section .section_text .description {
+        color: #666;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        text-align: left;
+      }
+
+      .team_section .doctors_row {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      .team_item {
+        display: flex;
+        background: #fff;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .team_item:hover {
+        transform: translateX(10px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .item_image {
+        flex: 0 0 200px;
+        position: relative;
+      }
+
+      .item_image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .item_content {
+        flex: 1;
+        padding: 25px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .item_title {
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+        color: #333;
+      }
+
+      .item_designation {
+        color: #666;
+        font-size: 1rem;
+        margin-bottom: 15px;
+        display: block;
+      }
+
+      .social_links {
+        display: flex;
+        gap: 12px;
+      }
+
+      .social_links a {
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f5f5f5;
+        color: #666;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+      }
+
+      .social_links a:hover {
+        background: #6B4CE6;
+        color: #fff;
+      }
+
+      .contact_icon {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        width: 40px;
+        height: 40px;
+        background: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #6B4CE6;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .contact_icon:hover {
+        transform: scale(1.1) rotate(15deg);
+        background: #6B4CE6;
+        color: #fff;
+      }
+
+      @media (max-width: 991px) {
+        .team_section .section_content {
+          flex-direction: column;
         }
-        70% {
-          box-shadow: 0 0 0 15px rgba(142, 122, 181, 0);
+        .team_section .section_text,
+        .team_section .doctors_grid {
+          flex: 0 0 100%;
         }
-        100% {
-          box-shadow: 0 0 0 0 rgba(142, 122, 181, 0);
+        .team_section .section_text {
+          position: relative;
+          top: 0;
         }
+      }
+
+      @media (max-width: 767px) {
+        .team_item {
+          flex-direction: column;
+        }
+        .item_image {
+          height: 250px;
+        }
+      }
+
+      .team_section .section_content {
+        display: flex;
+        align-items: flex-start;
+        gap: 60px;
+      }
+
+      .team_section .section_text {
+        flex: 0 0 40%;
+        position: sticky;
+        top: 30px;
+        text-align: left;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .team_section .section_text .title_text {
+        font-size: 2.5rem;
+        color: #333;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+      }
+
+      .team_section .section_text .title_text::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: #6B4CE6;
+        border-radius: 2px;
+      }
+
+      .team_section .section_text .description {
+        color: #666;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .team_section .section_text .description strong {
+        color: #6B4CE6;
+        font-weight: bold;
+      }
+
+      .team_section .doctors_grid {
+        flex: 0 0 60%;
+      }
+
+      .team_section .doctors_row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+
+      .team_item {
+        background: #fff;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .team_item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .item_image {
+        position: relative;
+        height: 280px;
+        overflow: hidden;
+      }
+
+      .item_image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .team_item:hover .item_image img {
+        transform: scale(1.05);
+      }
+
+      .item_content {
+        padding: 25px;
+        text-align: center;
+      }
+
+      .item_title {
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+        color: #333;
+      }
+
+      .item_designation {
+        color: #666;
+        font-size: 1rem;
+        margin-bottom: 20px;
+        display: block;
+      }
+
+      .social_links {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 15px;
+      }
+
+      .social_links a {
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f5f5f5;
+        color: #666;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+      }
+
+      .social_links a:hover {
+        background: #6B4CE6;
+        color: #fff;
+      }
+
+      .contact_icon {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        width: 40px;
+        height: 40px;
+        background: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #6B4CE6;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .contact_icon:hover {
+        transform: scale(1.1);
+        background: #6B4CE6;
+        color: #fff;
+      }
+
+      @media (max-width: 991px) {
+        .team_section .section_content {
+          flex-direction: column;
+        }
+        .team_section .section_text,
+        .team_section .doctors_grid {
+          flex: 0 0 100%;
+        }
+        .team_section .section_text {
+          position: relative;
+          top: 0;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .team_section .doctors_row {
+          grid-template-columns: 1fr;
+        }
+        .item_image {
+          height: 250px;
+        }
+      }
+      .team_section .doctors_row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        max-width: 900px;
+      }
+
+      .team_item {
+        background: #fff;
+        border-radius: 20px;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        position: relative;
+        width: 100%;
+        max-width: 320px;
+      }
+
+      .team_item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 40px rgba(107, 76, 230, 0.15);
+      }
+
+      .team_item::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        background: linear-gradient(180deg, rgba(107, 76, 230, 0) 0%, rgba(107, 76, 230, 0.05) 100%);
+        opacity: 0;
+        transition: all 0.4s ease;
+      }
+
+      .team_item:hover::after {
+        opacity: 1;
+      }
+
+      .team_item .item_image{
+        height: 50%;
+      }
+      .item_image {
+        position: relative;
+        height: 240px;
+        overflow: hidden;
+      }
+
+      .item_image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .team_item:hover .item_image img {
+        transform: scale(1.05);
+      }
+
+      .item_content {
+        padding: 20px;
+        text-align: center;
+        position: relative;
+        background: #fff;
+      }
+
+      .item_title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #333;
+      }
+
+      .item_designation {
+        color: #6B4CE6;
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-bottom: 15px;
+        display: block;
+        letter-spacing: 0.5px;
+      }
+
+      .social_links {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 15px;
+        position: relative;
+      }
+
+      .social_links::before {
+        content: '';
+        position: absolute;
+        top: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 2px;
+        background: #6B4CE6;
+        opacity: 0.3;
+      }
+
+      .social_links a {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f8f9ff;
+        color: #6B4CE6;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+      }
+
+      .social_links a:hover {
+        background: #6B4CE6;
+        color: #fff;
+        transform: translateY(-3px);
+      }
+
+      .contact_icon {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        width: 35px;
+        height: 35px;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(5px);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #6B4CE6;
+        box-shadow: 0 3px 15px rgba(107, 76, 230, 0.2);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 2;
+      }
+
+      .contact_icon:hover {
+        transform: scale(1.1) rotate(15deg);
+        background: #6B4CE6;
+        color: #fff;
+      }
+
+      @media (max-width: 991px) {
+        .team_section .section_content {
+          flex-direction: column;
+          align-items: center;
+        }
+        .team_section .section_text {
+          text-align: center;
+          margin-bottom: 40px;
+        }
+        .team_section .section_text .title_text,
+        .team_section .section_text .description {
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .team_section .doctors_row {
+          grid-template-columns: 1fr;
+          justify-items: center;
+        }
+        .team_item {
+          max-width: 280px;
+        }
+        .item_image {
+          height: 200px;
+        }
+      }
+      .team_section .doctors_row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        max-width: 900px;
+      }
+
+      .team_item {
+        background: #fff;
+        border-radius: 20px;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        position: relative;
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .team_item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 40px rgba(107, 76, 230, 0.15);
+      }
+
+      .team_item::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        background: linear-gradient(180deg, rgba(107, 76, 230, 0) 0%, rgba(107, 76, 230, 0.05) 100%);
+        opacity: 0;
+        transition: all 0.4s ease;
+      }
+
+      .team_item:hover::after {
+        opacity: 1;
+      }
+
+      .item_image {
+        position: relative;
+        height: 180px;
+        overflow: hidden;
+      }
+
+      .item_image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .team_item:hover .item_image img {
+        transform: scale(1.05);
+      }
+
+      .item_content {
+        padding: 15px;
+        text-align: center;
+        position: relative;
+        background: #fff;
+      }
+
+      .item_title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 3px;
+        color: #333;
+      }
+
+      .item_designation {
+        color: #6B4CE6;
+        font-size: 0.85rem;
+        font-weight: 500;
+        margin-bottom: 12px;
+        display: block;
+        letter-spacing: 0.5px;
+      }
+
+      .social_links {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 12px;
+        position: relative;
+      }
+
+      .social_links::before {
+        content: '';
+        position: absolute;
+        top: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30px;
+        height: 2px;
+        background: #6B4CE6;
+        opacity: 0.3;
+      }
+
+      .social_links a {
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+      }
+
+      .contact_icon {
+        width: 32px;
+        height: 32px;
       }
     </style>
   </head>
@@ -1201,47 +1916,48 @@
 <section class="why_choose_section">
   <div class="container">
     <div class="section_header">
-      <div class="section_subtitle">
-        <i class="fas fa-shield-alt"></i> WHY CHOOSE US?
-      </div>
-      <p class="additional_text">
+      <span class="section_subtitle" style="color: #7C58D3 !important; background: rgba(124, 88, 211, 0.1) !important;">Services</span>
+      <h2 class="section_title">WHY CHOOSE US?</h2>
+      <p class="section_description">
         As a trusted name in the Riyadh veterinary community since 2013, we've helped more than 200,000,000 pets through:
       </p>
+      <a href="#" class="all-services-btn" style="background: #7C58D3 !important; color: #fff !important;">All Services</a>
     </div>
     
     <div class="process_steps">
       <svg xmlns="http://www.w3.org/2000/svg" width="767" height="238" viewBox="0 0 767 238" fill="none">
         <path d="M1 91.2512C53.0375 0.994668 207.541 -75.2978 398.619 141.318C516.319 285.356 668.984 251.301 766 141.318" stroke="#A5A5A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 10"/>
       </svg>
-      <div class="process_step">
-        <div class="step_icon first-icon">
-          <img src="assets/images/icons/man.png" alt="Personalized Care">
+      <div class="grid_wrapper">
+        <div class="process_step">
+          <div class="step_icon">
+            <img src="assets/images/icons/man.png" alt="Personalized Care">
+          </div>
+          <h3 class="step_title">Personalized Care</h3>
+          <p class="step_description">Tailored treatment plans for each pet.</p>
+          <a href="#" class="view-more-btn">View More</a>
         </div>
-        <h3 class="step_title">Personalized Care</h3>
-        <p class="step_description">Tailored treatment plans for each pet.</p>
-      </div>
 
-      <div class="process_step">
-        <div class="step_icon first-icon">
-          <img src="assets/images/icons/lifeline.png" alt="Latest Technology">
+        <div class="process_step">
+          <div class="step_icon">
+            <img src="assets/images/icons/lifeline.png" alt="Latest Technology">
+          </div>
+          <h3 class="step_title">Latest Technology</h3>
+          <p class="step_description">Cutting-edge equipment for accurate diagnosis.</p>
+          <a href="#" class="view-more-btn">View More</a>
         </div>
-        <h3 class="step_title">Latest Technology</h3>
-        <p class="step_description">Cutting-edge equipment for accurate diagnosis.</p>
-      </div>
 
-      <div class="process_step">
-        <div class="step_icon first-icon">
-          <img src="assets/images/icons/doctors.png" alt="Compassionate Staff">
+        <div class="process_step">
+          <div class="step_icon">
+            <img src="assets/images/icons/doctors.png" alt="Compassionate Staff">
+          </div>
+          <h3 class="step_title">Compassionate Staff</h3>
+          <p class="step_description">A dedicated team that loves animals.</p>
+          <a href="#" class="view-more-btn">View More</a>
         </div>
-        <h3 class="step_title">Compassionate Staff</h3>
-        <p class="step_description">A dedicated team that loves animals.</p>
       </div>
     </div>
-    <div class="read_more_btn_wrapper">
-      <a href="about.html" class="read_more_btn_large">
-        Read More <i class="fas fa-arrow-right"></i>
-      </a>
-    </div>
+
   </div>
 </section>
 
@@ -1249,123 +1965,95 @@
   <i class="fas fa-paw divider_icon"></i>
 </div>
 
-<section class="team_section section_space_lg">
+<section class="team_section">
   <div class="container">
-    <div class="section_title text-center">
-      <h2 class="title_text mb-0">
-        <span class="sub_title">Pet Care Team</span> Welcome To Our
-        Family
-      </h2>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col col-lg-3 col-md-6 col-sm-6">
-        <div class="team_item text-center">
-          <div class="item_image">
-            <img
-              src="assets/images/team/team_img_1.png"
-              alt="Team Image"
-            />
+    <span class="sub_title">OUR DOCTORS</span>
+    <div class="section_content">
+      <div class="section_text">
+        <h2 class="title_text">Team Of Healthcare Specialists</h2>
+        <p class="description">
+          Our team of <strong>highly skilled veterinarians</strong> is committed to providing top-notch care for your furry companions. They're passionate about <strong>animal health</strong> & dedicated to providing the best possible medical services.
+        </p>
+      </div>
+      <div class="doctors_grid">
+        <div class="doctors_row">
+          <div class="team_item">
+            <div class="item_image">
+              <img src="assets/images/team/team_img_1.png" alt="Dr. Sophie Lee" />
+              <a href="#" class="contact_icon">
+                <i class="fas fa-phone"></i>
+              </a>
+            </div>
+            <div class="item_content">
+              <h3 class="item_title">Doctor 1</h3>
+              <span class="item_designation">Interventional Cardiology</span>
+              <ul class="social_links">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fas fa-globe"></i></a></li>
+              </ul>
+            </div>
           </div>
-          <div class="item_content">
-            <h3 class="item_title">Cameron Rogers</h3>
-            <span class="item_designation">President & CEO</span>
-            <ul class="social_links unorder_list">
-              <li>
-                <a href="#!"><i class="fab fa-facebook-f"></i></a>
-              </li>
-              <li>
-                <a href="#!"><i class="fab fa-instagram"></i></a>
-              </li>
-              <li>
-                <a href="#!"><i class="fab fa-twitter"></i></a>
-              </li>
-            </ul>
+
+          <div class="team_item">
+            <div class="item_image">
+              <img src="assets/images/team/team_img_2.png" alt="Dr. John Smith" />
+              <a href="#" class="contact_icon">
+                <i class="fas fa-phone"></i>
+              </a>
+            </div>
+            <div class="item_content">
+              <h3 class="item_title">Doctor 2</h3>
+              <span class="item_designation">Orthopedic Surgery</span>
+              <ul class="social_links">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fas fa-globe"></i></a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="team_item">
+            <div class="item_image">
+              <img src="assets/images/team/team_img_3.png" alt="Dr. Emily Johnson" />
+              <a href="#" class="contact_icon">
+                <i class="fas fa-phone"></i>
+              </a>
+            </div>
+            <div class="item_content">
+              <h3 class="item_title">Doctor 3</h3>
+              <span class="item_designation">Pediatric Care</span>
+              <ul class="social_links">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fas fa-globe"></i></a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="team_item">
+            <div class="item_image">
+              <img src="assets/images/team/team_img_4.png" alt="Dr. Michael Chen" />
+              <a href="#" class="contact_icon">
+                <i class="fas fa-phone"></i>
+              </a>
+            </div>
+            <div class="item_content">
+              <h3 class="item_title">Doctor 4</h3>
+              <span class="item_designation">Dermatology</span>
+              <ul class="social_links">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fas fa-globe"></i></a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col col-lg-3 col-md-6 col-sm-6">
-        <div class="team_item text-center">
-          <div class="item_image">
-            <img
-              src="assets/images/team/team_img_2.png"
-              alt="Team Image"
-            />
-          </div>
-          <div class="item_content">
-            <h3 class="item_title">Irene Sotelo</h3>
-            <span class="item_designation">President & CEO</span>
-            <ul class="social_links unorder_list">
-              <li>
-                <a href="#!"><i class="fab fa-facebook-f"></i></a>
-              </li>
-              <li>
-                <a href="#!"><i class="fab fa-instagram"></i></a>
-              </li>
-              <li>
-                <a href="#!"><i class="fab fa-twitter"></i></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col col-lg-3 col-md-6 col-sm-6">
-        <div class="team_item text-center">
-          <div class="item_image">
-            <img
-              src="assets/images/team/team_img_3.png"
-              alt="Team Image"
-            />
-          </div>
-          <div class="item_content">
-            <h3 class="item_title">Cameron Rogers</h3>
-            <span class="item_designation">President & CEO</span>
-            <ul class="social_links unorder_list">
-              <li>
-                <a href="#!"><i class="fab fa-facebook-f"></i></a>
-              </li>
-              <li>
-                <a href="#!"><i class="fab fa-instagram"></i></a>
-              </li>
-              <li>
-                <a href="#!"><i class="fab fa-twitter"></i></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col col-lg-3 col-md-6 col-sm-6">
-        <div class="team_item text-center">
-          <div class="item_image">
-            <img
-              src="assets/images/team/team_img_4.png"
-              alt="Team Image"
-            />
-          </div>
-          <div class="item_content">
-            <h3 class="item_title">Tiontay Carroll</h3>
-            <span class="item_designation">President & CEO</span>
-            <ul class="social_links unorder_list">
-              <li>
-                <a href="#!"><i class="fab fa-facebook-f"></i></a>
-              </li>
-              <li>
-                <a href="#!"><i class="fab fa-instagram"></i></a>
-              </li>
-              <li>
-                <a href="#!"><i class="fab fa-twitter"></i></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="text-center">
-      <a class="btn btn_primary" href="team.html"
-        ><i class="fas fa-paw"></i> Our Team</a
-      >
     </div>
   </div>
 </section>
+
         <section class="service_section section_space_lg pb-0">
           <div class="container">
             <div class="section_title text-center">
@@ -1578,7 +2266,7 @@
         </section>
         <section class="about_section section_space_lg pb-0 decoration_wrap">
           <div class="container">
-            <div class="row align-items-center justify-content-lg-between">
+            <div class="row align-items-center">
               <div class="col col-lg-5">
                 <div class="section_title">
                   <h2 class="title_text">Welcome To Our Family</h2>
@@ -2787,123 +3475,25 @@
             />
           </div>
         </section>
-        <section class="team_section section_space_lg">
-          <div class="container">
-            <div class="section_title text-center">
-              <h2 class="title_text mb-0">
-                <span class="sub_title">Pet Care Team</span> Welcome To Our
-                Family
-              </h2>
-            </div>
-            <div class="row justify-content-center">
-              <div class="col col-lg-3 col-md-6 col-sm-6">
-                <div class="team_item text-center">
-                  <div class="item_image">
-                    <img
-                      src="assets/images/team/team_img_1.png"
-                      alt="Team Image"
-                    />
-                  </div>
-                  <div class="item_content">
-                    <h3 class="item_title">Cameron Rogers</h3>
-                    <span class="item_designation">President & CEO</span>
-                    <ul class="social_links unorder_list">
-                      <li>
-                        <a href="#!"><i class="fab fa-facebook-f"></i></a>
-                      </li>
-                      <li>
-                        <a href="#!"><i class="fab fa-instagram"></i></a>
-                      </li>
-                      <li>
-                        <a href="#!"><i class="fab fa-twitter"></i></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col col-lg-3 col-md-6 col-sm-6">
-                <div class="team_item text-center">
-                  <div class="item_image">
-                    <img
-                      src="assets/images/team/team_img_2.png"
-                      alt="Team Image"
-                    />
-                  </div>
-                  <div class="item_content">
-                    <h3 class="item_title">Irene Sotelo</h3>
-                    <span class="item_designation">President & CEO</span>
-                    <ul class="social_links unorder_list">
-                      <li>
-                        <a href="#!"><i class="fab fa-facebook-f"></i></a>
-                      </li>
-                      <li>
-                        <a href="#!"><i class="fab fa-instagram"></i></a>
-                      </li>
-                      <li>
-                        <a href="#!"><i class="fab fa-twitter"></i></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col col-lg-3 col-md-6 col-sm-6">
-                <div class="team_item text-center">
-                  <div class="item_image">
-                    <img
-                      src="assets/images/team/team_img_3.png"
-                      alt="Team Image"
-                    />
-                  </div>
-                  <div class="item_content">
-                    <h3 class="item_title">Cameron Rogers</h3>
-                    <span class="item_designation">President & CEO</span>
-                    <ul class="social_links unorder_list">
-                      <li>
-                        <a href="#!"><i class="fab fa-facebook-f"></i></a>
-                      </li>
-                      <li>
-                        <a href="#!"><i class="fab fa-instagram"></i></a>
-                      </li>
-                      <li>
-                        <a href="#!"><i class="fab fa-twitter"></i></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col col-lg-3 col-md-6 col-sm-6">
-                <div class="team_item text-center">
-                  <div class="item_image">
-                    <img
-                      src="assets/images/team/team_img_4.png"
-                      alt="Team Image"
-                    />
-                  </div>
-                  <div class="item_content">
-                    <h3 class="item_title">Tiontay Carroll</h3>
-                    <span class="item_designation">President & CEO</span>
-                    <ul class="social_links unorder_list">
-                      <li>
-                        <a href="#!"><i class="fab fa-facebook-f"></i></a>
-                      </li>
-                      <li>
-                        <a href="#!"><i class="fab fa-instagram"></i></a>
-                      </li>
-                      <li>
-                        <a href="#!"><i class="fab fa-twitter"></i></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="text-center">
-              <a class="btn btn_primary" href="team.html"
-                ><i class="fas fa-paw"></i> Our Team</a
-              >
-            </div>
-          </div>
-        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+        
         <section
           class="contact_section bg_gray section_space_lg decoration_wrap"
         >
@@ -2912,7 +3502,9 @@
               <h2 class="title_text">
                 <span class="sub_title">Our Contacts</span> Contacts
               </h2>
-              <p class="mb-0">Massa enim nec dui nunc mattis enim ut tellus</p>
+              <p class="mb-0">
+                Massa enim nec dui nunc mattis enim ut tellus
+              </p>
             </div>
             <div class="row justify-content-center">
               <div class="col col-lg-3 col-md-6 col-sm-6">
