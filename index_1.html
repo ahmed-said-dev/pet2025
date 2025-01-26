@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="assets/images/logo/favourite_icon.svg" />
     <link rel="stylesheet" type="text/css" href="assets/css/all.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <style>
       .header_section .box_wrap {
         justify-content: center !important;
@@ -478,7 +479,8 @@
       /* Why Choose Us Section Styles */
       .why_choose_section {
         padding: 120px 0;
-        background: linear-gradient(90deg, #fff 50%, #E8E5FF 50%);
+        background: url('assets/images/background/bg5.png') no-repeat center center;
+        background-size: cover;
         position: relative;
         overflow: hidden;
         min-height: 800px;
@@ -499,16 +501,28 @@
       }
 
       .why_choose_section .section_subtitle {
-        color: #FF725E;
-        font-size: 1rem;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 20px;
-        display: inline-block;
-        background: rgba(255, 114, 94, 0.1);
-        padding: 5px 15px;
-        border-radius: 5px;
+        font-size: 20px;
+        color: rgba(10, 20, 47, 0.8);
+        text-align: left;
+        max-width: 500px;
+        margin: 0 0 48px 0;
+        line-height: 1.8;
+        font-weight: 400;
+        letter-spacing: 0.3px;
+        position: relative;
+        padding-left: 20px;
+        border-left: 4px solid #6B4CE6;
+      }
+
+      .why_choose_section .section_subtitle::before {
+        content: '';
+        position: absolute;
+        left: -4px;
+        top: -10px;
+        width: 4px;
+        height: 40px;
+        background: linear-gradient(to bottom, #8667FF, #6B4CE6);
+        border-radius: 4px;
       }
 
       .why_choose_section .section_title {
@@ -678,32 +692,46 @@
         }
       }
       .team_section {
-        background: linear-gradient(180deg, #FFFFFF 0%, #F8F9FF 100%);
-        padding: 80px 0;
         position: relative;
+        padding: 80px 0;
         overflow: hidden;
       }
 
-      .team_section::before {
-        content: '';
+      .team_section .section_background {
         position: absolute;
-        width: 100%;
-        height: 100%;
         top: 0;
         left: 0;
-        background: radial-gradient(circle at 0% 0%, #F8F9FF 0%, transparent 50%);
-        opacity: 0.5;
-      }
-
-      .team_section::after {
-        content: '';
-        position: absolute;
         width: 100%;
         height: 100%;
+        z-index: 0;
+      }
+
+      .team_section .section_background::before {
+        content: '';
+        position: absolute;
         top: 0;
-        right: 0;
-        background: radial-gradient(circle at 100% 100%, #F8F9FF 0%, transparent 50%);
-        opacity: 0.5;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .team_section{
+        background-image: url('assets/images/background/bg4.png');
+        background-size: contain;
+        background-position:top center;
+        background-repeat: repeat;
+        z-index: -1;
+
+      }
+
+      .team_section .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* background: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)); */
+        z-index: -1;
       }
 
       .team_section .container {
@@ -712,663 +740,211 @@
       }
 
       .team_section .section_title {
-        text-align: center;
-        margin-bottom: 50px;
-      }
-
-      .team_section .sub_title {
-        background: #6B4CE6;
-        color: #fff;
-        padding: 8px 25px;
-        border-radius: 50px;
-        font-size: 1rem;
-        display: inline-block;
-        margin-bottom: 15px;
-      }
-
-      .team_section .title_text {
-        font-size: 2.5rem;
-        color: #333;
-        margin-bottom: 20px;
-      }
-
-      .team_section .title_description {
-        color: #666;
-        font-size: 1.1rem;
-        line-height: 1.6;
-      }
-
-      .team_item {
-        background: #fff;
-        border-radius: 15px;
-        overflow: hidden;
-        transition: all 0.3s ease;
-        margin-bottom: 30px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-        justify-content: center;
-        flex-wrap: wrap;
-        max-width: 360PX !important;
-        height: 360px !important;
-
-      }
-
-      .team_item:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-      }
-
-      .item_image {
-        position: relative;
-        overflow: hidden;
-      }
-
-      .item_image img {
-        width: 50%;
-        height: 300px;
-        object-fit: cover;
-      }
-
-      .item_content {
-        padding: 25px 20px;
-        position: relative;
-      }
-
-      .item_title {
-        font-size: 1.3rem;
-        margin-bottom: 5px;
-        color: #333;
-      }
-
-      .item_designation {
-        color: #666;
-        font-size: 1rem;
-        display: block;
-        margin-bottom: 15px;
-      }
-
-      .social_links {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-      }
-
-      .social_links a {
-        width: 35px;
-        height: 35px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #f5f5f5;
-        color: #666;
-        border-radius: 50%;
-        transition: all 0.3s ease;
-      }
-
-      .social_links a:hover {
-        background: #6B4CE6;
-        color: #fff;
-      }
-
-      .contact_icon {
-        position: absolute;
-        right: 15px;
-        top: 15px;
-        width: 35px;
-        height: 35px;
-        background: #fff;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #6B4CE6;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-
-      .contact_icon:hover {
-        transform: scale(1.1);
-      }
-
-      .team_section .section_content {
-        display: flex;
-        align-items: flex-start;
-        gap: 50px;
-      }
-
-      .team_section .section_text {
-        flex: 0 0 35%;
-        padding-top: 30px;
-      }
-
-      .team_section .doctors_grid {
-        flex: 0 0 65%;
-      }
-
-      .team_section .section_text .title_text {
-        font-size: 2.8rem;
-        color: #333;
-        margin-bottom: 25px;
+        font-size: 52px;
+        font-weight: 700;
+        color: #0A142F;
         text-align: left;
+        margin-bottom: 16px;
+        max-width: 500px;
       }
 
-      .team_section .section_text .description {
-        color: #666;
-        font-size: 1.1rem;
-        line-height: 1.6;
-        text-align: left;
-      }
-
-      .team_section .doctors_row {
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-      }
-
-      .team_item {
-        display: flex;
-        background: #fff;
-        border-radius: 15px;
-        overflow: hidden;
-        transition: all 0.3s ease;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-      }
-
-      .team_item:hover {
-        transform: translateX(10px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-      }
-
-      .item_image {
-        flex: 0 0 200px;
-        position: relative;
-      }
-
-      .item_image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .item_content {
-        flex: 1;
-        padding: 25px 30px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .item_title {
-        font-size: 1.4rem;
-        margin-bottom: 8px;
-        color: #333;
-      }
-
-      .item_designation {
-        color: #666;
-        font-size: 1rem;
-        margin-bottom: 15px;
-        display: block;
-      }
-
-      .social_links {
-        display: flex;
-        gap: 12px;
-      }
-
-      .social_links a {
-        width: 35px;
-        height: 35px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #f5f5f5;
-        color: #666;
-        border-radius: 50%;
-        transition: all 0.3s ease;
-      }
-
-      .social_links a:hover {
-        background: #6B4CE6;
-        color: #fff;
-      }
-
-      .contact_icon {
-        position: absolute;
-        right: 15px;
-        top: 15px;
-        width: 40px;
-        height: 40px;
-        background: #fff;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      .team_section .section_subtitle {
+        font-size: 18px;
         color: #6B4CE6;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-
-      .contact_icon:hover {
-        transform: scale(1.1) rotate(15deg);
-        background: #6B4CE6;
-        color: #fff;
-      }
-
-      @media (max-width: 991px) {
-        .team_section .section_content {
-          flex-direction: column;
-        }
-        .team_section .section_text,
-        .team_section .doctors_grid {
-          flex: 0 0 100%;
-        }
-        .team_section .section_text {
-          position: relative;
-          top: 0;
-        }
-      }
-
-      @media (max-width: 767px) {
-        .team_item {
-          flex-direction: column;
-        }
-        .item_image {
-          height: 250px;
-        }
-      }
-
-      .team_section .section_content {
-        display: flex;
-        align-items: flex-start;
-        gap: 60px;
-      }
-
-      .team_section .section_text {
-        flex: 0 0 40%;
-        position: sticky;
-        top: 30px;
         text-align: left;
-        padding: 20px;
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      .team_section .section_text .title_text {
-        font-size: 2.5rem;
-        color: #333;
-        margin-bottom: 15px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        position: relative;
-      }
-
-      .team_section .section_text .title_text::after {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 50px;
-        height: 3px;
-        background: #6B4CE6;
-        border-radius: 2px;
-      }
-
-      .team_section .section_text .description {
-        color: #666;
-        font-size: 1.1rem;
+        max-width: 500px;
+        margin: 0 0 48px 0;
         line-height: 1.6;
-        margin-bottom: 20px;
-      }
-
-      .team_section .section_text .description strong {
-        color: #6B4CE6;
         font-weight: bold;
       }
 
-      .team_section .doctors_grid {
-        flex: 0 0 60%;
+      .doctors_grid {
+        display: flex;
+        gap: 24px;
+        max-width: 100%;
+        margin: 60px auto 0;
+        padding: 0 15px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: thin;
+        scrollbar-color: #00A9FF #F8F9FF;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 20px;
       }
 
-      .team_section .doctors_row {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
+      .doctors_grid::-webkit-scrollbar {
+        height: 8px;
       }
 
-      .team_item {
+      .doctors_grid::-webkit-scrollbar-track {
+        background: #F8F9FF;
+        border-radius: 10px;
+      }
+
+      .doctors_grid::-webkit-scrollbar-thumb {
+        background: #00A9FF;
+        border-radius: 10px;
+      }
+
+      .doctors_grid::-webkit-scrollbar-thumb:hover {
+        background: #0A142F;
+      }
+
+      .doctor_card {
+        min-width: 450px;
+        height: 700px;
+        scroll-snap-align: start;
         background: #fff;
-        border-radius: 15px;
+        border-radius: 20px;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        background-color: #F8F4FF;
         transition: all 0.3s ease;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-      }
-
-      .team_item:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-      }
-
-      .item_image {
         position: relative;
-        height: 280px;
-        overflow: hidden;
+        z-index: 1;
       }
 
-      .item_image img {
+      .doctor_image_wrapper {
+        position: relative;
+        width: 100%;
+        height: 550px;
+        border-radius: 20px 20px 0 0;
+        overflow: hidden;
+        padding: 24px;
+        background-color: #F8F4FF;
+      }
+
+      .doctor_image {
         width: 100%;
         height: 100%;
+        border-radius: 16px;
         object-fit: cover;
       }
 
-      .team_item:hover .item_image img {
-        transform: scale(1.05);
-      }
-
-      .item_content {
-        padding: 25px;
-        text-align: center;
-      }
-
-      .item_title {
-        font-size: 1.4rem;
-        margin-bottom: 8px;
-        color: #333;
-      }
-
-      .item_designation {
-        color: #666;
-        font-size: 1rem;
-        margin-bottom: 20px;
-        display: block;
-      }
-
-      .social_links {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        margin-top: 15px;
-      }
-
-      .social_links a {
-        width: 35px;
-        height: 35px;
+      .appointment_btn {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%) translateY(100%);
+        background: #8667FF;
+        color: white;
+        padding: 16px 32px;
+        border-radius: 8px;
+        text-decoration: none;
         display: flex;
         align-items: center;
-        justify-content: center;
-        background: #f5f5f5;
-        color: #666;
-        border-radius: 50%;
+        gap: 12px;
+        opacity: 0;
         transition: all 0.3s ease;
+        white-space: nowrap;
+        font-weight: 500;
+        font-size: 16px;
       }
 
-      .social_links a:hover {
-        background: #6B4CE6;
-        color: #fff;
+      .appointment_btn i {
+        font-size: 18px;
       }
 
-      .contact_icon {
-        position: absolute;
-        right: 15px;
-        top: 15px;
+      .doctor_info {
+        height: 150px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px;
+        background: #F8F4FF;
+      }
+
+      .doctor_details {
+        flex: 1;
+      }
+
+      .doctor_name {
+        font-size: 24px;
+        font-weight: 600;
+        color: #2D1857;
+        margin-bottom: 8px;
+      }
+
+      .doctor_specialty {
+        font-size: 16px;
+        color: #6B4CE6;
+        margin: 0;
+      }
+
+      .view_more_btn {
         width: 40px;
         height: 40px;
-        background: #fff;
-        border-radius: 50%;
+        background: #6B4CE6;
+        border-radius: 8px;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #6B4CE6;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        cursor: pointer;
+        color: white;
+        text-decoration: none;
         transition: all 0.3s ease;
-      }
-
-      .contact_icon:hover {
-        transform: scale(1.1);
-        background: #6B4CE6;
-        color: #fff;
-      }
-
-      @media (max-width: 991px) {
-        .team_section .section_content {
-          flex-direction: column;
-        }
-        .team_section .section_text,
-        .team_section .doctors_grid {
-          flex: 0 0 100%;
-        }
-        .team_section .section_text {
-          position: relative;
-          top: 0;
-        }
-      }
-
-      @media (max-width: 767px) {
-        .team_section .doctors_row {
-          grid-template-columns: 1fr;
-        }
-        .item_image {
-          height: 250px;
-        }
-      }
-      .team_section .doctors_row {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-        max-width: 900px;
-      }
-
-      .team_item {
-        background: #fff;
-        border-radius: 20px;
-        overflow: hidden;
-        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        position: relative;
-        width: 100%;
-        max-width: 320px;
-      }
-
-      .team_item:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 40px rgba(107, 76, 230, 0.15);
-      }
-
-      .team_item::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 20px;
-        background: linear-gradient(180deg, rgba(107, 76, 230, 0) 0%, rgba(107, 76, 230, 0.05) 100%);
-        opacity: 0;
-        transition: all 0.4s ease;
-      }
-
-      .team_item:hover::after {
-        opacity: 1;
-      }
-
-      .team_item .item_image{
-        height: 50%;
-      }
-      .item_image {
-        position: relative;
-        height: 240px;
-        overflow: hidden;
-      }
-
-      .item_image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.4s ease;
-      }
-
-      .team_item:hover .item_image img {
-        transform: scale(1.05);
-      }
-
-      .item_content {
-        padding: 20px;
-        text-align: center;
-        position: relative;
-        background: #fff;
-      }
-
-      .item_title {
-        font-size: 1.25rem;
-        font-weight: 600;
-        margin-bottom: 5px;
-        color: #333;
-      }
-
-      .item_designation {
-        color: #6B4CE6;
-        font-size: 0.9rem;
-        font-weight: 500;
-        margin-bottom: 15px;
-        display: block;
-        letter-spacing: 0.5px;
       }
 
       .social_links {
+        position: absolute;
+        bottom: -50px;
+        left: 0;
+        width: 100%;
         display: flex;
         justify-content: center;
-        gap: 12px;
-        margin-top: 15px;
-        position: relative;
-      }
-
-      .social_links::before {
-        content: '';
-        position: absolute;
-        top: -8px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 40px;
-        height: 2px;
-        background: #6B4CE6;
-        opacity: 0.3;
+        gap: 24px;
+        opacity: 0;
+        padding: 16px 0;
+        background-color: #F8F4FF;
+        transform: translateY(0);
+        transition: all 0.3s ease;
+        border-radius: 0 0 20px 20px;
       }
 
       .social_links a {
-        width: 32px;
-        height: 32px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #f8f9ff;
-        color: #6B4CE6;
-        border-radius: 50%;
+        color: #2D1857;
+        text-decoration: none;
+        font-size: 18px;
         transition: all 0.3s ease;
-        font-size: 0.9rem;
       }
 
       .social_links a:hover {
-        background: #6B4CE6;
-        color: #fff;
+        color: #6B4CE6;
         transform: translateY(-3px);
       }
 
-      .contact_icon {
-        position: absolute;
-        right: 15px;
-        top: 15px;
-        width: 35px;
-        height: 35px;
-        background: rgba(255, 255, 255, 0.9);
-        backdrop-filter: blur(5px);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #6B4CE6;
-        box-shadow: 0 3px 15px rgba(107, 76, 230, 0.2);
-        cursor: pointer;
-        transition: all 0.3s ease;
+      /* Hover Effects */
+      .doctor_card:hover {
+        background-color: white;
         z-index: 2;
       }
 
-      .contact_icon:hover {
-        transform: scale(1.1) rotate(15deg);
-        background: #6B4CE6;
-        color: #fff;
+      .doctor_card:hover .doctor_image {
+        transform: scale(1.05);
       }
 
-      @media (max-width: 991px) {
-        .team_section .section_content {
-          flex-direction: column;
-          align-items: center;
-        }
-        .team_section .section_text {
-          text-align: center;
-          margin-bottom: 40px;
-        }
-        .team_section .section_text .title_text,
-        .team_section .section_text .description {
-          text-align: center;
-        }
-      }
-
-      @media (max-width: 767px) {
-        .team_section .doctors_row {
-          grid-template-columns: 1fr;
-          justify-items: center;
-        }
-        .team_item {
-          max-width: 280px;
-        }
-        .item_image {
-          height: 200px;
-        }
-      }
-      .team_section .doctors_row {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        max-width: 900px;
-      }
-
-      .team_item {
-        background: #fff;
-        border-radius: 20px;
-        overflow: hidden;
-        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        position: relative;
-        width: 100%;
-        max-width: 300px;
-      }
-
-      .team_item:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 40px rgba(107, 76, 230, 0.15);
-      }
-
-      .team_item::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 20px;
-        background: linear-gradient(180deg, rgba(107, 76, 230, 0) 0%, rgba(107, 76, 230, 0.05) 100%);
-        opacity: 0;
-        transition: all 0.4s ease;
-      }
-
-      .team_item:hover::after {
+      .doctor_card:hover .appointment_btn {
+        transform: translateX(-50%) translateY(0);
         opacity: 1;
+      }
+
+      .doctor_card:hover .doctor_info {
+        background: #2D1857;
+        border-radius: 0;
+      }
+
+      .doctor_card:hover .doctor_name {
+        color: white;
+      }
+
+      .doctor_card:hover .view_more_btn {
+        background: white;
+        color: #2D1857;
+      }
+
+      .doctor_card:hover .social_links {
+        opacity: 1;
+        transform: translateY(-50px);
       }
 
       .item_image {
@@ -1440,10 +1016,518 @@
         width: 32px;
         height: 32px;
       }
+      .view_all_btn {
+        position: absolute;
+        top: 0;
+        right: 80px;
+        background: #6B4CE6;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 50px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 500;
+        font-size: 16px;
+        transition: all 0.3s ease;
+      }
+
+      .view_all_btn i {
+        font-size: 16px;
+        background: rgba(255, 255, 255, 0.2);
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      .view_all_btn:hover {
+        background: #8667FF;
+      }
+
+      .view_all_btn:hover i {
+        transform: translateX(3px);
+      }
+
+      .team_section .container {
+        position: relative;
+        padding: 0 80px;
+      }
+      /* Team Section Styles */
+      .team-section {
+        padding: 100px 0 120px;
+        position: relative;
+      }
+
+      .team-section .top-mediic-section {
+        margin-bottom: 0;
+      }
+
+      .team-section .mediic-shape {
+        position: absolute;
+        right: 350px;
+        text-align: right;
+        z-index: -1;
+      }
+
+      .team-single-box {
+        padding: 30px 30px 32px;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.30196078431372547);
+        border: 2px solid #ffffff;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        transition: all 0.3s ease;
+      }
+
+      .team-single-box::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        width: 0;
+        height: 0;
+        z-index: 2;
+        opacity: 0;
+        border-top: 2px solid #6f42c1;
+        border-left: 2px solid #6f42c1;
+        transition: all linear 0.5s;
+      }
+
+      .team-single-box::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        right: -2px;
+        width: 0;
+        height: 0;
+        z-index: 2;
+        opacity: 0;
+        border-bottom: 2px solid #6f42c1;
+        border-right: 2px solid #6f42c1;
+        transition: all linear 0.5s;
+      }
+
+      .team-thumb {
+        position: relative;
+        z-index: 21;
+      }
+
+      .team-thumb img {
+        border-radius: 25px;
+        width: 100%;
+      }
+
+      .team-thumb:after {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0%;
+        transition: 0.5s;
+        border-radius: 20px;
+        background-image: linear-gradient(
+          0deg,
+          rgba(111, 66, 193, 0.9) 0%,
+          rgba(111, 66, 193, 0.9) 20%,
+          rgba(111, 66, 193, 0) 50%,
+          rgba(111, 66, 193, 0) 100%
+        );
+      }
+
+      .social-icon {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        transition: 0.5s;
+        z-index: 1;
+      }
+
+      .social-icon ul li {
+        display: inline-block;
+        padding-right: 9px;
+        list-style: none;
+      }
+
+      .social-icon ul li i {
+        width: 42px;
+        line-height: 42px;
+        height: 42px;
+        border-radius: 21px;
+        background-color: #ffffff;
+        color: #6f42c1;
+        transition: 0.5s;
+      }
+
+      .social-icon ul li i:hover {
+        background-color: #6f42c1;
+        color: #ffffff;
+      }
+
+      .team-content h5 {
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+        padding: 26px 0 0;
+        color: #6f42c1;
+      }
+
+      .team-content h2 {
+        font-size: 28px;
+        font-weight: 600;
+        color: #4a148c;
+      }
+
+      .team-single-box:hover .social-icon {
+        bottom: 35px;
+        opacity: 1;
+      }
+
+      .team-single-box:hover .team-thumb:after {
+        height: 100%;
+      }
+
+      /* Swiper Styles */
+      .team-section .swiper {
+        padding-top: 50px;
+        padding-bottom: 80px;
+      }
+
+      .style-2 .swiper-slide {
+        background-position: center;
+        background-size: cover;
+      }
+
+      .style-2 .swiper-pagination-bullet {
+        width: var(
+          --swiper-pagination-bullet-width,
+          var(--swiper-pagination-bullet-size, 11px)
+        ) !important;
+        height: var(
+          --swiper-pagination-bullet-height,
+          var(--swiper-pagination-bullet-size, 11px)
+        ) !important;
+      }
+
+      .swiper-slide.swiper-slide-active .team-single-box .team-thumb:after {
+        height: 100%;
+      }
+
+      .swiper-slide.swiper-slide-active .team-single-box::before {
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+        border-radius: 20px;
+      }
+
+      /* Team Box Styles */
+      .team-single-box {
+        padding: 30px 30px 32px;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.30196078431372547);
+        border: 2px solid #ffffff;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        transition: all 0.3s ease;
+      }
+
+      .team-single-box::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        width: 0;
+        height: 0;
+        z-index: 2;
+        opacity: 0;
+        border-top: 2px solid #6f42c1;
+        border-left: 2px solid #6f42c1;
+        transition: all linear 0.5s;
+      }
+
+      .team-single-box::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        right: -2px;
+        width: 0;
+        height: 0;
+        z-index: 2;
+        opacity: 0;
+        border-bottom: 2px solid #6f42c1;
+        border-right: 2px solid #6f42c1;
+        transition: all linear 0.5s;
+      }
+
+      .team-single-box:hover:before,
+      .team-single-box:hover:after {
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+        border-radius: 20px;
+      }
+
+      /* Team Thumb Styles */
+      .team-thumb {
+        position: relative;
+        z-index: 21;
+      }
+
+      .team-thumb img {
+        border-radius: 25px;
+        width: 100%;
+      }
+
+      .team-thumb:after {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0%;
+        transition: 0.5s;
+        border-radius: 20px;
+        background-image: linear-gradient(
+          0deg,
+          rgba(111, 66, 193, 0.9) 0%,
+          rgba(111, 66, 193, 0.9) 20%,
+          rgba(111, 66, 193, 0) 50%,
+          rgba(111, 66, 193, 0) 100%
+        );
+      }
+
+      /* Social Icons */
+      .social-icon {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        transition: 0.5s;
+        z-index: 1;
+      }
+
+      .social-icon ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .social-icon ul li {
+        display: inline-block;
+        padding-right: 9px;
+      }
+
+      .social-icon ul li i {
+        width: 42px;
+        line-height: 42px;
+        height: 42px;
+        border-radius: 21px;
+        background-color: #ffffff;
+        color: #6f42c1;
+        transition: 0.5s;
+      }
+
+      .team-single-box:hover .social-icon {
+        bottom: 35px;
+        opacity: 1;
+      }
+
+      .team-single-box:hover .team-thumb:after {
+        height: 100%;
+      }
+
+      /* Team Content */
+      .team-content h5 {
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+        padding: 26px 0 0;
+        margin: 0;
+        color: #6f42c1;
+      }
+
+      .team-content h2 {
+        font-size: 28px;
+        font-weight: 600;
+        margin: 10px 0;
+        color: #4a148c;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 991px) {
+        .team-section {
+          padding: 60px 0;
+        }
+        .team-content h2 {
+          font-size: 24px;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .team-section {
+          padding: 40px 0;
+        }
+        .team-content h2 {
+          font-size: 20px;
+        }
+        .team-content h5 {
+          font-size: 14px;
+        }
+      }
+      .swiper-pagination-bullet {
+        background: #6f42c1 !important;
+      }
+
+      .swiper-pagination-bullet-active {
+        background: #4a148c !important;
+      }
+      /* Team Section Header Styles */
+      .team-section {
+        background: #f0f4ff;
+      }
+      
+      .top-mediic-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 50px;
+      }
+
+      .mediic-section-title h1 {
+        color: #0a1f44;
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 1.2;
+        margin: 0;
+      }
+
+      .counter-single-box {
+        text-align: right;
+      }
+
+      .counter-box-title {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+
+      .counter-box-title h1 {
+        color: #6f42c1;
+        font-size: 48px;
+        font-weight: 700;
+        margin: 0;
+        line-height: 1;
+      }
+
+      .counter-desc {
+        color: #0a1f44;
+        font-size: 16px;
+        font-weight: 500;
+        margin: 5px 0 0;
+      }
+
+      @media (max-width: 991px) {
+        .top-mediic-section {
+          flex-direction: column;
+          text-align: center;
+          gap: 20px;
+        }
+
+        .counter-single-box {
+          text-align: center;
+        }
+
+        .counter-box-title {
+          justify-content: center;
+        }
+
+        .mediic-section-title h1 {
+          font-size: 36px;
+        }
+      }
+      /* Purple Glow Animation */
+      @keyframes purpleGlow {
+        0% {
+          opacity: 0.3;
+          transform: scale(0.95);
+        }
+        50% {
+          opacity: 0.6;
+          transform: scale(1.05);
+        }
+        100% {
+          opacity: 0.3;
+          transform: scale(0.95);
+        }
+      }
+
+      .team-section {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .team-section::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: radial-gradient(
+          circle at center,
+          rgba(111, 66, 193, 0.15) 0%,
+          rgba(111, 66, 193, 0.1) 25%,
+          rgba(111, 66, 193, 0.05) 50%,
+          transparent 70%
+        );
+        animation: purpleGlow 3s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      /* Add a second glow for more effect */
+      .team-section::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: radial-gradient(
+          circle at center,
+          rgba(74, 20, 140, 0.1) 0%,
+          rgba(74, 20, 140, 0.05) 30%,
+          transparent 60%
+        );
+        animation: purpleGlow 4s ease-in-out infinite reverse;
+        pointer-events: none;
+      }
+
+      /* Ensure cards stay above the glow */
+      .swiper {
+        position: relative;
+        z-index: 2;
+      }
+
+      .team-single-box {
+        position: relative;
+        z-index: 3;
+        backdrop-filter: blur(5px);
+      }
     </style>
   </head>
   <body>
     <div class="body_wrap">
+      
       <div class="backtotop">
         <a href="#" class="scroll"><i class="far fa-arrow-up"></i></a>
       </div>
@@ -1925,7 +2009,7 @@
     </div>
     
     <div class="process_steps">
-      <svg xmlns="http://www.w3.org/2000/svg" width="767" height="238" viewBox="0 0 767 238" fill="none">
+      <svg xmlns="http://www.w3.org/2000/svg" width="767" height="238" viewBox="0 0 767 238" preserveAspectRatio="none">
         <path d="M1 91.2512C53.0375 0.994668 207.541 -75.2978 398.619 141.318C516.319 285.356 668.984 251.301 766 141.318" stroke="#A5A5A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 10"/>
       </svg>
       <div class="grid_wrapper">
@@ -1965,1606 +2049,479 @@
   <i class="fas fa-paw divider_icon"></i>
 </div>
 
+<style>
+  .section_divider {
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+    margin-top: -50px;
+    margin-bottom: -50px;
+    z-index: 1;
+  }
+
+  .section_divider svg {
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    fill: #7C58D3;
+  }
+</style>
+
+<div class="section_divider">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+    <path d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+  </svg>
+</div>
+
 <section class="team_section">
+  <div class="section_background">
+    <div class="overlay"></div>
+  </div>
   <div class="container">
-    <span class="sub_title">OUR DOCTORS</span>
-    <div class="section_content">
-      <div class="section_text">
-        <h2 class="title_text">Team Of Healthcare Specialists</h2>
-        <p class="description">
-          Our team of <strong>highly skilled veterinarians</strong> is committed to providing top-notch care for your furry companions. They're passionate about <strong>animal health</strong> & dedicated to providing the best possible medical services.
-        </p>
+    <h2 class="section_title">We Employ Only Specialists</h2>
+    <p class="section_subtitle">Our team of highly skilled specialists is dedicated to providing exceptional care with expertise and compassion.</p>
+    <a href="#" class="view_all_btn">View All <i class="fas fa-arrow-right"></i></a>
+    <div class="doctors_grid">
+      <div class="doctor_card">
+        <div class="doctor_image_wrapper">
+          <img src="assets/images/doctors/doctor1.jpg" alt="Nashid Martines" class="doctor_image">
+          <a href="#" class="appointment_btn">
+            <i class="far fa-calendar"></i>
+            Appointment Now
+          </a>
+        </div>
+        <div class="social_links">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="doctor_info">
+          <div class="doctor_details">
+            <h3 class="doctor_name">Nashid Martines</h3>
+            <p class="doctor_specialty">Cardiac Surgery</p>
+          </div>
+          <a href="#" class="view_more_btn">
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
       </div>
-      <div class="doctors_grid">
-        <div class="doctors_row">
-          <div class="team_item">
-            <div class="item_image">
-              <img src="assets/images/team/team_img_1.png" alt="Dr. Sophie Lee" />
-              <a href="#" class="contact_icon">
-                <i class="fas fa-phone"></i>
-              </a>
-            </div>
-            <div class="item_content">
-              <h3 class="item_title">Doctor 1</h3>
-              <span class="item_designation">Interventional Cardiology</span>
-              <ul class="social_links">
-                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fas fa-globe"></i></a></li>
-              </ul>
-            </div>
-          </div>
 
-          <div class="team_item">
-            <div class="item_image">
-              <img src="assets/images/team/team_img_2.png" alt="Dr. John Smith" />
-              <a href="#" class="contact_icon">
-                <i class="fas fa-phone"></i>
-              </a>
-            </div>
-            <div class="item_content">
-              <h3 class="item_title">Doctor 2</h3>
-              <span class="item_designation">Orthopedic Surgery</span>
-              <ul class="social_links">
-                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fas fa-globe"></i></a></li>
-              </ul>
-            </div>
+      <div class="doctor_card">
+        <div class="doctor_image_wrapper">
+          <img src="assets/images/doctors/doctor2.jpg" alt="Danial Frankie" class="doctor_image">
+          <a href="#" class="appointment_btn">
+            <i class="far fa-calendar"></i>
+            Appointment Now
+          </a>
+        </div>
+        <div class="social_links">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="doctor_info">
+          <div class="doctor_details">
+            <h3 class="doctor_name">Danial Frankie</h3>
+            <p class="doctor_specialty">Pediatric Clinic</p>
           </div>
+          <a href="#" class="view_more_btn">
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
 
-          <div class="team_item">
-            <div class="item_image">
-              <img src="assets/images/team/team_img_3.png" alt="Dr. Emily Johnson" />
-              <a href="#" class="contact_icon">
-                <i class="fas fa-phone"></i>
-              </a>
-            </div>
-            <div class="item_content">
-              <h3 class="item_title">Doctor 3</h3>
-              <span class="item_designation">Pediatric Care</span>
-              <ul class="social_links">
-                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fas fa-globe"></i></a></li>
-              </ul>
-            </div>
+      <div class="doctor_card">
+        <div class="doctor_image_wrapper">
+          <img src="assets/images/doctors/doctor3.jpg" alt="Rihana Roy" class="doctor_image">
+          <a href="#" class="appointment_btn">
+            <i class="far fa-calendar"></i>
+            Appointment Now
+          </a>
+        </div>
+        <div class="social_links">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="doctor_info">
+          <div class="doctor_details">
+            <h3 class="doctor_name">Rihana Roy</h3>
+            <p class="doctor_specialty">Gynecology</p>
           </div>
+          <a href="#" class="view_more_btn">
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
 
-          <div class="team_item">
-            <div class="item_image">
-              <img src="assets/images/team/team_img_4.png" alt="Dr. Michael Chen" />
-              <a href="#" class="contact_icon">
-                <i class="fas fa-phone"></i>
-              </a>
-            </div>
-            <div class="item_content">
-              <h3 class="item_title">Doctor 4</h3>
-              <span class="item_designation">Dermatology</span>
-              <ul class="social_links">
-                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fas fa-globe"></i></a></li>
-              </ul>
-            </div>
+      <div class="doctor_card">
+        <div class="doctor_image_wrapper">
+          <img src="assets/images/doctors/doctor4.jpg" alt="Sarah Wilson" class="doctor_image">
+          <a href="#" class="appointment_btn">
+            <i class="far fa-calendar"></i>
+            Appointment Now
+          </a>
+        </div>
+        <div class="social_links">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="doctor_info">
+          <div class="doctor_details">
+            <h3 class="doctor_name">Sarah Wilson</h3>
+            <p class="doctor_specialty">Neurology</p>
           </div>
+          <a href="#" class="view_more_btn">
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="doctor_card">
+        <div class="doctor_image_wrapper">
+          <img src="assets/images/doctors/doctor5.jpg" alt="Michael Chen" class="doctor_image">
+          <a href="#" class="appointment_btn">
+            <i class="far fa-calendar"></i>
+            Appointment Now
+          </a>
+        </div>
+        <div class="social_links">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="doctor_info">
+          <div class="doctor_details">
+            <h3 class="doctor_name">Michael Chen</h3>
+            <p class="doctor_specialty">Orthopedics</p>
+          </div>
+          <a href="#" class="view_more_btn">
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="doctor_card">
+        <div class="doctor_image_wrapper">
+          <img src="assets/images/doctors/doctor6.jpg" alt="Emily Rodriguez" class="doctor_image">
+          <a href="#" class="appointment_btn">
+            <i class="far fa-calendar"></i>
+            Appointment Now
+          </a>
+        </div>
+        <div class="social_links">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="doctor_info">
+          <div class="doctor_details">
+            <h3 class="doctor_name">Emily Rodriguez</h3>
+            <p class="doctor_specialty">Pediatrics</p>
+          </div>
+          <a href="#" class="view_more_btn">
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="doctor_card">
+        <div class="doctor_image_wrapper">
+          <img src="assets/images/doctors/doctor7.jpg" alt="David Kim" class="doctor_image">
+          <a href="#" class="appointment_btn">
+            <i class="far fa-calendar"></i>
+            Appointment Now
+          </a>
+        </div>
+        <div class="social_links">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="doctor_info">
+          <div class="doctor_details">
+            <h3 class="doctor_name">David Kim</h3>
+            <p class="doctor_specialty">Dermatology</p>
+          </div>
+          <a href="#" class="view_more_btn">
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="doctor_card">
+        <div class="doctor_image_wrapper">
+          <img src="assets/images/doctors/doctor8.jpg" alt="Lisa Thompson" class="doctor_image">
+          <a href="#" class="appointment_btn">
+            <i class="far fa-calendar"></i>
+            Appointment Now
+          </a>
+        </div>
+        <div class="social_links">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="doctor_info">
+          <div class="doctor_details">
+            <h3 class="doctor_name">Lisa Thompson</h3>
+            <p class="doctor_specialty">Ophthalmology</p>
+          </div>
+          <a href="#" class="view_more_btn">
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="doctor_card">
+        <div class="doctor_image_wrapper">
+          <img src="assets/images/doctors/doctor9.jpg" alt="James Anderson" class="doctor_image">
+          <a href="#" class="appointment_btn">
+            <i class="far fa-calendar"></i>
+            Appointment Now
+          </a>
+        </div>
+        <div class="social_links">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="doctor_info">
+          <div class="doctor_details">
+            <h3 class="doctor_name">James Anderson</h3>
+            <p class="doctor_specialty">Psychiatry</p>
+          </div>
+          <a href="#" class="view_more_btn">
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="doctor_card">
+        <div class="doctor_image_wrapper">
+          <img src="assets/images/doctors/doctor10.jpg" alt="Maria Garcia" class="doctor_image">
+          <a href="#" class="appointment_btn">
+            <i class="far fa-calendar"></i>
+            Appointment Now
+          </a>
+        </div>
+        <div class="social_links">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="doctor_info">
+          <div class="doctor_details">
+            <h3 class="doctor_name">Maria Garcia</h3>
+            <p class="doctor_specialty">Endocrinology</p>
+          </div>
+          <a href="#" class="view_more_btn">
+            <i class="fas fa-arrow-right"></i>
+          </a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-        <section class="service_section section_space_lg pb-0">
-          <div class="container">
-            <div class="section_title text-center">
-              <h2 class="title_text">
-                <span class="sub_title">Our Services</span> All Pet Care
-                Services
-              </h2>
+      <div class="team-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="top-mediic-section">
+                <div class="mediic-section-title">
+                  <h1>
+                    MEET OUR BEST<br />
+                    DOCTORS
+                  </h1>
+                </div>
+                <div class="counter-single-box">
+                  <div class="counter-box-title">
+                    <h1 class="odometer">38</h1>
+                    <h1>+</h1>
+                  </div>
+                  <p class="counter-desc">PROFESSIONAL DOCTORS</p>
+                </div>
+              </div>
             </div>
-            <div class="row justify-content-center">
-              <div class="col col-lg-4">
-                <div
-                  class="service_item"
-                  style="
-                    background-image: url('assets/images/shape/shape_path_1.svg');
-                  "
-                >
-                  <div class="title_wrap">
-                    <div class="item_icon">
-                      <img
-                        src="assets/images/icon/icon_pet_walking.svg"
-                        alt="Pet Walking"
-                      />
-                    </div>
-                    <h3 class="item_title mb-0">Walking & Sitting</h3>
-                  </div>
-                  <p>
-                    Ut tortor pretium viverra suspendisse potenti nullam ac
-                    tortor vitae eget dolor morbi
-                  </p>
-                  <div class="item_price"><span>From $15 / hour</span></div>
-                  <a class="btn_unfill" href="service_details.html"
-                    ><span>Get Service</span>
-                    <i class="far fa-long-arrow-right"></i
-                  ></a>
-                  <div class="decoration_image">
-                    <img
-                      src="assets/images/shape/shape_paws.svg"
-                      alt="Pet Paws"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="col col-lg-4">
-                <div
-                  class="service_item"
-                  style="
-                    background-image: url('assets/images/shape/shape_path_1.svg');
-                  "
-                >
-                  <div class="title_wrap">
-                    <div class="item_icon">
-                      <img
-                        src="assets/images/icon/icon_pet_grooming.svg"
-                        alt="Pet Grooming"
-                      />
-                    </div>
-                    <h3 class="item_title mb-0">Pet Grooming</h3>
-                  </div>
-                  <p>
-                    Et odio pellentesque diam volutpat commodo sed egestas
-                    egestas pellentesque nec nam
-                  </p>
-                  <div class="item_price"><span>From $39 / complex</span></div>
-                  <a class="btn_unfill" href="service_details.html"
-                    ><span>Get Service</span>
-                    <i class="far fa-long-arrow-right"></i
-                  ></a>
-                  <div class="decoration_image">
-                    <img
-                      src="assets/images/shape/shape_paws.svg"
-                      alt="Pet Paws"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="col col-lg-4">
-                <div
-                  class="service_item"
-                  style="
-                    background-image: url('assets/images/shape/shape_path_1.svg');
-                  "
-                >
-                  <div class="title_wrap">
-                    <div class="item_icon">
-                      <img
-                        src="assets/images/icon/icon_pet_training.svg"
-                        alt="Pet Training"
-                      />
-                    </div>
-                    <h3 class="item_title mb-0">Pet Training</h3>
-                  </div>
-                  <p>
-                    Aliquam ut porttitor leo a diam sollicitudin tempor sit amet
-                    est placerat
-                  </p>
-                  <div class="item_price"><span>From $27 / hour</span></div>
-                  <a class="btn_unfill" href="service_details.html"
-                    ><span>Get Service</span>
-                    <i class="far fa-long-arrow-right"></i
-                  ></a>
-                  <div class="decoration_image">
-                    <img
-                      src="assets/images/shape/shape_paws.svg"
-                      alt="Pet Paws"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="col col-lg-4">
-                <div
-                  class="service_item"
-                  style="
-                    background-image: url('assets/images/shape/shape_path_1.svg');
-                  "
-                >
-                  <div class="title_wrap">
-                    <div class="item_icon">
-                      <img
-                        src="assets/images/icon/icon_pet_taxi.svg"
-                        alt="Pet Taxi"
-                      />
-                    </div>
-                    <h3 class="item_title mb-0">Pet Taxi</h3>
-                  </div>
-                  <p>
-                    Maecenas ultricies mi eget mauris pharetra et ultrices
-                    consectetur adipiscing elit
-                  </p>
-                  <div class="item_price"><span>From $22 / trip</span></div>
-                  <a class="btn_unfill" href="service_details.html"
-                    ><span>Get Service</span>
-                    <i class="far fa-long-arrow-right"></i
-                  ></a>
-                  <div class="decoration_image">
-                    <img
-                      src="assets/images/shape/shape_paws.svg"
-                      alt="Pet Paws"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="col col-lg-4">
-                <div
-                  class="service_item"
-                  style="
-                    background-image: url('assets/images/shape/shape_path_1.svg');
-                  "
-                >
-                  <div class="title_wrap">
-                    <div class="item_icon">
-                      <img
-                        src="assets/images/icon/icon_pet_health.svg"
-                        alt="Pet Health & Wellness"
-                      />
-                    </div>
-                    <h3 class="item_title mb-0">Health & Wellness</h3>
-                  </div>
-                  <p>
-                    Amet porttitor eget dolor morbi non arcu risus quis varius
-                    blandit aliquam etiam
-                  </p>
-                  <div class="item_price"><span>From $39/ visit</span></div>
-                  <a class="btn_unfill" href="service_details.html"
-                    ><span>Get Service</span>
-                    <i class="far fa-long-arrow-right"></i
-                  ></a>
-                  <div class="decoration_image">
-                    <img
-                      src="assets/images/shape/shape_paws.svg"
-                      alt="Pet Paws"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="col col-lg-4">
-                <div
-                  class="service_item"
-                  style="
-                    background-image: url('assets/images/shape/shape_path_1.svg');
-                  "
-                >
-                  <div class="title_wrap">
-                    <div class="item_icon">
-                      <img
-                        src="assets/images/icon/icon_pet_hotel.svg"
-                        alt="Pet Hotel"
-                      />
-                    </div>
-                    <h3 class="item_title mb-0">Pet Hotel</h3>
-                  </div>
-                  <p>
-                    Turpis massa sed elementum tempus egestas sed sed risus
-                    aliquam urna cursus eget n
-                  </p>
-                  <div class="item_price"><span>From $15 / night</span></div>
-                  <a class="btn_unfill" href="service_details.html"
-                    ><span>Get Service</span>
-                    <i class="far fa-long-arrow-right"></i
-                  ></a>
-                  <div class="decoration_image">
-                    <img
-                      src="assets/images/shape/shape_paws.svg"
-                      alt="Pet Paws"
-                    />
-                  </div>
-                </div>
-              </div>
+            <div class="mediic-shape">
+              <img src="assets/images/resource/crcle-bg.png" alt="" />
             </div>
           </div>
-        </section>
-        <section class="about_section section_space_lg pb-0 decoration_wrap">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col col-lg-5">
-                <div class="section_title">
-                  <h2 class="title_text">Welcome To Our Family</h2>
-                  <p>
-                    Tristique nulla aliquet enim tortor at auctor urna nunc.
-                    Massa enim nec dui nunc mattis enim ut tellus
-                  </p>
-                </div>
-                <div class="accordion" id="faq_accordion">
-                  <div class="accordion-item">
-                    <button
-                      class="accordion-button"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq_collapse_1"
-                      aria-expanded="true"
-                      aria-controls="faq_collapse_1"
-                    >
-                      How Petopia Pet Care Started
-                    </button>
-                    <div
-                      id="faq_collapse_1"
-                      class="accordion-collapse collapse show"
-                      data-bs-parent="#faq_accordion"
-                    >
-                      <div class="accordion-body">
-                        <p class="m-0">
-                          Vitae et leo duis ut diam. Amet venenatis urna cursus
-                          eget nunc scelerisque. Nec ultrices dui sapien eget.
-                          Lectus magna fringilla urna porttitor rhoncus dolor
-                          purus
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="accordion-item">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq_collapse_2"
-                      aria-expanded="false"
-                      aria-controls="faq_collapse_2"
-                    >
-                      Mission Statement
-                    </button>
-                    <div
-                      id="faq_collapse_2"
-                      class="accordion-collapse collapse"
-                      data-bs-parent="#faq_accordion"
-                    >
-                      <div class="accordion-body">
-                        <p class="m-0">
-                          Vitae et leo duis ut diam. Amet venenatis urna cursus
-                          eget nunc scelerisque. Nec ultrices dui sapien eget.
-                          Lectus magna fringilla urna porttitor rhoncus dolor
-                          purus
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="accordion-item">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq_collapse_3"
-                      aria-expanded="false"
-                      aria-controls="faq_collapse_3"
-                    >
-                      Value Added Services
-                    </button>
-                    <div
-                      id="faq_collapse_3"
-                      class="accordion-collapse collapse"
-                      data-bs-parent="#faq_accordion"
-                    >
-                      <div class="accordion-body">
-                        <p class="m-0">
-                          Vitae et leo duis ut diam. Amet venenatis urna cursus
-                          eget nunc scelerisque. Nec ultrices dui sapien eget.
-                          Lectus magna fringilla urna porttitor rhoncus dolor
-                          purus
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="accordion-item">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq_collapse_4"
-                      aria-expanded="false"
-                      aria-controls="faq_collapse_4"
-                    >
-                      Social Responsability
-                    </button>
-                    <div
-                      id="faq_collapse_4"
-                      class="accordion-collapse collapse"
-                      data-bs-parent="#faq_accordion"
-                    >
-                      <div class="accordion-body">
-                        <p class="m-0">
-                          Vitae et leo duis ut diam. Amet venenatis urna cursus
-                          eget nunc scelerisque. Nec ultrices dui sapien eget.
-                          Lectus magna fringilla urna porttitor rhoncus dolor
-                          purus
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col col-lg-6">
-                <div class="about_image_1">
-                  <div class="image_1 p-0">
-                    <img
-                      src="assets/images/about/about_img_1.jpg"
-                      alt="Pet Doctor"
-                    />
-                  </div>
-                  <div class="image_2">
-                    <img
-                      src="assets/images/about/about_img_2.jpg"
-                      alt="Cat Image"
-                    />
-                  </div>
-                  <div class="image_3">
-                    <img
-                      src="assets/images/about/about_img_3.jpg"
-                      alt="Dog Image"
-                    />
-                  </div>
-                  <div class="shape_img_1">
-                    <img
-                      src="assets/images/shape/shape_circle_1.svg"
-                      alt="Yellow Circle"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="decoration_item shape_dot_1">
-            <img
-              src="assets/images/shape/shape_dot_group_1.svg"
-              alt="Colorful Dots"
-            />
-          </div>
-        </section>
-        <section class="gallery_section section_space_lg decoration_wrap">
-          <div class="container">
-            <div class="section_title text-center">
-              <h2 class="title_text">
-                <span class="sub_title">favorite pets</span> Our Gallery
-              </h2>
-              <p class="mb-0">
-                Tristique nulla aliquet enim tortor at auctor urna nunc.
-              </p>
-            </div>
-            <div class="row">
-              <div class="col col-lg-4 col-md-6 col-sm-6">
-                <div class="gallery_item">
-                  <div class="item_image">
-                    <img
-                      src="assets/images/gallery/gallery_img_1.jpg"
-                      alt="Pet Image"
-                    />
-                  </div>
-                  <a class="item_content" href="#!"
-                    ><span class="d-block"><small>SERVICES</small></span>
-                    <strong class="d-block">Cat Grooming</strong></a
-                  >
-                </div>
-              </div>
-              <div class="col col-lg-4 col-md-6 col-sm-6">
-                <div class="gallery_item">
-                  <div class="item_image">
-                    <img
-                      src="assets/images/gallery/gallery_img_2.jpg"
-                      alt="Pet Image"
-                    />
-                  </div>
-                  <a class="item_content" href="#!"
-                    ><span class="d-block"><small>SERVICES</small></span>
-                    <strong class="d-block">Cat Grooming</strong></a
-                  >
-                </div>
-              </div>
-              <div class="col col-lg-4 col-md-6 col-sm-6">
-                <div class="gallery_item">
-                  <div class="item_image">
-                    <img
-                      src="assets/images/gallery/gallery_img_3.jpg"
-                      alt="Pet Image"
-                    />
-                  </div>
-                  <a class="item_content" href="#!"
-                    ><span class="d-block"><small>SERVICES</small></span>
-                    <strong class="d-block">Cat Grooming</strong></a
-                  >
-                </div>
-              </div>
-              <div class="col col-lg-4 col-md-6 col-sm-6">
-                <div class="gallery_item">
-                  <div class="item_image">
-                    <img
-                      src="assets/images/gallery/gallery_img_4.jpg"
-                      alt="Pet Image"
-                    />
-                  </div>
-                  <a class="item_content" href="#!"
-                    ><span class="d-block"><small>SERVICES</small></span>
-                    <strong class="d-block">Cat Grooming</strong></a
-                  >
-                </div>
-              </div>
-              <div class="col col-lg-4 col-md-6 col-sm-6">
-                <div class="gallery_item">
-                  <div class="item_image">
-                    <img
-                      src="assets/images/gallery/gallery_img_5.jpg"
-                      alt="Pet Image"
-                    />
-                  </div>
-                  <a class="item_content" href="#!"
-                    ><span class="d-block"><small>SERVICES</small></span>
-                    <strong class="d-block">Cat Grooming</strong></a
-                  >
-                </div>
-              </div>
-              <div class="col col-lg-4 col-md-6 col-sm-6">
-                <div class="gallery_item">
-                  <div class="item_image">
-                    <img
-                      src="assets/images/gallery/gallery_img_6.jpg"
-                      alt="Pet Image"
-                    />
-                  </div>
-                  <a class="item_content" href="#!"
-                    ><span class="d-block"><small>SERVICES</small></span>
-                    <strong class="d-block">Cat Grooming</strong></a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="decoration_item shape_dot_1">
-            <img
-              src="assets/images/shape/shape_dot_group_2.svg"
-              alt="Colorful Dots"
-            />
-          </div>
-        </section>
-        <section
-          class="pricing_section bg_gray section_space_lg decoration_wrap"
-        >
-          <div class="container">
-            <div class="section_title text-center">
-              <h2 class="title_text">
-                <span class="sub_title">Our prices</span> Dog Grooming Services
-                & Pricing
-              </h2>
-              <div class="row justify-content-center">
-                <div class="col col-lg-6">
-                  <p class="mb-0">
-                    We can fully customize your pet sitting schedule to fit your
-                    pet’s needs. Pick and choose what visits work best for you
-                    and your family
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="pricing_tab_wrap">
-              <ul class="nav tabs_nav unorder_list_center" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <button
-                    class="nav-link active"
-                    data-bs-toggle="tab"
-                    data-bs-target="#tab_small_dog"
-                    type="button"
-                    role="tab"
-                    aria-selected="true"
-                  >
-                    Small Dog
-                  </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button
-                    class="nav-link"
-                    data-bs-toggle="tab"
-                    data-bs-target="#tab_medium_dog"
-                    type="button"
-                    role="tab"
-                    aria-selected="false"
-                  >
-                    Medium Dog
-                  </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button
-                    class="nav-link"
-                    data-bs-toggle="tab"
-                    data-bs-target="#tab_large_dog"
-                    type="button"
-                    role="tab"
-                    aria-selected="false"
-                  >
-                    Large Dog
-                  </button>
-                </li>
-              </ul>
-              <div class="tab-content">
-                <div
-                  class="tab-pane fade show active"
-                  id="tab_small_dog"
-                  role="tabpanel"
-                >
-                  <div class="row">
-                    <div class="col col-lg-3 col-md-6 col-sm-6">
-                      <div class="pricing_table_item">
-                        <h3 class="pricing_heading">Bath & Brush</h3>
-                        <div class="pricing_value">
-                          <span class="value_text">$13 – $18</span>
-                        </div>
-                        <ul class="pricing_info_list unorder_list_block">
+          <div class="row">
+            <div class="swiper style-2 team">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="team-single-box" data-aos="fade-up">
+                    <div class="team-thumb">
+                      <img src="assets/images/resource/team.jpg" alt="" />
+                      <div class="social-icon">
+                        <ul>
                           <li>
-                            <i class="fas fa-check-circle"></i
-                            ><span>Bath (Hypo-Allergenic)</span>
+                            <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
                           </li>
                           <li>
-                            <i class="fas fa-check-circle"></i
-                            ><span>Conditioning Treatment</span>
+                            <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
                           </li>
                           <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Ears Flushed & Cleaned</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Watering Plants</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Handscissor Finish</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Setting Length of Coat</span></del
-                            >
+                            <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
                           </li>
                         </ul>
-                        <a class="btn border_primary" href="#!">Purchase Now</a>
                       </div>
                     </div>
-                    <div class="col col-lg-3 col-md-6 col-sm-6">
-                      <div class="pricing_table_item">
-                        <h3 class="pricing_heading">Mini Groom</h3>
-                        <div class="pricing_value">
-                          <span class="value_text">$20 – $25</span>
-                        </div>
-                        <ul class="pricing_info_list unorder_list_block">
-                          <li>
-                            <i class="fas fa-check-circle"></i
-                            ><span>Bath (Hypo-Allergenic)</span>
-                          </li>
-                          <li>
-                            <i class="fas fa-check-circle"></i
-                            ><span>Conditioning Treatment</span>
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Ears Flushed & Cleaned</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Watering Plants</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Handscissor Finish</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Setting Length of Coat</span></del
-                            >
-                          </li>
-                        </ul>
-                        <a class="btn border_primary" href="#!">Purchase Now</a>
-                      </div>
-                    </div>
-                    <div class="col col-lg-3 col-md-6 col-sm-6">
-                      <div class="pricing_table_item active">
-                        <h3 class="pricing_heading">Complete Groom</h3>
-                        <div class="pricing_value">
-                          <span class="value_text">$35 – $40</span>
-                        </div>
-                        <ul class="pricing_info_list unorder_list_block">
-                          <li>
-                            <i class="fas fa-check-circle"></i
-                            ><span>Bath (Hypo-Allergenic)</span>
-                          </li>
-                          <li>
-                            <i class="fas fa-check-circle"></i
-                            ><span>Conditioning Treatment</span>
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Ears Flushed & Cleaned</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Watering Plants</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Handscissor Finish</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Setting Length of Coat</span></del
-                            >
-                          </li>
-                        </ul>
-                        <a class="btn btn_warning" href="#!">Purchase Now</a>
-                      </div>
-                    </div>
-                    <div class="col col-lg-3 col-md-6 col-sm-6">
-                      <div class="pricing_table_item">
-                        <h3 class="pricing_heading">Hand Scissor Groom</h3>
-                        <div class="pricing_value">
-                          <span class="value_text">$50 – $55</span>
-                        </div>
-                        <ul class="pricing_info_list unorder_list_block">
-                          <li>
-                            <i class="fas fa-check-circle"></i
-                            ><span>Bath (Hypo-Allergenic)</span>
-                          </li>
-                          <li>
-                            <i class="fas fa-check-circle"></i
-                            ><span>Conditioning Treatment</span>
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Ears Flushed & Cleaned</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Watering Plants</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Handscissor Finish</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Setting Length of Coat</span></del
-                            >
-                          </li>
-                        </ul>
-                        <a class="btn border_primary" href="#!">Purchase Now</a>
-                      </div>
+                    <div class="team-content">
+                      <h5>CARDIOLOGY</h5>
+                      <h2>Dr. David Luis</h2>
                     </div>
                   </div>
                 </div>
-                <div class="tab-pane fade" id="tab_medium_dog" role="tabpanel">
-                  <div class="row">
-                    <div class="col col-lg-3 col-md-6 col-sm-6">
-                      <div class="pricing_table_item">
-                        <h3 class="pricing_heading">Bath & Brush</h3>
-                        <div class="pricing_value">
-                          <span class="value_text">$13 – $18</span>
-                        </div>
-                        <ul class="pricing_info_list unorder_list_block">
+                <div class="swiper-slide">
+                  <div class="team-single-box" data-aos="zoom-in">
+                    <div class="team-thumb">
+                      <img src="assets/images/resource/team.jpg" alt="" />
+                      <div class="social-icon">
+                        <ul>
                           <li>
-                            <i class="fas fa-check-circle"></i
-                            ><span>Bath (Hypo-Allergenic)</span>
+                            <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
                           </li>
                           <li>
-                            <i class="fas fa-check-circle"></i
-                            ><span>Conditioning Treatment</span>
+                            <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
                           </li>
                           <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Ears Flushed & Cleaned</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Watering Plants</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Handscissor Finish</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Setting Length of Coat</span></del
-                            >
+                            <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
                           </li>
                         </ul>
-                        <a class="btn border_primary" href="#!">Purchase Now</a>
                       </div>
                     </div>
-                    <div class="col col-lg-3 col-md-6 col-sm-6">
-                      <div class="pricing_table_item">
-                        <h3 class="pricing_heading">Mini Groom</h3>
-                        <div class="pricing_value">
-                          <span class="value_text">$20 – $25</span>
-                        </div>
-                        <ul class="pricing_info_list unorder_list_block">
-                          <li>
-                            <i class="fas fa-check-circle"></i
-                            ><span>Bath (Hypo-Allergenic)</span>
-                          </li>
-                          <li>
-                            <i class="fas fa-check-circle"></i
-                            ><span>Conditioning Treatment</span>
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Ears Flushed & Cleaned</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Watering Plants</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Handscissor Finish</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Setting Length of Coat</span></del
-                            >
-                          </li>
-                        </ul>
-                        <a class="btn border_primary" href="#!">Purchase Now</a>
-                      </div>
-                    </div>
-                    <div class="col col-lg-3 col-md-6 col-sm-6">
-                      <div class="pricing_table_item active">
-                        <h3 class="pricing_heading">Complete Groom</h3>
-                        <div class="pricing_value">
-                          <span class="value_text">$35 – $40</span>
-                        </div>
-                        <ul class="pricing_info_list unorder_list_block">
-                          <li>
-                            <i class="fas fa-check-circle"></i
-                            ><span>Bath (Hypo-Allergenic)</span>
-                          </li>
-                          <li>
-                            <i class="fas fa-check-circle"></i
-                            ><span>Conditioning Treatment</span>
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Ears Flushed & Cleaned</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Watering Plants</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Handscissor Finish</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Setting Length of Coat</span></del
-                            >
-                          </li>
-                        </ul>
-                        <a class="btn btn_warning" href="#!">Purchase Now</a>
-                      </div>
-                    </div>
-                    <div class="col col-lg-3 col-md-6 col-sm-6">
-                      <div class="pricing_table_item">
-                        <h3 class="pricing_heading">Hand Scissor Groom</h3>
-                        <div class="pricing_value">
-                          <span class="value_text">$50 – $55</span>
-                        </div>
-                        <ul class="pricing_info_list unorder_list_block">
-                          <li>
-                            <i class="fas fa-check-circle"></i
-                            ><span>Bath (Hypo-Allergenic)</span>
-                          </li>
-                          <li>
-                            <i class="fas fa-check-circle"></i
-                            ><span>Conditioning Treatment</span>
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Ears Flushed & Cleaned</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Watering Plants</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Handscissor Finish</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Setting Length of Coat</span></del
-                            >
-                          </li>
-                        </ul>
-                        <a class="btn border_primary" href="#!">Purchase Now</a>
-                      </div>
+                    <div class="team-content">
+                      <h5>DENTISTRY</h5>
+                      <h2>Dr. Sarah Smith</h2>
                     </div>
                   </div>
                 </div>
-                <div class="tab-pane fade" id="tab_large_dog" role="tabpanel">
-                  <div class="row">
-                    <div class="col col-lg-3 col-md-6 col-sm-6">
-                      <div class="pricing_table_item">
-                        <h3 class="pricing_heading">Bath & Brush</h3>
-                        <div class="pricing_value">
-                          <span class="value_text">$13 – $18</span>
-                        </div>
-                        <ul class="pricing_info_list unorder_list_block">
+                <div class="swiper-slide">
+                  <div class="team-single-box" data-aos="fade-up">
+                    <div class="team-thumb">
+                      <img src="assets/images/resource/team.jpg" alt="" />
+                      <div class="social-icon">
+                        <ul>
                           <li>
-                            <i class="fas fa-check-circle"></i
-                            ><span>Bath (Hypo-Allergenic)</span>
+                            <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
                           </li>
                           <li>
-                            <i class="fas fa-check-circle"></i
-                            ><span>Conditioning Treatment</span>
+                            <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
                           </li>
                           <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Ears Flushed & Cleaned</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Watering Plants</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Handscissor Finish</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Setting Length of Coat</span></del
-                            >
+                            <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
                           </li>
                         </ul>
-                        <a class="btn border_primary" href="#!">Purchase Now</a>
                       </div>
                     </div>
-                    <div class="col col-lg-3 col-md-6 col-sm-6">
-                      <div class="pricing_table_item">
-                        <h3 class="pricing_heading">Mini Groom</h3>
-                        <div class="pricing_value">
-                          <span class="value_text">$20 – $25</span>
-                        </div>
-                        <ul class="pricing_info_list unorder_list_block">
+                    <div class="team-content">
+                      <h5>NEUROLOGY</h5>
+                      <h2>Dr. Michael Chen</h2>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="team-single-box" data-aos="fade-up">
+                    <div class="team-thumb">
+                      <img src="assets/images/resource/team.jpg" alt="" />
+                      <div class="social-icon">
+                        <ul>
                           <li>
-                            <i class="fas fa-check-circle"></i
-                            ><span>Bath (Hypo-Allergenic)</span>
+                            <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
                           </li>
                           <li>
-                            <i class="fas fa-check-circle"></i
-                            ><span>Conditioning Treatment</span>
+                            <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
                           </li>
                           <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Ears Flushed & Cleaned</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Watering Plants</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Handscissor Finish</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Setting Length of Coat</span></del
-                            >
+                            <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
                           </li>
                         </ul>
-                        <a class="btn border_primary" href="#!">Purchase Now</a>
                       </div>
                     </div>
-                    <div class="col col-lg-3 col-md-6 col-sm-6">
-                      <div class="pricing_table_item active">
-                        <h3 class="pricing_heading">Complete Groom</h3>
-                        <div class="pricing_value">
-                          <span class="value_text">$35 – $40</span>
-                        </div>
-                        <ul class="pricing_info_list unorder_list_block">
+                    <div class="team-content">
+                      <h5>PEDIATRICS</h5>
+                      <h2>Dr. Emily Brown</h2>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="team-single-box" data-aos="fade-up">
+                    <div class="team-thumb">
+                      <img src="assets/images/resource/team.jpg" alt="" />
+                      <div class="social-icon">
+                        <ul>
                           <li>
-                            <i class="fas fa-check-circle"></i
-                            ><span>Bath (Hypo-Allergenic)</span>
+                            <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
                           </li>
                           <li>
-                            <i class="fas fa-check-circle"></i
-                            ><span>Conditioning Treatment</span>
+                            <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
                           </li>
                           <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Ears Flushed & Cleaned</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Watering Plants</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Handscissor Finish</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Setting Length of Coat</span></del
-                            >
+                            <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
                           </li>
                         </ul>
-                        <a class="btn btn_warning" href="#!">Purchase Now</a>
                       </div>
                     </div>
-                    <div class="col col-lg-3 col-md-6 col-sm-6">
-                      <div class="pricing_table_item">
-                        <h3 class="pricing_heading">Hand Scissor Groom</h3>
-                        <div class="pricing_value">
-                          <span class="value_text">$50 – $55</span>
-                        </div>
-                        <ul class="pricing_info_list unorder_list_block">
+                    <div class="team-content">
+                      <h5>ORTHOPEDICS</h5>
+                      <h2>Dr. James Wilson</h2>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="team-single-box" data-aos="fade-up">
+                    <div class="team-thumb">
+                      <img src="assets/images/resource/team.jpg" alt="" />
+                      <div class="social-icon">
+                        <ul>
                           <li>
-                            <i class="fas fa-check-circle"></i
-                            ><span>Bath (Hypo-Allergenic)</span>
+                            <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
                           </li>
                           <li>
-                            <i class="fas fa-check-circle"></i
-                            ><span>Conditioning Treatment</span>
+                            <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
                           </li>
                           <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Ears Flushed & Cleaned</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Watering Plants</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Handscissor Finish</span></del
-                            >
-                          </li>
-                          <li>
-                            <del
-                              ><i class="fas fa-check-circle"></i
-                              ><span>Setting Length of Coat</span></del
-                            >
+                            <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
                           </li>
                         </ul>
-                        <a class="btn border_primary" href="#!">Purchase Now</a>
                       </div>
+                    </div>
+                    <div class="team-content">
+                      <h5>DERMATOLOGY</h5>
+                      <h2>Dr. Sofia Martinez</h2>
                     </div>
                   </div>
                 </div>
               </div>
+              <div class="swiper-pagination"></div>
             </div>
           </div>
-          <div class="decoration_item shape_dot_1">
-            <img
-              src="assets/images/shape/shape_dot_group_3.svg"
-              alt="Colorful Dots"
-            />
-          </div>
-          <div class="decoration_item shape_dot_2">
-            <img
-              src="assets/images/shape/shape_dot_group_4.svg"
-              alt="Colorful Dots"
-            />
-          </div>
-        </section>
-        <section class="testimonial_section section_space_lg">
-          <div class="container">
-            <div class="section_title">
-              <h2 class="title_text mb-0">
-                <span class="sub_title">Our Reviews</span> What People Say
-              </h2>
-            </div>
-          </div>
-          <div class="testimonial_carousel">
-            <div
-              class="row common_carousel_3col"
-              data-slick='{"dots": false, "centerMode": true}'
-            >
-              <div class="col carousel_item">
-                <div class="testimonial_item">
-                  <div class="testimonial_admin">
-                    <div class="admin_thumbnail">
-                      <img
-                        src="assets/images/meta/thumbnail_img_1.png"
-                        alt="Pet Thumbnail Image"
-                      />
-                    </div>
-                    <div class="admin_info">
-                      <h4 class="admin_name">Home Visits</h4>
-                      <span class="admin_designation">Lucas Simões</span>
-                    </div>
-                  </div>
-                  <ul class="rating_star">
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                  </ul>
-                  <p class="mb-0">
-                    Tristique nulla aliquet enim tortor at auctor urna nunc.
-                    Massa enim nec dui nunc mattis enim ut tellus
-                  </p>
-                  <span class="quote_icon"
-                    ><i class="fas fa-quote-right"></i
-                  ></span>
-                </div>
-              </div>
-              <div class="col carousel_item">
-                <div class="testimonial_item">
-                  <div class="testimonial_admin">
-                    <div class="admin_thumbnail">
-                      <img
-                        src="assets/images/meta/thumbnail_img_2.png"
-                        alt="Pet Thumbnail Image"
-                      />
-                    </div>
-                    <div class="admin_info">
-                      <h4 class="admin_name">Dog Boarding</h4>
-                      <span class="admin_designation">Wilhelm Dowall</span>
-                    </div>
-                  </div>
-                  <ul class="rating_star">
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                  </ul>
-                  <p class="mb-0">
-                    Lectus magna fringilla urna porttitor rhoncus dolor purus
-                    non enim. Tellus in hac habitasse platea dictumst
-                  </p>
-                  <span class="quote_icon"
-                    ><i class="fas fa-quote-right"></i
-                  ></span>
-                </div>
-              </div>
-              <div class="col carousel_item">
-                <div class="testimonial_item">
-                  <div class="testimonial_admin">
-                    <div class="admin_thumbnail">
-                      <img
-                        src="assets/images/meta/thumbnail_img_3.png"
-                        alt="Pet Thumbnail Image"
-                      />
-                    </div>
-                    <div class="admin_info">
-                      <h4 class="admin_name">Pet Training</h4>
-                      <span class="admin_designation">Lara Madrigal</span>
-                    </div>
-                  </div>
-                  <ul class="rating_star">
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                  </ul>
-                  <p class="mb-0">
-                    Ut tortor pretium viverra suspendisse potenti nullam.
-                    Venenatis urna cursus eget nunc scelerisque. Nec ultrices dui
-                    sapien eget. Lectus magna fringilla urna porttitor rhoncus
-                    dolor purus
-                  </p>
-                  <span class="quote_icon"
-                    ><i class="fas fa-quote-right"></i
-                  ></span>
-                </div>
-              </div>
-              <div class="col carousel_item">
-                <div class="testimonial_item">
-                  <div class="testimonial_admin">
-                    <div class="admin_thumbnail">
-                      <img
-                        src="assets/images/meta/thumbnail_img_4.png"
-                        alt="Pet Thumbnail Image"
-                      />
-                    </div>
-                    <div class="admin_info">
-                      <h4 class="admin_name">Home Visit</h4>
-                      <span class="admin_designation">Lara Madrigal</span>
-                    </div>
-                  </div>
-                  <ul class="rating_star">
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                  </ul>
-                  <p class="mb-0">
-                    Ut tortor pretium viverra suspendisse potenti nullam.
-                    Venenatis urna cursus eget nunc scelerisque. Nec ultrices dui
-                    sapien eget. Lectus magna fringilla urna porttitor rhoncus
-                    dolor purus
-                  </p>
-                  <span class="quote_icon"
-                    ><i class="fas fa-quote-right"></i
-                  ></span>
-                </div>
-              </div>
-              <div class="col carousel_item">
-                <div class="testimonial_item">
-                  <div class="testimonial_admin">
-                    <div class="admin_thumbnail">
-                      <img
-                        src="assets/images/meta/thumbnail_img_1.png"
-                        alt="Pet Thumbnail Image"
-                      />
-                    </div>
-                    <div class="admin_info">
-                      <h4 class="admin_name">Home Visits</h4>
-                      <span class="admin_designation">Lucas Simões</span>
-                    </div>
-                  </div>
-                  <ul class="rating_star">
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                  </ul>
-                  <p class="mb-0">
-                    Tristique nulla aliquet enim tortor at auctor urna nunc.
-                    Massa enim nec dui nunc mattis enim ut tellus
-                  </p>
-                  <span class="quote_icon"
-                    ><i class="fas fa-quote-right"></i
-                  ></span>
-                </div>
-              </div>
-              <div class="col carousel_item">
-                <div class="testimonial_item">
-                  <div class="testimonial_admin">
-                    <div class="admin_thumbnail">
-                      <img
-                        src="assets/images/meta/thumbnail_img_2.png"
-                        alt="Pet Thumbnail Image"
-                      />
-                    </div>
-                    <div class="admin_info">
-                      <h4 class="admin_name">Dog Boarding</h4>
-                      <span class="admin_designation">Wilhelm Dowall</span>
-                    </div>
-                  </div>
-                  <ul class="rating_star">
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                  </ul>
-                  <p class="mb-0">
-                    Lectus magna fringilla urna porttitor rhoncus dolor purus
-                    non enim. Tellus in hac habitasse platea dictumst
-                  </p>
-                  <span class="quote_icon"
-                    ><i class="fas fa-quote-right"></i
-                  ></span>
-                </div>
-              </div>
-              <div class="col carousel_item">
-                <div class="testimonial_item">
-                  <div class="testimonial_admin">
-                    <div class="admin_thumbnail">
-                      <img
-                        src="assets/images/meta/thumbnail_img_3.png"
-                        alt="Pet Thumbnail Image"
-                      />
-                    </div>
-                    <div class="admin_info">
-                      <h4 class="admin_name">Pet Training</h4>
-                      <span class="admin_designation">Lara Madrigal</span>
-                    </div>
-                  </div>
-                  <ul class="rating_star">
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                  </ul>
-                  <p class="mb-0">
-                    Ut tortor pretium viverra suspendisse potenti nullam.
-                    Venenatis urna cursus eget nunc scelerisque. Nec ultrices dui
-                    sapien eget. Lectus magna fringilla urna porttitor rhoncus
-                    dolor purus
-                  </p>
-                  <span class="quote_icon"
-                    ><i class="fas fa-quote-right"></i
-                  ></span>
-                </div>
-              </div>
-              <div class="col carousel_item">
-                <div class="testimonial_item">
-                  <div class="testimonial_admin">
-                    <div class="admin_thumbnail">
-                      <img
-                        src="assets/images/meta/thumbnail_img_4.png"
-                        alt="Pet Thumbnail Image"
-                      />
-                    </div>
-                    <div class="admin_info">
-                      <h4 class="admin_name">Home Visit</h4>
-                      <span class="admin_designation">Lara Madrigal</span>
-                    </div>
-                  </div>
-                  <ul class="rating_star">
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                    <li><i class="fas fa-star"></i></li>
-                  </ul>
-                  <p class="mb-0">
-                    Ut tortor pretium viverra suspendisse potenti nullam.
-                    Venenatis urna cursus eget nunc scelerisque. Nec ultrices dui
-                    sapien eget. Lectus magna fringilla urna porttitor rhoncus
-                    dolor purus
-                  </p>
-                  <span class="quote_icon"
-                    ><i class="fas fa-quote-right"></i
-                  ></span>
-                </div>
-              </div>
-            </div>
-            <div class="carousel_arrow">
-              <div class="container">
-                <button type="button" class="cc3c_left_arrow">
-                  <i class="far fa-arrow-left"></i>
-                </button>
-                <button type="button" class="cc3c_right_arrow">
-                  <i class="far fa-arrow-right"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section
-          class="feature_service decoration_wrap"
-          style="
-            background-image: url('assets/images/background/shape_bg_2.png');
-          "
-        >
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col col-lg-5">
-                <div class="feature_image">
-                  <div class="image_wrap">
-                    <img
-                      src="assets/images/feature/feature_img_1.jpg"
-                      alt="Pet Grooming Service Image"
-                    />
-                  </div>
-                  <div class="shape_image_1">
-                    <img
-                      src="assets/images/shape/shape_butterfly.svg"
-                      alt="Butterfly Shape"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="col col-lg-4">
-                <div class="feature_content">
-                  <h2 class="item_title">Pet Grooming Service</h2>
-                  <ul class="icon_list unorder_list_block">
-                    <li>
-                      <i class="fas fa-check-circle"></i>
-                      <span>Bathing – wash and fluff dry</span>
-                    </li>
-                    <li>
-                      <i class="fas fa-check-circle"></i>
-                      <span>Pawdicure – nail trimming and filing</span>
-                    </li>
-                    <li>
-                      <i class="fas fa-check-circle"></i>
-                      <span>Breed specific styling, cutting and stripping</span>
-                    </li>
-                    <li>
-                      <i class="fas fa-check-circle"></i>
-                      <span>De-matting and detangling</span>
-                    </li>
-                  </ul>
-                  <a class="btn btn_primary" href="service_details.html"
-                    ><i class="fas fa-paw"></i> Get Service</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="decoration_item shape_image_2">
-            <img
-              src="assets/images/shape/shape_group_1.svg"
-              alt="Pet Tools Box"
-            />
-          </div>
-          <div class="decoration_item decoration_image_1">
-            <img
-              src="assets/images/feature/feature_img_2.jpg"
-              alt="Pet Grooming Service Image"
-            />
-          </div>
-          <div class="decoration_item decoration_image_2">
-            <img
-              src="assets/images/feature/feature_img_3.jpg"
-              alt="Pet Grooming Service Image"
-            />
-          </div>
-        </section>
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-        
-        <section
-          class="contact_section bg_gray section_space_lg decoration_wrap"
-        >
-          <div class="container">
-            <div class="section_title text-center">
-              <h2 class="title_text">
-                <span class="sub_title">Our Contacts</span> Contacts
-              </h2>
-              <p class="mb-0">
-                Massa enim nec dui nunc mattis enim ut tellus
-              </p>
-            </div>
-            <div class="row justify-content-center">
-              <div class="col col-lg-3 col-md-6 col-sm-6">
-                <div class="iconbox_item iconbox_overicon">
-                  <div class="item_icon"><i class="fas fa-phone"></i></div>
-                  <div class="item_content">
-                    <h3 class="item_title">
-                      <a href="tel:(913)756-3126">(913) 756-3126</a>
-                    </h3>
-                    <p class="mb-0">Got Questions? Call us 24/7</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col col-lg-3 col-md-6 col-sm-6">
-                <div class="iconbox_item iconbox_overicon">
-                  <div class="item_icon"><i class="fas fa-envelope"></i></div>
-                  <div class="item_content">
-                    <h3 class="item_title">
-                      <a href="mailto:petopia@example.com">petopia@example.com</a>
-                    </h3>
-                    <p class="mb-0">Get in touch with us</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col col-lg-3 col-md-6 col-sm-6">
-                <div class="iconbox_item iconbox_overicon">
-                  <div class="item_icon">
-                    <i class="fas fa-map-marker-alt"></i>
-                  </div>
-                  <div class="item_content">
-                    <h3 class="item_title">
-                      <a href="https://www.google.com/maps/place/17+Parkman+Pl,+Boston,+MA+02122,+USA/@42.357321,-71.070444,17z/data=!3m1!4b1!4m5!3m4!1s0x89e37a0c9d6a5f6f:0x9f6f7a2a5e2c5f6f!8m2!3d42.357321!4d-71.06825">17 Parkman Place, 2122</a>
-                    </h3>
-                    <p class="mb-0">United States</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col col-lg-3 col-md-6 col-sm-6">
-                <div class="iconbox_item iconbox_overicon">
-                  <div class="item_icon"><i class="fas fa-clock"></i></div>
-                  <div class="item_content">
-                    <h3 class="item_title">Open Hours</h3>
-                    <ul class="item_info_list unorder_list_block">
-                      <li>Mon - Fri: 7am - 6pm</li>
-                      <li>Saturday: 9am - 4pm</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="decoration_item shape_image_1">
-            <img src="assets/images/shape/shape_purr.svg" alt="Pet Purr" />
-          </div>
-          <div class="decoration_item shape_image_2">
-            <img src="assets/images/shape/shape_cat.svg" alt="Cat" />
-          </div>
-        </section>
-
-      </main>
+        </div>
+      </div>
       <footer class="footer_section">
         <div class="footer_widget_area section_space_lg">
           <div class="container">
@@ -3720,6 +2677,46 @@
       gtag("js", new Date());
 
       gtag("config", "G-TSZFRP5V2X");
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".team", {
+        effect: "coverflow",
+        slidesPerView: 3,
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          speed: 1500,
+          delay: 2000,
+        },
+        breakpoints: {
+          0: {
+            slidesPerView: 1,
+          },
+          480: {
+            slidesPerView: 1,
+          },
+          600: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          992: {
+            slidesPerView: 3,
+          },
+          1400: {
+            slidesPerView: 3,
+          },
+          1920: {
+            slidesPerView: 3,
+          },
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
     </script>
   </body>
 </html>
