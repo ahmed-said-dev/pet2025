@@ -1137,7 +1137,7 @@
           rgba(111, 66, 193, 0.9) 0%,
           rgba(111, 66, 193, 0.9) 20%,
           rgba(111, 66, 193, 0) 50%,
-          rgba(111, 66, 193, 0) 100%
+          transparent 70%
         );
       }
 
@@ -1301,7 +1301,7 @@
           rgba(111, 66, 193, 0.9) 0%,
           rgba(111, 66, 193, 0.9) 20%,
           rgba(111, 66, 193, 0) 50%,
-          rgba(111, 66, 193, 0) 100%
+          transparent 70%
         );
       }
 
@@ -1522,6 +1522,60 @@
         position: relative;
         z-index: 3;
         backdrop-filter: blur(5px);
+      }
+      .center-description{
+        display: flex;
+        justify-content: center;
+      }
+      .center-description p{
+        width: 55%;
+        font-weight: 800;
+        color: rebeccapurple;
+        font-size: 14px;
+      }
+    </style>
+    <style>
+      .section_title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+
+      .title_wrap {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .slider_arrows {
+        display: flex;
+        gap: 10px;
+      }
+
+      .slider_arrow {
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background: transparent;
+        color: #6B4CE6;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .slider_arrow:hover {
+        color: #2D1857;
+      }
+
+      .slider_arrow i {
+        font-size: 32px;
+      }
+
+      /* Hide the old carousel arrows */
+      .carousel_arrow {
+        display: none;
       }
     </style>
   </head>
@@ -1902,7 +1956,7 @@
                   
                   <div class="services_list">
                     <div class="service_item d-flex align-items-start">
-                      <div class="service_icon primary-icon me-3">
+                      <div class="service_icon me-3" style="color: #6B4CE6; font-size: 24px;">
                         <i class="fas fa-stethoscope"></i>
                       </div>
                       <div class="service_content">
@@ -1912,7 +1966,7 @@
                     </div>
                     
                     <div class="service_item d-flex align-items-start">
-                      <div class="service_icon secondary-icon me-3">
+                      <div class="service_icon me-3" style="color: #6B4CE6; font-size: 24px;">
                         <i class="fas fa-syringe"></i>
                       </div>
                       <div class="service_content">
@@ -2009,9 +2063,7 @@
     </div>
     
     <div class="process_steps">
-      <svg xmlns="http://www.w3.org/2000/svg" width="767" height="238" viewBox="0 0 767 238" preserveAspectRatio="none">
-        <path d="M1 91.2512C53.0375 0.994668 207.541 -75.2978 398.619 141.318C516.319 285.356 668.984 251.301 766 141.318" stroke="#A5A5A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 10"/>
-      </svg>
+
       <div class="grid_wrapper">
         <div class="process_step">
           <div class="step_icon">
@@ -2045,9 +2097,6 @@
   </div>
 </section>
 
-<div class="section_divider">
-  <i class="fas fa-paw divider_icon"></i>
-</div>
 
 <style>
   .section_divider {
@@ -2073,455 +2122,828 @@
   </svg>
 </div>
 
-<section class="team_section">
-  <div class="section_background">
-    <div class="overlay"></div>
-  </div>
+<section class="team-section section_space_lg" style="padding-top: 120px;">
   <div class="container">
-    <h2 class="section_title">We Employ Only Specialists</h2>
-    <p class="section_subtitle">Our team of highly skilled specialists is dedicated to providing exceptional care with expertise and compassion.</p>
-    <a href="#" class="view_all_btn">View All <i class="fas fa-arrow-right"></i></a>
-    <div class="doctors_grid">
-      <div class="doctor_card">
-        <div class="doctor_image_wrapper">
-          <img src="assets/images/doctors/doctor1.jpg" alt="Nashid Martines" class="doctor_image">
-          <a href="#" class="appointment_btn">
-            <i class="far fa-calendar"></i>
-            Appointment Now
-          </a>
-        </div>
-        <div class="social_links">
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        </div>
-        <div class="doctor_info">
-          <div class="doctor_details">
-            <h3 class="doctor_name">Nashid Martines</h3>
-            <p class="doctor_specialty">Cardiac Surgery</p>
-          </div>
-          <a href="#" class="view_more_btn">
-            <i class="fas fa-arrow-right"></i>
-          </a>
+    <div class="top-mediic-section">
+      <div class="mediic-section-title">
+        <h1>MEET OUR BEST DOCTORS</h1>
+      </div>
+      <div class="center-description">
+        <p>Our team of highly skilled veterinarians is committed to providing top-notch care for your furry companions. They're passionate about animal health & dedicated to providing the best possible medical services.</p>
+      </div>
+      <div class="counter-single-box">
+        <div class="counter-box-title">
+          <h1>38+</h1>
+          <span class="counter-text">Professional Doctors</span>
         </div>
       </div>
+    </div>
+    
+    <div class="team-description text-center mb-5">
+      <!-- <p class="lead">Our veterinary team brings together passionate professionals with decades of combined experience in animal care. Each specialist is committed to providing the highest standard of medical care while treating your pets with the gentleness and compassion they deserve. From routine check-ups to complex procedures, our doctors are here to ensure your pet's health and happiness.</p> -->
+    </div>
 
-      <div class="doctor_card">
-        <div class="doctor_image_wrapper">
-          <img src="assets/images/doctors/doctor2.jpg" alt="Danial Frankie" class="doctor_image">
-          <a href="#" class="appointment_btn">
-            <i class="far fa-calendar"></i>
-            Appointment Now
-          </a>
-        </div>
-        <div class="social_links">
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        </div>
-        <div class="doctor_info">
-          <div class="doctor_details">
-            <h3 class="doctor_name">Danial Frankie</h3>
-            <p class="doctor_specialty">Pediatric Clinic</p>
+    <div class="team-slider-wrapper">
+      <div class="purple-glow-effect"></div>
+      <div class="swiper team">
+        <div class="swiper-wrapper">
+          <!-- Team members slider content -->
+          <div class="swiper-slide">
+            <div class="team-single-box" data-aos="fade-up">
+              <div class="team-thumb">
+                <img src="assets/images/resource/team.jpg" alt="" />
+                <div class="social-icon">
+                  <ul>
+                    <li>
+                      <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="team-content">
+                <h5>CARDIOLOGY</h5>
+                <h2>Dr. David Luis</h2>
+              </div>
+            </div>
           </div>
-          <a href="#" class="view_more_btn">
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="doctor_card">
-        <div class="doctor_image_wrapper">
-          <img src="assets/images/doctors/doctor3.jpg" alt="Rihana Roy" class="doctor_image">
-          <a href="#" class="appointment_btn">
-            <i class="far fa-calendar"></i>
-            Appointment Now
-          </a>
-        </div>
-        <div class="social_links">
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        </div>
-        <div class="doctor_info">
-          <div class="doctor_details">
-            <h3 class="doctor_name">Rihana Roy</h3>
-            <p class="doctor_specialty">Gynecology</p>
+          <div class="swiper-slide">
+            <div class="team-single-box" data-aos="zoom-in">
+              <div class="team-thumb">
+                <img src="assets/images/resource/team.jpg" alt="" />
+                <div class="social-icon">
+                  <ul>
+                    <li>
+                      <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="team-content">
+                <h5>DENTISTRY</h5>
+                <h2>Dr. Sarah Smith</h2>
+              </div>
+            </div>
           </div>
-          <a href="#" class="view_more_btn">
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="doctor_card">
-        <div class="doctor_image_wrapper">
-          <img src="assets/images/doctors/doctor4.jpg" alt="Sarah Wilson" class="doctor_image">
-          <a href="#" class="appointment_btn">
-            <i class="far fa-calendar"></i>
-            Appointment Now
-          </a>
-        </div>
-        <div class="social_links">
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        </div>
-        <div class="doctor_info">
-          <div class="doctor_details">
-            <h3 class="doctor_name">Sarah Wilson</h3>
-            <p class="doctor_specialty">Neurology</p>
+          <div class="swiper-slide">
+            <div class="team-single-box" data-aos="fade-up">
+              <div class="team-thumb">
+                <img src="assets/images/resource/team.jpg" alt="" />
+                <div class="social-icon">
+                  <ul>
+                    <li>
+                      <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="team-content">
+                <h5>NEUROLOGY</h5>
+                <h2>Dr. Michael Chen</h2>
+              </div>
+            </div>
           </div>
-          <a href="#" class="view_more_btn">
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="doctor_card">
-        <div class="doctor_image_wrapper">
-          <img src="assets/images/doctors/doctor5.jpg" alt="Michael Chen" class="doctor_image">
-          <a href="#" class="appointment_btn">
-            <i class="far fa-calendar"></i>
-            Appointment Now
-          </a>
-        </div>
-        <div class="social_links">
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        </div>
-        <div class="doctor_info">
-          <div class="doctor_details">
-            <h3 class="doctor_name">Michael Chen</h3>
-            <p class="doctor_specialty">Orthopedics</p>
+          <div class="swiper-slide">
+            <div class="team-single-box" data-aos="fade-up">
+              <div class="team-thumb">
+                <img src="assets/images/resource/team.jpg" alt="" />
+                <div class="social-icon">
+                  <ul>
+                    <li>
+                      <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="team-content">
+                <h5>PEDIATRICS</h5>
+                <h2>Dr. Emily Brown</h2>
+              </div>
+            </div>
           </div>
-          <a href="#" class="view_more_btn">
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="doctor_card">
-        <div class="doctor_image_wrapper">
-          <img src="assets/images/doctors/doctor6.jpg" alt="Emily Rodriguez" class="doctor_image">
-          <a href="#" class="appointment_btn">
-            <i class="far fa-calendar"></i>
-            Appointment Now
-          </a>
-        </div>
-        <div class="social_links">
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        </div>
-        <div class="doctor_info">
-          <div class="doctor_details">
-            <h3 class="doctor_name">Emily Rodriguez</h3>
-            <p class="doctor_specialty">Pediatrics</p>
+          <div class="swiper-slide">
+            <div class="team-single-box" data-aos="fade-up">
+              <div class="team-thumb">
+                <img src="assets/images/resource/team.jpg" alt="" />
+                <div class="social-icon">
+                  <ul>
+                    <li>
+                      <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="team-content">
+                <h5>ORTHOPEDICS</h5>
+                <h2>Dr. James Wilson</h2>
+              </div>
+            </div>
           </div>
-          <a href="#" class="view_more_btn">
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="doctor_card">
-        <div class="doctor_image_wrapper">
-          <img src="assets/images/doctors/doctor7.jpg" alt="David Kim" class="doctor_image">
-          <a href="#" class="appointment_btn">
-            <i class="far fa-calendar"></i>
-            Appointment Now
-          </a>
-        </div>
-        <div class="social_links">
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        </div>
-        <div class="doctor_info">
-          <div class="doctor_details">
-            <h3 class="doctor_name">David Kim</h3>
-            <p class="doctor_specialty">Dermatology</p>
+          <div class="swiper-slide">
+            <div class="team-single-box" data-aos="fade-up">
+              <div class="team-thumb">
+                <img src="assets/images/resource/team.jpg" alt="" />
+                <div class="social-icon">
+                  <ul>
+                    <li>
+                      <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="team-content">
+                <h5>DERMATOLOGY</h5>
+                <h2>Dr. Sofia Martinez</h2>
+              </div>
+            </div>
           </div>
-          <a href="#" class="view_more_btn">
-            <i class="fas fa-arrow-right"></i>
-          </a>
         </div>
-      </div>
-
-      <div class="doctor_card">
-        <div class="doctor_image_wrapper">
-          <img src="assets/images/doctors/doctor8.jpg" alt="Lisa Thompson" class="doctor_image">
-          <a href="#" class="appointment_btn">
-            <i class="far fa-calendar"></i>
-            Appointment Now
-          </a>
-        </div>
-        <div class="social_links">
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        </div>
-        <div class="doctor_info">
-          <div class="doctor_details">
-            <h3 class="doctor_name">Lisa Thompson</h3>
-            <p class="doctor_specialty">Ophthalmology</p>
-          </div>
-          <a href="#" class="view_more_btn">
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="doctor_card">
-        <div class="doctor_image_wrapper">
-          <img src="assets/images/doctors/doctor9.jpg" alt="James Anderson" class="doctor_image">
-          <a href="#" class="appointment_btn">
-            <i class="far fa-calendar"></i>
-            Appointment Now
-          </a>
-        </div>
-        <div class="social_links">
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        </div>
-        <div class="doctor_info">
-          <div class="doctor_details">
-            <h3 class="doctor_name">James Anderson</h3>
-            <p class="doctor_specialty">Psychiatry</p>
-          </div>
-          <a href="#" class="view_more_btn">
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="doctor_card">
-        <div class="doctor_image_wrapper">
-          <img src="assets/images/doctors/doctor10.jpg" alt="Maria Garcia" class="doctor_image">
-          <a href="#" class="appointment_btn">
-            <i class="far fa-calendar"></i>
-            Appointment Now
-          </a>
-        </div>
-        <div class="social_links">
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        </div>
-        <div class="doctor_info">
-          <div class="doctor_details">
-            <h3 class="doctor_name">Maria Garcia</h3>
-            <p class="doctor_specialty">Endocrinology</p>
-          </div>
-          <a href="#" class="view_more_btn">
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
+        <div class="swiper-pagination"></div>
       </div>
     </div>
   </div>
 </section>
 
-      <div class="team-section">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="top-mediic-section">
-                <div class="mediic-section-title">
-                  <h1>
-                    MEET OUR BEST<br />
-                    DOCTORS
-                  </h1>
-                </div>
-                <div class="counter-single-box">
-                  <div class="counter-box-title">
-                    <h1 class="odometer">38</h1>
-                    <h1>+</h1>
-                  </div>
-                  <p class="counter-desc">PROFESSIONAL DOCTORS</p>
-                </div>
-              </div>
-            </div>
-            <div class="mediic-shape">
-              <img src="assets/images/resource/crcle-bg.png" alt="" />
-            </div>
+<style>
+  .team-section {
+    background: #f0f4ff;
+    position: relative;
+    padding: 120px 0 100px;
+    overflow: hidden;
+  }
+
+  .team-description {
+    max-width: 900px;
+    margin: 0 auto 60px;
+  }
+
+  .team-description p {
+    color: #4a4a4a;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .purple-glow-effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(111, 66, 193, 0.15) 0%, rgba(111, 66, 193, 0.1) 25%, rgba(111, 66, 193, 0.05) 50%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .team-slider-wrapper {
+    position: relative;
+    padding: 40px 0;
+  }
+
+  .top-mediic-section {
+    margin-bottom: 40px;
+  }
+
+  .mediic-section-title h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #2D1857;
+    margin: 0;
+  }
+
+  .counter-box-title {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .counter-box-title h1 {
+    font-size: 48px;
+    color: #6f42c1;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+  }
+
+  .counter-text {
+    color: #4a4a4a;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .top-mediic-section {
+      flex-direction: column;
+      text-align: center;
+      gap: 20px;
+    }
+    
+    .counter-box-title {
+      justify-content: center;
+    }
+    
+    .mediic-section-title h1 {
+      font-size: 32px;
+    }
+    
+    .team-description p {
+      font-size: 16px;
+    }
+  }
+</style>
+
+<style>
+  /* Product Section Styles */
+  .product_section {
+    background: #fff;
+    padding: 80px 0;
+  }
+  
+  .product_carousel {
+    position: relative;
+    padding: 40px 0;
+  }
+  
+  .product_item {
+    background-color: transparent;
+    border-radius: 15px;
+    padding: 0;
+    margin: 10px;
+    box-shadow: none;
+    transition: all 0.3s ease;
+  }
+
+  .product_item:hover {
+    box-shadow: none;
+    transform: translateY(-5px);
+  }
+
+  .item_image {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 300px;
+  }
+
+  .image_wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .product_item:hover .image_wrap img {
+    transform: scale(1.1);
+  }
+
+  .cart_btns_group {
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+  }
+
+  .product_item:hover .cart_btns_group {
+    bottom: 0;
+  }
+
+  .cart_btns_group li a {
+    background: #8E7AB5;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+
+  .cart_btns_group li a:hover {
+    background: #6B4CE6;
+  }
+
+  .badge_group {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+  }
+
+  .badge_sale {
+    background: #FF497C;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+
+  .item_content {
+    padding: 20px 10px 10px;
+    text-align: center;
+    background: transparent;
+  }
+
+  .item_title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .item_title a {
+    color: #2D1857;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .item_title a:hover {
+    color: #6B4CE6;
+  }
+
+  .rating_star {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+
+  .rating_star li i {
+    color: #FFA800;
+    font-size: 18px;
+  }
+
+  .item_price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #6B4CE6;
+  }
+
+  .item_price del {
+    color: #8E7AB5;
+    margin-right: 8px;
+    font-weight: 700;
+  }
+
+  .badge_group {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .badge_sale {
+    background: #FF6B6B;
+    color: #fff;
+  }
+
+  .carousel_arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    z-index: 1;
+  }
+
+  .carousel_arrow button {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    border: none;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .carousel_arrow button:hover {
+    background: #6B4CE6;
+    color: #fff;
+  }
+
+  .carousel_arrow button i {
+    font-size: 20px;
+  }
+
+  .cc4c_left_arrow {
+    left: -20px;
+  }
+
+  .cc4c_right_arrow {
+    right: -20px;
+  }
+</style>
+
+<section class="product_section section_space_md">
+  <div class="container">
+    <div class="section_title">
+      <div class="title_wrap">
+        <h2 class="title_text mb-0">
+          <span class="sub_title">Our Products</span> Top Products
+        </h2>
+      </div>
+      <div class="slider_arrows">
+        <button type="button" class="slider_arrow cc4c_left_arrow">
+          <i class="fas fa-chevron-circle-left"></i>
+        </button>
+        <button type="button" class="slider_arrow cc4c_right_arrow">
+          <i class="fas fa-chevron-circle-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="product_carousel">
+    <div class="row common_carousel_4col" data-slick='{"dots": false, "centerMode": true}'>
+      <div class="col carousel_item">
+        <div class="product_item">
+          <div class="item_image">
+            <a class="image_wrap" href="shop_details.html">
+              <img src="assets/images/shop/product_img_1.jpg" alt="Pink Spiked Collar" />
+            </a>
+            <ul class="cart_btns_group">
+              <li><a href="#!">Add To Cart</a></li>
+              <li><a href="#!"><i class="far fa-heart"></i></a></li>
+              <li><a href="#!" data-bs-toggle="modal" data-bs-target="#quick_view_popup"><i class="far fa-eye"></i></a></li>
+            </ul>
           </div>
-          <div class="row">
-            <div class="swiper style-2 team">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="team-single-box" data-aos="fade-up">
-                    <div class="team-thumb">
-                      <img src="assets/images/resource/team.jpg" alt="" />
-                      <div class="social-icon">
-                        <ul>
-                          <li>
-                            <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
-                          </li>
-                          <li>
-                            <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
-                          </li>
-                          <li>
-                            <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="team-content">
-                      <h5>CARDIOLOGY</h5>
-                      <h2>Dr. David Luis</h2>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="team-single-box" data-aos="zoom-in">
-                    <div class="team-thumb">
-                      <img src="assets/images/resource/team.jpg" alt="" />
-                      <div class="social-icon">
-                        <ul>
-                          <li>
-                            <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
-                          </li>
-                          <li>
-                            <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
-                          </li>
-                          <li>
-                            <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="team-content">
-                      <h5>DENTISTRY</h5>
-                      <h2>Dr. Sarah Smith</h2>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="team-single-box" data-aos="fade-up">
-                    <div class="team-thumb">
-                      <img src="assets/images/resource/team.jpg" alt="" />
-                      <div class="social-icon">
-                        <ul>
-                          <li>
-                            <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
-                          </li>
-                          <li>
-                            <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
-                          </li>
-                          <li>
-                            <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="team-content">
-                      <h5>NEUROLOGY</h5>
-                      <h2>Dr. Michael Chen</h2>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="team-single-box" data-aos="fade-up">
-                    <div class="team-thumb">
-                      <img src="assets/images/resource/team.jpg" alt="" />
-                      <div class="social-icon">
-                        <ul>
-                          <li>
-                            <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
-                          </li>
-                          <li>
-                            <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
-                          </li>
-                          <li>
-                            <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="team-content">
-                      <h5>PEDIATRICS</h5>
-                      <h2>Dr. Emily Brown</h2>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="team-single-box" data-aos="fade-up">
-                    <div class="team-thumb">
-                      <img src="assets/images/resource/team.jpg" alt="" />
-                      <div class="social-icon">
-                        <ul>
-                          <li>
-                            <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
-                          </li>
-                          <li>
-                            <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
-                          </li>
-                          <li>
-                            <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="team-content">
-                      <h5>ORTHOPEDICS</h5>
-                      <h2>Dr. James Wilson</h2>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="team-single-box" data-aos="fade-up">
-                    <div class="team-thumb">
-                      <img src="assets/images/resource/team.jpg" alt="" />
-                      <div class="social-icon">
-                        <ul>
-                          <li>
-                            <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
-                          </li>
-                          <li>
-                            <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
-                          </li>
-                          <li>
-                            <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="team-content">
-                      <h5>DERMATOLOGY</h5>
-                      <h2>Dr. Sofia Martinez</h2>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-pagination"></div>
+          <div class="item_content">
+            <h3 class="item_title">
+              <a href="shop_details.html">Pink Spiked Collar</a>
+            </h3>
+            <ul class="rating_star">
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+            </ul>
+            <div class="item_price"><span>$22.99</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="col carousel_item">
+        <div class="product_item">
+          <ul class="badge_group unorder_list_right">
+            <li><a class="badge badge_sale" href="#!">Sale</a></li>
+          </ul>
+          <div class="item_image">
+            <a class="image_wrap" href="shop_details.html">
+              <img src="assets/images/shop/product_img_2.jpg" alt="Squeezz Ball Dog Toy" />
+            </a>
+            <ul class="cart_btns_group">
+              <li><a href="#!">Add To Cart</a></li>
+              <li><a href="#!"><i class="far fa-heart"></i></a></li>
+              <li><a href="#!" data-bs-toggle="modal" data-bs-target="#quick_view_popup"><i class="far fa-eye"></i></a></li>
+            </ul>
+          </div>
+          <div class="item_content">
+            <h3 class="item_title">
+              <a href="shop_details.html">Squeezz Ball Dog Toy</a>
+            </h3>
+            <ul class="rating_star">
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+            </ul>
+            <div class="item_price">
+              <del>$12.39</del> <span>$7.99</span>
             </div>
           </div>
         </div>
       </div>
+      <div class="col carousel_item">
+        <div class="product_item">
+          <div class="item_image">
+            <a class="image_wrap" href="shop_details.html">
+              <img src="assets/images/shop/product_img_3.jpg" alt="Hydrolyzed Dry Dog Food" />
+            </a>
+            <ul class="cart_btns_group">
+              <li><a href="#!">Add To Cart</a></li>
+              <li><a href="#!"><i class="far fa-heart"></i></a></li>
+              <li><a href="#!" data-bs-toggle="modal" data-bs-target="#quick_view_popup"><i class="far fa-eye"></i></a></li>
+            </ul>
+          </div>
+          <div class="item_content">
+            <h3 class="item_title">
+              <a href="shop_details.html">Hydrolyzed Dry Dog Food</a>
+            </h3>
+            <ul class="rating_star">
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+            </ul>
+            <div class="item_price"><span>$12.39</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="col carousel_item">
+        <div class="product_item">
+          <div class="item_image">
+            <a class="image_wrap" href="shop_details.html">
+              <img src="assets/images/shop/product_img_4.jpg" alt="Flying Fish Cat Scratching" />
+            </a>
+            <ul class="cart_btns_group">
+              <li><a href="#!">Add To Cart</a></li>
+              <li><a href="#!"><i class="far fa-heart"></i></a></li>
+              <li><a href="#!" data-bs-toggle="modal" data-bs-target="#quick_view_popup"><i class="far fa-eye"></i></a></li>
+            </ul>
+          </div>
+          <div class="item_content">
+            <h3 class="item_title">
+              <a href="shop_details.html">Flying Fish Cat Scratching</a>
+            </h3>
+            <ul class="rating_star">
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+            </ul>
+            <div class="item_price"><span>$25.89</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="col carousel_item">
+        <div class="product_item">
+          <ul class="badge_group unorder_list_right">
+            <li><a class="badge badge_sale" href="#!">Sale</a></li>
+          </ul>
+          <div class="item_image">
+            <a class="image_wrap" href="shop_details.html">
+              <img src="assets/images/shop/product_img_5.jpg" alt="Pet Carrier Bag" />
+            </a>
+            <ul class="cart_btns_group">
+              <li><a href="#!">Add To Cart</a></li>
+              <li><a href="#!"><i class="far fa-heart"></i></a></li>
+              <li><a href="#!" data-bs-toggle="modal" data-bs-target="#quick_view_popup"><i class="far fa-eye"></i></a></li>
+            </ul>
+          </div>
+          <div class="item_content">
+            <h3 class="item_title">
+              <a href="shop_details.html">Pet Carrier Bag</a>
+            </h3>
+            <ul class="rating_star">
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+            </ul>
+            <div class="item_price">
+              <del>$45.99</del> <span>$35.99</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col carousel_item">
+        <div class="product_item">
+          <div class="item_image">
+            <a class="image_wrap" href="shop_details.html">
+              <img src="assets/images/shop/product_img_6.jpg" alt="Cat Bed Luxury" />
+            </a>
+            <ul class="cart_btns_group">
+              <li><a href="#!">Add To Cart</a></li>
+              <li><a href="#!"><i class="far fa-heart"></i></a></li>
+              <li><a href="#!" data-bs-toggle="modal" data-bs-target="#quick_view_popup"><i class="far fa-eye"></i></a></li>
+            </ul>
+          </div>
+          <div class="item_content">
+            <h3 class="item_title">
+              <a href="shop_details.html">Cat Bed Luxury</a>
+            </h3>
+            <ul class="rating_star">
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+            </ul>
+            <div class="item_price"><span>$29.99</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="col carousel_item">
+        <div class="product_item">
+          <ul class="badge_group unorder_list_right">
+            <li><a class="badge badge_sale" href="#!">Sale</a></li>
+          </ul>
+          <div class="item_image">
+            <a class="image_wrap" href="shop_details.html">
+              <img src="assets/images/shop/product_img_7.jpg" alt="Dog Training Leash" />
+            </a>
+            <ul class="cart_btns_group">
+              <li><a href="#!">Add To Cart</a></li>
+              <li><a href="#!"><i class="far fa-heart"></i></a></li>
+              <li><a href="#!" data-bs-toggle="modal" data-bs-target="#quick_view_popup"><i class="far fa-eye"></i></a></li>
+            </ul>
+          </div>
+          <div class="item_content">
+            <h3 class="item_title">
+              <a href="shop_details.html">Dog Training Leash</a>
+            </h3>
+            <ul class="rating_star">
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+            </ul>
+            <div class="item_price">
+              <del>$18.99</del> <span>$14.99</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col carousel_item">
+        <div class="product_item">
+          <div class="item_image">
+            <a class="image_wrap" href="shop_details.html">
+              <img src="assets/images/shop/product_img_8.jpg" alt="Bird Cage Large" />
+            </a>
+            <ul class="cart_btns_group">
+              <li><a href="#!">Add To Cart</a></li>
+              <li><a href="#!"><i class="far fa-heart"></i></a></li>
+              <li><a href="#!" data-bs-toggle="modal" data-bs-target="#quick_view_popup"><i class="far fa-eye"></i></a></li>
+            </ul>
+          </div>
+          <div class="item_content">
+            <h3 class="item_title">
+              <a href="shop_details.html">Bird Cage Large</a>
+            </h3>
+            <ul class="rating_star">
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+            </ul>
+            <div class="item_price"><span>$89.99</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="col carousel_item">
+        <div class="product_item">
+          <div class="item_image">
+            <a class="image_wrap" href="shop_details.html">
+              <img src="assets/images/shop/product_img_9.jpg" alt="Fish Tank Filter" />
+            </a>
+            <ul class="cart_btns_group">
+              <li><a href="#!">Add To Cart</a></li>
+              <li><a href="#!"><i class="far fa-heart"></i></a></li>
+              <li><a href="#!" data-bs-toggle="modal" data-bs-target="#quick_view_popup"><i class="far fa-eye"></i></a></li>
+            </ul>
+          </div>
+          <div class="item_content">
+            <h3 class="item_title">
+              <a href="shop_details.html">Fish Tank Filter</a>
+            </h3>
+            <ul class="rating_star">
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+            </ul>
+            <div class="item_price"><span>$34.99</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="col carousel_item">
+        <div class="product_item">
+          <ul class="badge_group unorder_list_right">
+            <li><a class="badge badge_sale" href="#!">Sale</a></li>
+          </ul>
+          <div class="item_image">
+            <a class="image_wrap" href="shop_details.html">
+              <img src="assets/images/shop/product_img_10.jpg" alt="Hamster Exercise Wheel" />
+            </a>
+            <ul class="cart_btns_group">
+              <li><a href="#!">Add To Cart</a></li>
+              <li><a href="#!"><i class="far fa-heart"></i></a></li>
+              <li><a href="#!" data-bs-toggle="modal" data-bs-target="#quick_view_popup"><i class="far fa-eye"></i></a></li>
+            </ul>
+          </div>
+          <div class="item_content">
+            <h3 class="item_title">
+              <a href="shop_details.html">Hamster Exercise Wheel</a>
+            </h3>
+            <ul class="rating_star">
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+            </ul>
+            <div class="item_price">
+              <del>$15.99</del> <span>$11.99</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel_arrow">
+      <div class="container">
+        <button type="button" class="cc4c_left_arrow">
+          <i class="far fa-arrow-left"></i>
+        </button>
+        <button type="button" class="cc4c_right_arrow">
+          <i class="far fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quick View Modal -->
+<div class="modal fade" id="quick_view_popup" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-body">
+        <div class="product_details">
+          <div class="row">
+            <div class="col col-lg-6">
+              <div class="details_image">
+                <img src="assets/images/shop/product_img_1.jpg" alt="Product">
+              </div>
+            </div>
+            <div class="col col-lg-6">
+              <div class="details_content">
+                <h2 class="item_title">Product Name</h2>
+                <div class="rating_review">
+                  <ul class="rating_star">
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                  </ul>
+                  <span class="review_text">3 Reviews</span>
+                </div>
+                <div class="item_price"><span class="price_text">$22.99</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
       <footer class="footer_section">
         <div class="footer_widget_area section_space_lg">
           <div class="container">
@@ -2685,38 +3107,115 @@
         slidesPerView: 3,
         spaceBetween: 30,
         centeredSlides: true,
+        loop: true,
         autoplay: {
-          speed: 1500,
-          delay: 2000,
+          delay: 2500,
+          disableOnInteraction: false,
         },
-        breakpoints: {
-          0: {
-            slidesPerView: 1,
-          },
-          480: {
-            slidesPerView: 1,
-          },
-          600: {
-            slidesPerView: 2,
-          },
-          768: {
-            slidesPerView: 2,
-          },
-          992: {
-            slidesPerView: 3,
-          },
-          1400: {
-            slidesPerView: 3,
-          },
-          1920: {
-            slidesPerView: 3,
-          },
+        coverflowEffect: {
+          rotate: 15,
+          stretch: 0,
+          depth: 100,
+          modifier: 1.5,
+          slideShadows: true,
         },
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
         },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+          1920: {
+            slidesPerView: 3,
+          },
+        }
       });
+    </script>
+    <script>
+      // Product Carousel
+      $('.common_carousel_4col').slick({
+        dots: false,
+        infinite: true,
+        speed: 800,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: '0px',
+        prevArrow: $('.cc4c_left_arrow'),
+        nextArrow: $('.cc4c_right_arrow'),
+        responsive: [
+          {
+            breakpoint: 1200,
+            settings: {
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 992,
+            settings: {
+              slidesToShow: 2
+            }
+          },
+          {
+            breakpoint: 576,
+            settings: {
+              slidesToShow: 1,
+              centerMode: false
+            }
+          }
+        ]
+      });
+
+      // Quick View Modal
+      $('#quick_view_popup').on('show.bs.modal', function (e) {
+        const button = $(e.relatedTarget);
+        const product = button.closest('.product_item');
+        const modal = $(this);
+        
+        const title = product.find('.item_title a').text();
+        const price = product.find('.item_price').html();
+        const image = product.find('.item_image img').attr('src');
+        
+        modal.find('.details_image img').attr('src', image);
+        modal.find('.details_content .item_title').text(title);
+        modal.find('.details_content .item_price').html(price);
+      });
+
+      // Quantity Input
+      $('.input_number_increment').on('click', function() {
+        const input = $(this).siblings('input');
+        const value = parseInt(input.val()) + 1;
+        input.val(value);
+        updateTotalPrice(input);
+      });
+
+      $('.input_number_decrement').on('click', function() {
+        const input = $(this).siblings('input');
+        const value = parseInt(input.val()) - 1;
+        if (value >= 1) {
+          input.val(value);
+          updateTotalPrice(input);
+        }
+      });
+
+      function updateTotalPrice(input) {
+        const quantity = parseInt(input.val());
+        const price = parseFloat($('.price_text').text().replace('$', ''));
+        const total = (quantity * price).toFixed(2);
+        $('.total_price span').text('$' + total);
+      }
     </script>
   </body>
 </html>
