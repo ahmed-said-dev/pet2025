@@ -206,7 +206,7 @@
       
       .service_icon i {
         font-size: 28px;
-        color: #ffffff;
+        color: #905f9d;
       }
       
       .service_icon img {
@@ -224,6 +224,14 @@
       .service_item:hover {
         transform: translateY(-5px);
         box-shadow: 0 10px 20px rgba(107, 76, 230, 0.1);
+        color: #ffffff;
+      }
+
+      .service_item:hover i,
+      .service_item:hover p,
+      .service_item:hover h3,
+      .service_item:hover h5 {
+        color: #ffffff !important;
       }
 
       .service_item:last-child {
@@ -354,10 +362,25 @@
         width: 100%;
         height: 100%;
         top: 0;
-        left: -100%;
+        left: 0;
         background: rgba(255, 255, 255, 0.2);
         border-radius: 50%;
-        animation: pulse 2s infinite;
+        animation: pulse-white 2s infinite;
+      }
+
+      @keyframes pulse-white {
+        0% {
+          transform: scale(1);
+          opacity: 0.7;
+        }
+        70% {
+          transform: scale(1.5);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0;
+        }
       }
 
       .play_button i {
@@ -369,17 +392,6 @@
       .play_button:hover {
         transform: scale(1.1);
         box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-      }
-
-      @keyframes pulse {
-        0% {
-          transform: scale(1);
-          opacity: 1;
-        }
-        100% {
-          transform: scale(1.5);
-          opacity: 0;
-        }
       }
 
       .video_title {
@@ -1578,6 +1590,20 @@
         display: none;
       }
     </style>
+
+        <!-- CSS here -->
+        <link rel="stylesheet" href="./petpal/assets/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="./petpal/assets/css/animate.min.css" />
+        <link rel="stylesheet" href="./petpal/assets/css/magnific-popup.css" />
+        <link rel="stylesheet" href="./petpal/assets/css/fontawesome-all.min.css" />
+        <link rel="stylesheet" href="./petpal/assets/css/flaticon_pet_care.css" />
+        <link rel="stylesheet" href="./petpal/assets/css/odometer.css" />
+        <link rel="stylesheet" href="./petpal/assets/css/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="./petpal/assets/css/select2.min.css" />
+        <link rel="stylesheet" href="./petpal/assets/css/jquery-ui.css" />
+        <link rel="stylesheet" href="./petpal/assets/css/aos.css" />
+        <link rel="stylesheet" href="./petpal/assets/css/default.css" />
+        <link rel="stylesheet" href="./petpal/assets/css/main.css" />
   </head>
   <body>
     <div class="body_wrap">
@@ -2049,541 +2075,6 @@
                   }
                 </script>
 
-
-
-<section class="why_choose_section">
-  <div class="container">
-    <div class="section_header">
-      <span class="section_subtitle" style="color: #7C58D3 !important; background: rgba(124, 88, 211, 0.1) !important;">Services</span>
-      <h2 class="section_title">WHY CHOOSE US?</h2>
-      <p class="section_description">
-        As a trusted name in the Riyadh veterinary community since 2013, we've helped more than 200,000,000 pets through:
-      </p>
-      <a href="#" class="all-services-btn" style="background: #7C58D3 !important; color: #fff !important;">All Services</a>
-    </div>
-    
-    <div class="process_steps">
-
-      <div class="grid_wrapper">
-        <div class="process_step">
-          <div class="step_icon">
-            <img src="assets/images/icons/man.png" alt="Personalized Care">
-          </div>
-          <h3 class="step_title">Personalized Care</h3>
-          <p class="step_description">Tailored treatment plans for each pet.</p>
-          <a href="#" class="view-more-btn">View More</a>
-        </div>
-
-        <div class="process_step">
-          <div class="step_icon">
-            <img src="assets/images/icons/lifeline.png" alt="Latest Technology">
-          </div>
-          <h3 class="step_title">Latest Technology</h3>
-          <p class="step_description">Cutting-edge equipment for accurate diagnosis.</p>
-          <a href="#" class="view-more-btn">View More</a>
-        </div>
-
-        <div class="process_step">
-          <div class="step_icon">
-            <img src="assets/images/icons/doctors.png" alt="Compassionate Staff">
-          </div>
-          <h3 class="step_title">Compassionate Staff</h3>
-          <p class="step_description">A dedicated team that loves animals.</p>
-          <a href="#" class="view-more-btn">View More</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<style>
-  .section_divider {
-    position: relative;
-    height: 150px;
-    overflow: hidden;
-    margin-top: -50px;
-    margin-bottom: -50px;
-    z-index: 1;
-  }
-
-  .section_divider svg {
-    position: absolute;
-    width: 100%;
-    height: 150px;
-    fill: #7C58D3;
-  }
-</style>
-
-<div class="section_divider">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
-    <path d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-  </svg>
-</div>
-
-<section class="team-section section_space_lg" style="padding-top: 120px;">
-  <div class="container">
-    <div class="top-mediic-section">
-      <div class="mediic-section-title">
-        <h1>MEET OUR DOCTORS</h1>
-      </div>
-      <div class="center-description">
-        <p>Our team of highly skilled veterinarians is committed to providing top-notch care for your furry companions. They're passionate about animal health & dedicated to providing the best possible medical services.</p>
-      </div>
-      <div class="counter-single-box">
-        <div class="counter-box-title">
-          <h1>38+</h1>
-          <span class="counter-text">Professional Doctors</span>
-        </div>
-      </div>
-    </div>
-    
-    <div class="team-description text-center mb-5">
-      <!-- <p class="lead">Our veterinary team brings together passionate professionals with decades of combined experience in animal care. Each specialist is committed to providing the highest standard of medical care while treating your pets with the gentleness and compassion they deserve. From routine check-ups to complex procedures, our doctors are here to ensure your pet's health and happiness.</p> -->
-    </div>
-
-    <div class="team-slider-wrapper">
-      <div class="purple-glow-effect"></div>
-      <div class="swiper team">
-        <div class="swiper-wrapper">
-          <!-- Team members slider content -->
-          <div class="swiper-slide">
-            <div class="team-single-box" data-aos="fade-up">
-              <div class="team-thumb">
-                <img src="assets/images/resource/team.jpg" alt="" />
-                <div class="social-icon">
-                  <ul>
-                    <li>
-                      <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
-                    </li>
-                    <li>
-                      <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
-                    </li>
-                    <li>
-                      <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="team-content">
-                <h5>CARDIOLOGY</h5>
-                <h2>Dr. David Luis</h2>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="team-single-box" data-aos="zoom-in">
-              <div class="team-thumb">
-                <img src="assets/images/resource/team.jpg" alt="" />
-                <div class="social-icon">
-                  <ul>
-                    <li>
-                      <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
-                    </li>
-                    <li>
-                      <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
-                    </li>
-                    <li>
-                      <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="team-content">
-                <h5>DENTISTRY</h5>
-                <h2>Dr. Sarah Smith</h2>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="team-single-box" data-aos="fade-up">
-              <div class="team-thumb">
-                <img src="assets/images/resource/team.jpg" alt="" />
-                <div class="social-icon">
-                  <ul>
-                    <li>
-                      <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
-                    </li>
-                    <li>
-                      <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
-                    </li>
-                    <li>
-                      <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="team-content">
-                <h5>NEUROLOGY</h5>
-                <h2>Dr. Michael Chen</h2>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="team-single-box" data-aos="fade-up">
-              <div class="team-thumb">
-                <img src="assets/images/resource/team.jpg" alt="" />
-                <div class="social-icon">
-                  <ul>
-                    <li>
-                      <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
-                    </li>
-                    <li>
-                      <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
-                    </li>
-                    <li>
-                      <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="team-content">
-                <h5>PEDIATRICS</h5>
-                <h2>Dr. Emily Brown</h2>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="team-single-box" data-aos="fade-up">
-              <div class="team-thumb">
-                <img src="assets/images/resource/team.jpg" alt="" />
-                <div class="social-icon">
-                  <ul>
-                    <li>
-                      <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
-                    </li>
-                    <li>
-                      <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
-                    </li>
-                    <li>
-                      <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="team-content">
-                <h5>ORTHOPEDICS</h5>
-                <h2>Dr. James Wilson</h2>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="team-single-box" data-aos="fade-up">
-              <div class="team-thumb">
-                <img src="assets/images/resource/team.jpg" alt="" />
-                <div class="social-icon">
-                  <ul>
-                    <li>
-                      <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
-                    </li>
-                    <li>
-                      <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
-                    </li>
-                    <li>
-                      <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="team-content">
-                <h5>DERMATOLOGY</h5>
-                <h2>Dr. Sofia Martinez</h2>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<style>
-  .team-section {
-    background: #f0f4ff;
-    position: relative;
-    padding: 120px 0 100px;
-    overflow: hidden;
-  }
-
-  .team-description {
-    max-width: 900px;
-    margin: 0 auto 60px;
-  }
-
-  .team-description p {
-    color: #4a4a4a;
-    font-size: 18px;
-    line-height: 1.8;
-  }
-
-  .purple-glow-effect {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at center, rgba(111, 66, 193, 0.15) 0%, rgba(111, 66, 193, 0.1) 25%, rgba(111, 66, 193, 0.05) 50%, transparent 70%);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  .team-slider-wrapper {
-    position: relative;
-    padding: 40px 0;
-  }
-
-  .top-mediic-section {
-    margin-bottom: 40px;
-  }
-
-  .mediic-section-title h1 {
-    font-size: 42px;
-    font-weight: 700;
-    color: #2D1857;
-    margin: 0;
-  }
-
-  .counter-box-title {
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-  }
-
-  .counter-box-title h1 {
-    font-size: 48px;
-    color: #6f42c1;
-    font-weight: 700;
-    margin: 0;
-    line-height: 1;
-  }
-
-  .counter-text {
-    color: #4a4a4a;
-    font-size: 18px;
-    font-weight: 500;
-  }
-
-  @media (max-width: 768px) {
-    .top-mediic-section {
-      flex-direction: column;
-      text-align: center;
-      gap: 20px;
-    }
-    
-    .counter-box-title {
-      justify-content: center;
-    }
-    
-    .mediic-section-title h1 {
-      font-size: 32px;
-    }
-    
-    .team-description p {
-      font-size: 16px;
-    }
-  }
-</style>
-
-<style>
-  /* Product Section Styles */
-  .product_section {
-    background: #fff;
-    padding: 80px 0;
-  }
-  
-  .product_carousel {
-    position: relative;
-    padding: 40px 0;
-  }
-  
-  .product_item {
-    background-color: transparent;
-    border-radius: 15px;
-    padding: 0;
-    margin: 10px;
-    box-shadow: none;
-    transition: all 0.3s ease;
-  }
-
-  .product_item:hover {
-    box-shadow: none;
-    transform: translateY(-5px);
-  }
-
-  .item_image {
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-    height: 300px;
-  }
-
-  .image_wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-  }
-
-  .product_item:hover .image_wrap img {
-    transform: scale(1.1);
-  }
-
-  .cart_btns_group {
-    position: absolute;
-    bottom: -60px;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.9);
-    transition: all 0.3s ease;
-  }
-
-  .product_item:hover .cart_btns_group {
-    bottom: 0;
-  }
-
-  .cart_btns_group li a {
-    background: #8E7AB5;
-    color: #fff;
-    padding: 8px 15px;
-    border-radius: 5px;
-    font-size: 14px;
-    transition: all 0.3s ease;
-  }
-
-  .cart_btns_group li a:hover {
-    background: #6B4CE6;
-  }
-
-  .badge_group {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 1;
-  }
-
-  .badge_sale {
-    background: #FF497C;
-    color: #fff;
-    padding: 5px 12px;
-    border-radius: 5px;
-    font-size: 12px;
-  }
-
-  .item_content {
-    padding: 20px 10px 10px;
-    text-align: center;
-    background: transparent;
-  }
-
-  .item_title {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-
-  .item_title a {
-    color: #2D1857;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-
-  .item_title a:hover {
-    color: #6B4CE6;
-  }
-
-  .rating_star {
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-    margin-bottom: 10px;
-  }
-
-  .rating_star li i {
-    color: #FFA800;
-    font-size: 18px;
-  }
-
-  .item_price {
-    font-size: 20px;
-    font-weight: 700;
-    color: #6B4CE6;
-  }
-
-  .item_price del {
-    color: #8E7AB5;
-    margin-right: 8px;
-    font-weight: 700;
-  }
-
-  .badge_group {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 1;
-  }
-
-  .badge {
-    display: inline-block;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-
-  .badge_sale {
-    background: #FF6B6B;
-    color: #fff;
-  }
-
-  .carousel_arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    z-index: 1;
-  }
-
-  .carousel_arrow button {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #fff;
-    border: none;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  .carousel_arrow button:hover {
-    background: #6B4CE6;
-    color: #fff;
-  }
-
-  .carousel_arrow button i {
-    font-size: 20px;
-  }
-
-  .cc4c_left_arrow {
-    left: -20px;
-  }
-
-  .cc4c_right_arrow {
-    right: -20px;
-  }
-</style>
-
 <section class="product_section section_space_md">
   <div class="container">
     <div class="section_title">
@@ -2907,6 +2398,603 @@
     </div>
   </div>
 </section>
+<div class="section-divider">
+    <div class="divider-line"></div>
+    <div class="icon-container">
+        <div class="icon-pulse"></div>
+        <i class="fas fa-stethoscope stethoscope-icon"></i>
+    </div>
+    <div class="divider-line"></div>
+</div>
+<style>
+  .section-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+    position: relative;
+  }
+
+  .divider-line {
+    height: 2px;
+    background: linear-gradient(90deg, rgba(107, 76, 230, 0.1), rgba(107, 76, 230, 0.8) 50%, rgba(107, 76, 230, 0.1));
+    flex-grow: 1;
+    max-width: 300px;
+  }
+
+  .icon-container {
+    position: relative;
+    margin: 0 30px;
+  }
+
+  .stethoscope-icon {
+    color: #6B4CE6;
+    font-size: 32px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .icon-pulse {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: rgba(107, 76, 230, 0.2);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.8;
+    }
+    70% {
+      transform: translate(-50%, -50%) scale(2);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0;
+    }
+  }
+</style>
+
+<section class="why_choose_section">
+  <div class="container">
+    <div class="section_header">
+      <span class="section_subtitle" style="color: #7C58D3 !important; background: rgba(124, 88, 211, 0.1) !important;">Services</span>
+      <h2 class="section_title">WHY CHOOSE US?</h2>
+      <p class="section_description">
+        As a trusted name in the Riyadh veterinary community since 2013, we've helped more than 200,000,000 pets through:
+      </p>
+      <a href="#" class="all-services-btn" style="background: #7C58D3 !important; color: #fff !important;">All Services</a>
+    </div>
+    
+    <div class="process_steps">
+
+      <div class="grid_wrapper">
+        <div class="process_step">
+          <div class="step_icon">
+            <img src="assets/images/icons/man.png" alt="Personalized Care">
+          </div>
+          <h3 class="step_title">Personalized Care</h3>
+          <p class="step_description">Tailored treatment plans for each pet.</p>
+          <a href="#" class="view-more-btn">View More</a>
+        </div>
+
+        <div class="process_step">
+          <div class="step_icon">
+            <img src="assets/images/icons/lifeline.png" alt="Latest Technology">
+          </div>
+          <h3 class="step_title">Latest Technology</h3>
+          <p class="step_description">Cutting-edge equipment for accurate diagnosis.</p>
+          <a href="#" class="view-more-btn">View More</a>
+        </div>
+
+        <div class="process_step">
+          <div class="step_icon">
+            <img src="assets/images/icons/doctors.png" alt="Compassionate Staff">
+          </div>
+          <h3 class="step_title">Compassionate Staff</h3>
+          <p class="step_description">A dedicated team that loves animals.</p>
+          <a href="#" class="view-more-btn">View More</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .section_divider {
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+    margin-top: -50px;
+    margin-bottom: -50px;
+    z-index: 1;
+  }
+
+  .section_divider svg {
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    fill: #7C58D3;
+  }
+</style>
+
+<div class="section_divider">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+    <path d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+  </svg>
+</div>
+
+<section class="team-section section_space_lg" style="padding-top: 120px;">
+  <div class="container">
+
+    
+    <div class="team-description text-center mb-5">
+      <!-- <p class="lead">Our veterinary team brings together passionate professionals with decades of combined experience in animal care. Each specialist is committed to providing the highest standard of medical care while treating your pets with the gentleness and compassion they deserve. From routine check-ups to complex procedures, our doctors are here to ensure your pet's health and happiness.</p> -->
+    </div>
+
+    <div class="team-slider-wrapper">
+      <div class="purple-glow-effect"></div>
+      <div class="top-mediic-section">
+        <div class="mediic-section-title">
+          <h1>MEET OUR DOCTORS</h1>
+        </div>
+        <div class="center-description">
+          <p>Our team of highly skilled veterinarians is committed to providing top-notch care for your furry companions. They're passionate about animal health & dedicated to providing the best possible medical services.</p>
+        </div>
+        <div class="counter-single-box">
+          <div class="counter-box-title">
+            <h1>38+</h1>
+            <span class="counter-text">Professional Doctors</span>
+          </div>
+        </div>
+      </div>
+      <div class="swiper team">
+        <div class="swiper-wrapper">
+          <!-- Team members slider content -->
+          <div class="swiper-slide">
+            <div class="team-single-box" data-aos="fade-up">
+              <div class="team-thumb">
+                <img src="assets/images/resource/team.jpg" alt="" />
+                <div class="social-icon">
+                  <ul>
+                    <li>
+                      <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="team-content">
+                <h5>CARDIOLOGY</h5>
+                <h2>Dr. David Luis</h2>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="team-single-box" data-aos="zoom-in">
+              <div class="team-thumb">
+                <img src="assets/images/resource/team.jpg" alt="" />
+                <div class="social-icon">
+                  <ul>
+                    <li>
+                      <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="team-content">
+                <h5>DENTISTRY</h5>
+                <h2>Dr. Sarah Smith</h2>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="team-single-box" data-aos="fade-up">
+              <div class="team-thumb">
+                <img src="assets/images/resource/team.jpg" alt="" />
+                <div class="social-icon">
+                  <ul>
+                    <li>
+                      <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="team-content">
+                <h5>NEUROLOGY</h5>
+                <h2>Dr. Michael Chen</h2>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="team-single-box" data-aos="fade-up">
+              <div class="team-thumb">
+                <img src="assets/images/resource/team.jpg" alt="" />
+                <div class="social-icon">
+                  <ul>
+                    <li>
+                      <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="team-content">
+                <h5>PEDIATRICS</h5>
+                <h2>Dr. Emily Brown</h2>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="team-single-box" data-aos="fade-up">
+              <div class="team-thumb">
+                <img src="assets/images/resource/team.jpg" alt="" />
+                <div class="social-icon">
+                  <ul>
+                    <li>
+                      <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="team-content">
+                <h5>ORTHOPEDICS</h5>
+                <h2>Dr. James Wilson</h2>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="team-single-box" data-aos="fade-up">
+              <div class="team-thumb">
+                <img src="assets/images/resource/team.jpg" alt="" />
+                <div class="social-icon">
+                  <ul>
+                    <li>
+                      <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="team-content">
+                <h5>DERMATOLOGY</h5>
+                <h2>Dr. Sofia Martinez</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .team-section {
+    background: #f0f4ff;
+    position: relative;
+    padding: 120px 0 100px;
+    overflow: hidden;
+  }
+
+  .team-description {
+    max-width: 900px;
+    margin: 0 auto 60px;
+  }
+
+  .team-description p {
+    color: #4a4a4a;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .purple-glow-effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(111, 66, 193, 0.15) 0%, rgba(111, 66, 193, 0.1) 25%, rgba(111, 66, 193, 0.05) 50%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .team-slider-wrapper {
+    position: relative;
+    padding: 40px 0;
+  }
+
+  .top-mediic-section {
+    margin-bottom: 40px;
+  }
+
+  .mediic-section-title h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #2D1857;
+    margin: 0;
+  }
+
+  .counter-box-title {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .counter-box-title h1 {
+    font-size: 48px;
+    color: #6f42c1;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+  }
+
+  .counter-text {
+    color: #4a4a4a;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .top-mediic-section {
+      flex-direction: column;
+      text-align: center;
+      gap: 20px;
+    }
+    
+    .counter-box-title {
+      justify-content: center;
+    }
+    
+    .mediic-section-title h1 {
+      font-size: 32px;
+    }
+    
+    .team-description p {
+      font-size: 16px;
+    }
+  }
+</style>
+
+<style>
+  /* Product Section Styles */
+  .product_section {
+    background: #fff;
+    padding: 80px 0;
+  }
+  
+  .product_carousel {
+    position: relative;
+    padding: 40px 0;
+  }
+  
+  .product_item {
+    background-color: transparent;
+    border-radius: 15px;
+    padding: 0;
+    margin: 10px;
+    box-shadow: none;
+    transition: all 0.3s ease;
+  }
+
+  .product_item:hover {
+    box-shadow: none;
+    transform: translateY(-5px);
+  }
+
+  .item_image {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 300px;
+  }
+
+  .image_wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .product_item:hover .image_wrap img {
+    transform: scale(1.1);
+  }
+
+  .cart_btns_group {
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+  }
+
+  .product_item:hover .cart_btns_group {
+    bottom: 0;
+  }
+
+  .cart_btns_group li a {
+    background: #8E7AB5;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+
+  .cart_btns_group li a:hover {
+    background: #6B4CE6;
+  }
+
+  .badge_group {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+  }
+
+  .badge_sale {
+    background: #FF497C;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+
+  .item_content {
+    padding: 20px 10px 10px;
+    text-align: center;
+    background: transparent;
+  }
+
+  .item_title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .item_title a {
+    color: #2D1857;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .item_title a:hover {
+    color: #6B4CE6;
+  }
+
+  .rating_star {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+
+  .rating_star li i {
+    color: #FFA800;
+    font-size: 18px;
+  }
+
+  .item_price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #6B4CE6;
+  }
+
+  .item_price del {
+    color: #8E7AB5;
+    margin-right: 8px;
+    font-weight: 700;
+  }
+
+  .badge_group {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .badge_sale {
+    background: #FF6B6B;
+    color: #fff;
+  }
+
+  .carousel_arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    z-index: 1;
+  }
+
+  .carousel_arrow button {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    border: none;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .carousel_arrow button:hover {
+    background: #6B4CE6;
+    color: #fff;
+  }
+
+  .carousel_arrow button i {
+    font-size: 20px;
+  }
+
+  .cc4c_left_arrow {
+    left: -20px;
+  }
+
+  .cc4c_right_arrow {
+    right: -20px;
+  }
+</style>
+
+
 
 <!-- Quick View Modal -->
 <div class="modal fade" id="quick_view_popup" tabindex="-1" aria-hidden="true">
@@ -2944,13 +3032,77 @@
   </div>
 </div>
 
+<style>
+  .section-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+    position: relative;
+  }
 
+  .divider-line {
+    height: 2px;
+    background: linear-gradient(90deg, rgba(107, 76, 230, 0.1), rgba(107, 76, 230, 0.8) 50%, rgba(107, 76, 230, 0.1));
+    flex-grow: 1;
+    max-width: 300px;
+  }
+
+  .paw-icon-container {
+    position: relative;
+    margin: 0 30px;
+  }
+
+  .paw-icon {
+    color: #6B4CE6;
+    font-size: 32px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .paw-pulse {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: rgba(107, 76, 230, 0.2);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.8;
+    }
+    70% {
+      transform: translate(-50%, -50%) scale(2);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0;
+    }
+  }
+</style>
+
+<div class="section-divider">
+  <div class="divider-line"></div>
+  <div class="paw-icon-container">
+    <div class="paw-pulse"></div>
+    <i class="fas fa-paw paw-icon"></i>
+  </div>
+  <div class="divider-line"></div>
+</div>
 <div class="appoinment-section">
   <div class="container">
       <div class="row">
           <div class="col-lg-12">
               <div class="mediic-section-title text-center">
-                  <h1>MAKE APPOINTMENT</h1>
+                  <h1>CONTACT US
+                  </h1>
               </div>
           </div>
           <div class="mediic-shape-cntr">
@@ -3123,12 +3275,6 @@
       margin-bottom: 50px;
   }
 
-  .mediic-section-title h1 {
-      font-size: 48px;
-      font-weight: 700;
-      color: #4C0070;
-  }
-
   .mediic-section-title2 h4 {
       font-size: 18px;
       font-weight: 600;
@@ -3293,7 +3439,248 @@
           </div>
         </div>
       </footer>
+      <section class="services__area">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-xl-6 col-lg-7">
+              <div class="section__title mb-40">
+                <span class="sub-title"
+                  >Delivering world class home care
+                  <strong class="shake">
+                    <img
+                      src="./petpal/assets/img/icon/pet_icon02.svg"
+                      alt=""
+                      class="injectable"
+                    />
+                  </strong>
+                </span>
+                <h2 class="title">
+                  Providing Our Best Pet Care & Veterinary Services
+                </h2>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-5">
+              <div class="view__all-btn text-end mb-40">
+                <a href="animal-details.html" class="btn border-btn"
+                  >See All Services
+                  <img
+                    src="./petpal/assets/img/icon/right_arrow.svg"
+                    alt=""
+                    class="injectable"
+                /></a>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
+              <div class="services__item">
+                <div class="services__shape">
+                  <div class="shape-one">
+                    <img
+                      src="./petpal/assets/img/images/services_shape01.svg"
+                      alt=""
+                      class="injectable"
+                    />
+                  </div>
+                  <div class="shape-two">
+                    <img
+                      src="./petpal/assets/img/images/services_shape02.svg"
+                      alt=""
+                      class="injectable"
+                    />
+                  </div>
+                </div>
+                <div class="services__icon">
+                  <i class="flaticon-vaccine"></i>
+                  <div class="services__icon-shape">
+                    <img
+                      src="./petpal/assets/img/images/services_icon_shape.svg"
+                      alt=""
+                      class="injectable"
+                    />
+                  </div>
+                </div>
+                <div class="services__content">
+                  <h4 class="title">
+                    <a href="./petpal/animal-details.html">Pet Vaccination</a>
+                  </h4>
+                  <p>
+                    We will work with you to develop individu alised care plans
+                    including
+                  </p>
+                  <a href="animal-details.html" class="btn border-btn"
+                    >See Details
+                    <img
+                      src="./petpal/assets/img/icon/right_arrow02.svg"
+                      alt=""
+                      class="injectable"
+                  /></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
+              <div class="services__item">
+                <div class="services__shape">
+                  <div class="shape-one">
+                    <img
+                      src="./petpal/assets/img/images/services_shape01.svg"
+                      alt=""
+                      class="injectable"
+                    />
+                  </div>
+                  <div class="shape-two">
+                    <img
+                      src="./petpal/assets/img/images/services_shape02.svg"
+                      alt=""
+                      class="injectable"
+                    />
+                  </div>
+                </div>
+                <div class="services__icon">
+                  <i class="flaticon-beauty-saloon"></i>
+                  <div class="services__icon-shape">
+                    <img
+                      src="./petpal/assets/img/images/services_icon_shape.svg"
+                      alt=""
+                      class="injectable"
+                    />
+                  </div>
+                </div>
+                <div class="services__content">
+                  <h4 class="title">
+                    <a href="animal-details.html">Pet Grooming</a>
+                  </h4>
+                  <p>
+                    We will work with you to develop individu alised care plans
+                    including
+                  </p>
+                  <a href="animal-details.html" class="btn border-btn"
+                    >See Details
+                    <img
+                      src="./petpal/assets/img/icon/right_arrow02.svg"
+                      alt=""
+                      class="injectable"
+                  /></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
+              <div class="services__item">
+                <div class="services__shape">
+                  <div class="shape-one">
+                    <img
+                      src="./petpal/assets/img/images/services_shape01.svg"
+                      alt=""
+                      class="injectable"
+                    />
+                  </div>
+                  <div class="shape-two">
+                    <img
+                      src="./petpal/assets/img/images/services_shape02.svg"
+                      alt=""
+                      class="injectable"
+                    />
+                  </div>
+                </div>
+                <div class="services__icon">
+                  <i class="flaticon-vet"></i>
+                  <div class="services__icon-shape">
+                    <img
+                      src="./petpal/assets/img/images/services_icon_shape.svg"
+                      alt=""
+                      class="injectable"
+                    />
+                  </div>
+                </div>
+                <div class="services__content">
+                  <h4 class="title">
+                    <a href="animal-details.html">Pet Veterinary</a>
+                  </h4>
+                  <p>
+                    We will work with you to develop individu alised care plans
+                    including
+                  </p>
+                  <a href="animal-details.html" class="btn border-btn"
+                    >See Details
+                    <img
+                      src="./petpal/assets/img/icon/right_arrow02.svg"
+                      alt=""
+                      class="injectable"
+                  /></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
+              <div class="services__item">
+                <div class="services__shape">
+                  <div class="shape-one">
+                    <img
+                      src="./petpal/assets/img/images/services_shape01.svg"
+                      alt=""
+                      class="injectable"
+                    />
+                  </div>
+                  <div class="shape-two">
+                    <img
+                      src="./petpal/assets/img/images/services_shape02.svg"
+                      alt=""
+                      class="injectable"
+                    />
+                  </div>
+                </div>
+                <div class="services__icon">
+                  <i class="flaticon-spay"></i>
+                  <div class="services__icon-shape">
+                    <img
+                      src="./petpal/assets/img/images/services_icon_shape.svg"
+                      alt=""
+                      class="injectable"
+                    />
+                  </div>
+                </div>
+                <div class="services__content">
+                  <h4 class="title">
+                    <a href="animal-details.html">Pet Surgery</a>
+                  </h4>
+                  <p>
+                    We will work with you to develop individu alised care plans
+                    including
+                  </p>
+                  <a href="animal-details.html" class="btn border-btn"
+                    >See Details
+                    <img
+                      src="./petpal/assets/img/icon/right_arrow02.svg"
+                      alt=""
+                      class="injectable"
+                  /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="services__shape-wrap">
+          <img
+            src="./petpal/assets/img/images/services_shape01.png"
+            alt="img"
+            class="ribbonRotate"
+          />
+          <img
+            src="./petpal/assets/img/images/services_shape02.png"
+            alt="img"
+            data-aos="fade-up-right"
+            data-aos-delay="800"
+          />
+          <img
+            src="./petpal/assets/img/images/services_shape03.png"
+            alt="img"
+            data-aos="fade-down-left"
+            data-aos-delay="400"
+          />
+        </div>
+      </section>
     </div>
+
+    
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>

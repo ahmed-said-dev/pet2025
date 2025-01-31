@@ -1,0 +1,3439 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Home V1 - Petopia – Pet Care Service Template</title>
+    <link rel="shortcut icon" href="assets/images/logo/favourite_icon.svg" />
+    <link rel="stylesheet" type="text/css" href="assets/css/all.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <style>
+      .header_section .box_wrap {
+        justify-content: center !important;
+      }
+      .main_menu {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .main_menu_inner {
+        width: 100%;
+      }
+      .main_menu_list {
+        width: 100%;
+        justify-content: center;
+      }
+      .header_btns_group {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .section_overlay {
+        position: relative;
+      }
+      .section_overlay::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('assets/images/overlay/EliteAssets.jpg');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.8;
+        filter: grayscale(100%);
+        z-index: -1;
+      }
+      .section_overlay::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('assets/images/overlay/shapes_overlay_1.svg');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.4;
+        z-index: -1;
+      }
+      .elite_vet_section .elite_vet_text h2 {
+        font-size: 3rem;
+        font-weight: 800;
+        color: #333;
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+        background: linear-gradient(45deg, #8E7AB5, #B784B7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .elite_vet_section .elite_vet_text h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #666;
+        margin-bottom: 1.5rem;
+        font-style: italic;
+      }
+      .elite_vet_section .elite_vet_text p {
+        font-size: 1.1rem;
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        text-align: justify;
+      }
+      .elite_vet_section .elite_vet_image {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.07);
+        transition: all 0.3s ease;
+      }
+      .elite_vet_section .elite_vet_image::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, rgba(142, 122, 181, 0.1), rgba(183, 132, 183, 0.1));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1;
+      }
+      .elite_vet_section .elite_vet_image img {
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 15px;
+        transition: all 0.5s ease;
+      }
+      .elite_vet_section .elite_vet_image:hover {
+        transform: scale(1.03);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.1);
+      }
+      .elite_vet_section .elite_vet_image:hover::before {
+        opacity: 1;
+      }
+      .elite_vet_section .elite_vet_image:hover img {
+        transform: scale(1.1);
+        filter: brightness(1.1) contrast(1.1);
+      }
+      .elite_vet_section .btn_secondary {
+        position: relative;
+        padding: 12px 30px;
+        background: linear-gradient(45deg, #8E7AB5, #B784B7);
+        color: white;
+        border: none;
+        border-radius: 30px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 20px rgba(142, 122, 181, 0.2);
+      }
+      .elite_vet_section .btn_secondary::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+        transition: all 0.5s ease;
+      }
+      .elite_vet_section .btn_secondary:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 25px rgba(142, 122, 181, 0.3);
+      }
+      .elite_vet_section .btn_secondary:hover::before {
+        left: 100%;
+      }
+      .elite_vet_section .btn_secondary:active {
+        transform: translateY(2px);
+        box-shadow: 0 5px 10px rgba(142, 122, 181, 0.2);
+      }
+      /* Medical Services Section Styles */
+      .medical_services_section {
+        overflow: hidden;
+        background: linear-gradient(180deg, #FFFEFD 0%, #F8F6FF 100%);
+        padding: 80px 0;
+        position: relative;
+      }
+      
+      .medical_services_card {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        height: 100%;
+      }
+
+      .text-navy {
+        color: #0a2463;
+      }
+      
+      .bg-navy {
+        background-color: #0a2463;
+      }
+
+      .medical_label {
+        background: #e8e5ff;
+        color: #6b4ce6;
+        padding: 8px 16px;
+        border-radius: 6px;
+        display: inline-block;
+        font-weight: 600;
+        font-size: 14px;
+        margin-bottom: 24px;
+      }
+      
+      .service_icon {
+        min-width: 64px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+      }
+      
+      .service_icon i {
+        font-size: 28px;
+        color: #ffffff;
+      }
+      
+      .service_icon img {
+        filter: brightness(0) invert(1);
+      }
+
+      .service_item {
+        background: #f8f6ff;
+        padding: 24px;
+        border-radius: 16px;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+      }
+
+      .service_item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(107, 76, 230, 0.1);
+      }
+
+      .service_item:last-child {
+        margin-bottom: 0;
+      }
+      
+      .shape_top {
+        position: absolute;
+        top: 10%;
+        left: 5%;
+      }
+      
+      .shape_bottom {
+        position: absolute;
+        bottom: 10%;
+        right: 15%;
+      }
+      .medical_image_wrapper {
+        height: 580px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      }
+
+      .medical_image_wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+      .btn_purple {
+        background: #6b4ce6;
+        color: #ffffff;
+        padding: 15px 30px;
+        border-radius: 12px;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .btn_purple:hover {
+        background: #4c3ab9;
+        color: #ffffff;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(107, 76, 230, 0.2);
+      }
+
+      .btn_purple i {
+        margin-left: 8px;
+        font-size: 18px;
+      }
+      /* Video Section Styles */
+      .video_section {
+        position: relative;
+        padding: 120px 0;
+        background-image: url('assets/images/banner/patient-dog.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        overflow: hidden;
+      }
+
+      .video_section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(135deg, rgba(74, 74, 74, 0.85) 0%, rgba(142, 122, 181, 0.85) 50%, rgba(183, 132, 183, 0.85) 100%);
+        z-index: 1;
+      }
+
+      .video_section .container {
+        display: flex;
+        justify-content: flex-start;
+      }
+
+      .video_content {
+        position: relative;
+        z-index: 2;
+        color: #ffffff;
+        max-width: 600px;
+        margin-left: 100px;
+      }
+
+      .text_content {
+        position: relative;
+        padding-left: 30px;
+      }
+
+      .text_content::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 4px;
+        background-color: #ffffff;
+      }
+
+      .play_button_wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 3rem;
+        margin-left: -50px;
+      }
+
+      .play_button {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        background: #ffffff;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .play_button::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: -100%;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        animation: pulse 2s infinite;
+      }
+
+      .play_button i {
+        color: #8E7AB5;
+        font-size: 1.8rem;
+        margin-left: 5px;
+      }
+
+      .play_button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1.5);
+          opacity: 0;
+        }
+      }
+
+      .video_title {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: #ffffff;
+      }
+
+      .video_description {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        opacity: 0.9;
+        color: #ffffff;
+        margin-bottom: 2rem;
+      }
+
+      .read_more_btn {
+        display: inline-flex;
+        align-items: center;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .read_more_btn i {
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+      }
+
+      .read_more_btn:hover {
+        opacity: 0.9;
+      }
+
+      .read_more_btn:hover i {
+        transform: translateX(5px);
+      }
+      /* Video Modal Styles */
+      .video_modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .video_modal.active {
+        display: flex;
+        opacity: 1;
+      }
+
+      .video_modal_content {
+        position: relative;
+        width: 90%;
+        max-width: 1000px;
+        margin: auto;
+        aspect-ratio: 16/9;
+      }
+
+      .video_modal_close {
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        border: 2px solid #ffffff;
+        border-radius: 50%;
+        color: #ffffff;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .video_modal_close:hover {
+        transform: rotate(90deg);
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .video_modal iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+      /* Why Choose Us Section Styles */
+      .why_choose_section {
+        padding: 120px 0;
+        background: url('assets/images/background/bg5.png') no-repeat center center;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+        min-height: 800px;
+      }
+
+      .why_choose_section .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 50px;
+      }
+
+      .why_choose_section .section_header {
+        flex: 0 0 40%;
+        padding-right: 30px;
+        z-index: 2;
+        position: relative;
+      }
+
+      .why_choose_section .section_subtitle {
+        font-size: 20px;
+        color: rgba(10, 20, 47, 0.8);
+        text-align: left;
+        max-width: 500px;
+        margin: 0 0 48px 0;
+        line-height: 1.8;
+        font-weight: 400;
+        letter-spacing: 0.3px;
+        position: relative;
+        padding-left: 20px;
+        border-left: 4px solid #6B4CE6;
+      }
+
+      .why_choose_section .section_subtitle::before {
+        content: '';
+        position: absolute;
+        left: -4px;
+        top: -10px;
+        width: 4px;
+        height: 40px;
+        background: linear-gradient(to bottom, #8667FF, #6B4CE6);
+        border-radius: 4px;
+      }
+
+      .why_choose_section .section_title {
+        font-size: 3.2rem;
+        line-height: 1.2;
+        color: #27115F;
+        font-weight: 700;
+        margin-bottom: 25px;
+      }
+
+      .why_choose_section .section_description {
+        color: #666;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 30px;
+      }
+
+      .why_choose_section .all-services-btn {
+        display: inline-block;
+        padding: 15px 35px;
+        background: #FF725E;
+        color: #fff;
+        border-radius: 10px;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .why_choose_section .all-services-btn:hover {
+        background: #e65e4b;
+        transform: translateY(-3px);
+      }
+
+      .why_choose_section .process_steps {
+        flex: 0 0 55%;
+        position: relative;
+        background: #7C58D3;
+        border-radius: 100px 40px 40px 100px;
+        padding: 120px 50px;
+        margin-right: -50px;
+        z-index: 1;
+        position: relative;
+        margin-right: -50px;
+        min-height: 600px;
+        display: flex;
+        align-items: center;
+      }
+
+      .why_choose_section .process_steps svg {
+        position: absolute;
+        bottom: 130px;
+        left: 0;
+        width: 100%;
+        height: auto;
+        z-index: 0;
+      }
+
+      .why_choose_section .process_step {
+        background: #fff;
+        border-radius: 20px;
+        padding: 30px;
+        text-align: left;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        position: relative;
+        z-index: 2;
+        transition: all 0.3s ease;
+        flex: 1;
+        min-width: 300px;
+        padding: 40px;
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        min-height: 380px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .why_choose_section .process_step:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .why_choose_section .step_icon {
+        width: 60px;
+        height: 60px;
+        background: #F0F1FF;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      .why_choose_section .step_icon img {
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
+      }
+
+      .why_choose_section .step_title {
+        font-size: 1.8rem;
+        color: #333;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      .why_choose_section .step_description {
+        color: #666;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 15px;
+      }
+
+      .why_choose_section .view-more-btn {
+        display: inline-block;
+        padding: 8px 20px;
+        background: #F0F1FF;
+        color: #6B4CE6;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .why_choose_section .view-more-btn:hover {
+        background: #6B4CE6;
+        color: #fff;
+      }
+
+      @media (max-width: 991px) {
+        .why_choose_section {
+          background: #fff;
+        }
+        .why_choose_section .container {
+          flex-direction: column;
+        }
+        .why_choose_section .section_header,
+        .why_choose_section .process_steps {
+          flex: 0 0 100%;
+          margin-right: 0;
+        }
+        .why_choose_section .process_steps {
+          border-radius: 20px;
+          padding: 40px 30px;
+        }
+      }
+
+      .grid_wrapper {
+    display: flex;
+    gap: 25px;
+    margin-left: -100px;
+    position: relative;
+    z-index: 2;
+}
+
+      @media (max-width: 767px) {
+        .process_steps .grid_wrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 25px;
+          margin-left: 0px;
+          position: relative;
+          z-index: 2;
+        }
+      }
+      .team_section {
+        position: relative;
+        padding: 80px 0;
+        overflow: hidden;
+      }
+
+      .team_section .section_background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+      }
+
+      .team_section .section_background::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .team_section{
+        background-image: url('assets/images/background/bg4.png');
+        background-size: contain;
+        background-position:top center;
+        background-repeat: repeat;
+        z-index: -1;
+
+      }
+
+      .team_section .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* background: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)); */
+        z-index: -1;
+      }
+
+      .team_section .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .team_section .section_title {
+        font-size: 52px;
+        font-weight: 700;
+        color: #0A142F;
+        text-align: left;
+        margin-bottom: 16px;
+        max-width: 500px;
+      }
+
+      .team_section .section_subtitle {
+        font-size: 18px;
+        color: #6B4CE6;
+        text-align: left;
+        max-width: 500px;
+        margin: 0 0 48px 0;
+        line-height: 1.6;
+        font-weight: bold;
+      }
+
+      .doctors_grid {
+        display: flex;
+        gap: 24px;
+        max-width: 100%;
+        margin: 60px auto 0;
+        padding: 0 15px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: thin;
+        scrollbar-color: #00A9FF #F8F9FF;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 20px;
+      }
+
+      .doctors_grid::-webkit-scrollbar {
+        height: 8px;
+      }
+
+      .doctors_grid::-webkit-scrollbar-track {
+        background: #F8F9FF;
+        border-radius: 10px;
+      }
+
+      .doctors_grid::-webkit-scrollbar-thumb {
+        background: #00A9FF;
+        border-radius: 10px;
+      }
+
+      .doctors_grid::-webkit-scrollbar-thumb:hover {
+        background: #0A142F;
+      }
+
+      .doctor_card {
+        min-width: 450px;
+        height: 700px;
+        scroll-snap-align: start;
+        background: #fff;
+        border-radius: 20px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        background-color: #F8F4FF;
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 1;
+      }
+
+      .doctor_image_wrapper {
+        position: relative;
+        width: 100%;
+        height: 550px;
+        border-radius: 20px 20px 0 0;
+        overflow: hidden;
+        padding: 24px;
+        background-color: #F8F4FF;
+      }
+
+      .doctor_image {
+        width: 100%;
+        height: 100%;
+        border-radius: 16px;
+        object-fit: cover;
+      }
+
+      .appointment_btn {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%) translateY(100%);
+        background: #8667FF;
+        color: white;
+        padding: 16px 32px;
+        border-radius: 8px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        opacity: 0;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        font-weight: 500;
+        font-size: 16px;
+      }
+
+      .appointment_btn i {
+        font-size: 18px;
+      }
+
+      .doctor_info {
+        height: 150px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px;
+        background: #F8F4FF;
+      }
+
+      .doctor_details {
+        flex: 1;
+      }
+
+      .doctor_name {
+        font-size: 24px;
+        font-weight: 600;
+        color: #2D1857;
+        margin-bottom: 8px;
+      }
+
+      .doctor_specialty {
+        font-size: 16px;
+        color: #6B4CE6;
+        margin: 0;
+      }
+
+      .view_more_btn {
+        width: 40px;
+        height: 40px;
+        background: #6B4CE6;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .social_links {
+        position: absolute;
+        bottom: -50px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        opacity: 0;
+        padding: 16px 0;
+        background-color: #F8F4FF;
+        transform: translateY(0);
+        transition: all 0.3s ease;
+        border-radius: 0 0 20px 20px;
+      }
+
+      .social_links a {
+        color: #2D1857;
+        text-decoration: none;
+        font-size: 18px;
+        transition: all 0.3s ease;
+      }
+
+      .social_links a:hover {
+        color: #6B4CE6;
+        transform: translateY(-3px);
+      }
+
+      /* Hover Effects */
+      .doctor_card:hover {
+        background-color: white;
+        z-index: 2;
+      }
+
+      .doctor_card:hover .doctor_image {
+        transform: scale(1.05);
+      }
+
+      .doctor_card:hover .appointment_btn {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+      }
+
+      .doctor_card:hover .doctor_info {
+        background: #2D1857;
+        border-radius: 0;
+      }
+
+      .doctor_card:hover .doctor_name {
+        color: white;
+      }
+
+      .doctor_card:hover .view_more_btn {
+        background: white;
+        color: #2D1857;
+      }
+
+      .doctor_card:hover .social_links {
+        opacity: 1;
+        transform: translateY(-50px);
+      }
+
+      .item_image {
+        position: relative;
+        height: 180px;
+        overflow: hidden;
+      }
+
+      .item_image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .team_item:hover .item_image img {
+        transform: scale(1.05);
+      }
+
+      .item_content {
+        padding: 15px;
+        text-align: center;
+        position: relative;
+        background: #fff;
+      }
+
+      .item_title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 3px;
+        color: #333;
+      }
+
+      .item_designation {
+        color: #6B4CE6;
+        font-size: 0.85rem;
+        font-weight: 500;
+        margin-bottom: 12px;
+        display: block;
+        letter-spacing: 0.5px;
+      }
+
+      .social_links {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 12px;
+        position: relative;
+      }
+
+      .social_links::before {
+        content: '';
+        position: absolute;
+        top: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30px;
+        height: 2px;
+        background: #6B4CE6;
+        opacity: 0.3;
+      }
+
+      .social_links a {
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+      }
+
+      .contact_icon {
+        width: 32px;
+        height: 32px;
+      }
+      .view_all_btn {
+        position: absolute;
+        top: 0;
+        right: 80px;
+        background: #6B4CE6;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 50px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 500;
+        font-size: 16px;
+        transition: all 0.3s ease;
+      }
+
+      .view_all_btn i {
+        font-size: 16px;
+        background: rgba(255, 255, 255, 0.2);
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      .view_all_btn:hover {
+        background: #8667FF;
+      }
+
+      .view_all_btn:hover i {
+        transform: translateX(3px);
+      }
+
+      .team_section .container {
+        position: relative;
+        padding: 0 80px;
+      }
+      /* Team Section Styles */
+      .team-section {
+        padding: 100px 0 120px;
+        position: relative;
+      }
+
+      .team-section .top-mediic-section {
+        margin-bottom: 0;
+      }
+
+      .team-section .mediic-shape {
+        position: absolute;
+        right: 350px;
+        text-align: right;
+        z-index: -1;
+      }
+
+      .team-single-box {
+        padding: 30px 30px 32px;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.30196078431372547);
+        border: 2px solid #ffffff;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        transition: all 0.3s ease;
+      }
+
+      .team-single-box::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        width: 0;
+        height: 0;
+        z-index: 2;
+        opacity: 0;
+        border-top: 2px solid #6f42c1;
+        border-left: 2px solid #6f42c1;
+        transition: all linear 0.5s;
+      }
+
+      .team-single-box::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        right: -2px;
+        width: 0;
+        height: 0;
+        z-index: 2;
+        opacity: 0;
+        border-bottom: 2px solid #6f42c1;
+        border-right: 2px solid #6f42c1;
+        transition: all linear 0.5s;
+      }
+
+      .team-thumb {
+        position: relative;
+        z-index: 21;
+      }
+
+      .team-thumb img {
+        border-radius: 25px;
+        width: 100%;
+      }
+
+      .team-thumb:after {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0%;
+        transition: 0.5s;
+        border-radius: 20px;
+        background-image: linear-gradient(
+          0deg,
+          rgba(111, 66, 193, 0.9) 0%,
+          rgba(111, 66, 193, 0.9) 20%,
+          rgba(111, 66, 193, 0) 50%,
+          transparent 70%
+        );
+      }
+
+      .social-icon {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        transition: 0.5s;
+        z-index: 1;
+      }
+
+      .social-icon ul li {
+        display: inline-block;
+        padding-right: 9px;
+        list-style: none;
+      }
+
+      .social-icon ul li i {
+        width: 42px;
+        line-height: 42px;
+        height: 42px;
+        border-radius: 21px;
+        background-color: #ffffff;
+        color: #6f42c1;
+        transition: 0.5s;
+      }
+
+      .social-icon ul li i:hover {
+        background-color: #6f42c1;
+        color: #ffffff;
+      }
+
+      .team-content h5 {
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+        padding: 26px 0 0;
+        color: #6f42c1;
+      }
+
+      .team-content h2 {
+        font-size: 28px;
+        font-weight: 600;
+        color: #4a148c;
+      }
+
+      .team-single-box:hover .social-icon {
+        bottom: 35px;
+        opacity: 1;
+      }
+
+      .team-single-box:hover .team-thumb:after {
+        height: 100%;
+      }
+
+      /* Swiper Styles */
+      .team-section .swiper {
+        padding-top: 50px;
+        padding-bottom: 80px;
+      }
+
+      .style-2 .swiper-slide {
+        background-position: center;
+        background-size: cover;
+      }
+
+      .style-2 .swiper-pagination-bullet {
+        width: var(
+          --swiper-pagination-bullet-width,
+          var(--swiper-pagination-bullet-size, 11px)
+        ) !important;
+        height: var(
+          --swiper-pagination-bullet-height,
+          var(--swiper-pagination-bullet-size, 11px)
+        ) !important;
+      }
+
+      .swiper-slide.swiper-slide-active .team-single-box .team-thumb:after {
+        height: 100%;
+      }
+
+      .swiper-slide.swiper-slide-active .team-single-box::before {
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+        border-radius: 20px;
+      }
+
+      /* Team Box Styles */
+      .team-single-box {
+        padding: 30px 30px 32px;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.30196078431372547);
+        border: 2px solid #ffffff;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        transition: all 0.3s ease;
+      }
+
+      .team-single-box::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        width: 0;
+        height: 0;
+        z-index: 2;
+        opacity: 0;
+        border-top: 2px solid #6f42c1;
+        border-left: 2px solid #6f42c1;
+        transition: all linear 0.5s;
+      }
+
+      .team-single-box::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        right: -2px;
+        width: 0;
+        height: 0;
+        z-index: 2;
+        opacity: 0;
+        border-bottom: 2px solid #6f42c1;
+        border-right: 2px solid #6f42c1;
+        transition: all linear 0.5s;
+      }
+
+      .team-single-box:hover:before,
+      .team-single-box:hover:after {
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+        border-radius: 20px;
+      }
+
+      /* Team Thumb Styles */
+      .team-thumb {
+        position: relative;
+        z-index: 21;
+      }
+
+      .team-thumb img {
+        border-radius: 25px;
+        width: 100%;
+      }
+
+      .team-thumb:after {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0%;
+        transition: 0.5s;
+        border-radius: 20px;
+        background-image: linear-gradient(
+          0deg,
+          rgba(111, 66, 193, 0.9) 0%,
+          rgba(111, 66, 193, 0.9) 20%,
+          rgba(111, 66, 193, 0) 50%,
+          transparent 70%
+        );
+      }
+
+      /* Social Icons */
+      .social-icon {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        transition: 0.5s;
+        z-index: 1;
+      }
+
+      .social-icon ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .social-icon ul li {
+        display: inline-block;
+        padding-right: 9px;
+      }
+
+      .social-icon ul li i {
+        width: 42px;
+        line-height: 42px;
+        height: 42px;
+        border-radius: 21px;
+        background-color: #ffffff;
+        color: #6f42c1;
+        transition: 0.5s;
+      }
+
+      .team-single-box:hover .social-icon {
+        bottom: 35px;
+        opacity: 1;
+      }
+
+      .team-single-box:hover .team-thumb:after {
+        height: 100%;
+      }
+
+      /* Team Content */
+      .team-content h5 {
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+        padding: 26px 0 0;
+        margin: 0;
+        color: #6f42c1;
+      }
+
+      .team-content h2 {
+        font-size: 28px;
+        font-weight: 600;
+        margin: 10px 0;
+        color: #4a148c;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 991px) {
+        .team-section {
+          padding: 60px 0;
+        }
+        .team-content h2 {
+          font-size: 24px;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .team-section {
+          padding: 40px 0;
+        }
+        .team-content h2 {
+          font-size: 20px;
+        }
+        .team-content h5 {
+          font-size: 14px;
+        }
+      }
+      .swiper-pagination-bullet {
+        background: #6f42c1 !important;
+      }
+
+      .swiper-pagination-bullet-active {
+        background: #4a148c !important;
+      }
+      /* Team Section Header Styles */
+      .team-section {
+        background: #f0f4ff;
+      }
+      
+      .top-mediic-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 50px;
+      }
+
+      .mediic-section-title h1 {
+        color: #0a1f44;
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 1.2;
+        margin: 0;
+      }
+
+      .counter-single-box {
+        text-align: right;
+      }
+
+      .counter-box-title {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+
+      .counter-box-title h1 {
+        color: #6f42c1;
+        font-size: 48px;
+        font-weight: 700;
+        margin: 0;
+        line-height: 1;
+      }
+
+      .counter-desc {
+        color: #0a1f44;
+        font-size: 16px;
+        font-weight: 500;
+        margin: 5px 0 0;
+      }
+
+      @media (max-width: 991px) {
+        .top-mediic-section {
+          flex-direction: column;
+          text-align: center;
+          gap: 20px;
+        }
+
+        .counter-single-box {
+          text-align: center;
+        }
+
+        .counter-box-title {
+          justify-content: center;
+        }
+
+        .mediic-section-title h1 {
+          font-size: 36px;
+        }
+      }
+      /* Purple Glow Animation */
+      @keyframes purpleGlow {
+        0% {
+          opacity: 0.3;
+          transform: scale(0.95);
+        }
+        50% {
+          opacity: 0.6;
+          transform: scale(1.05);
+        }
+        100% {
+          opacity: 0.3;
+          transform: scale(0.95);
+        }
+      }
+
+      .team-section {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .team-section::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: radial-gradient(
+          circle at center,
+          rgba(111, 66, 193, 0.15) 0%,
+          rgba(111, 66, 193, 0.1) 25%,
+          rgba(111, 66, 193, 0.05) 50%,
+          transparent 70%
+        );
+        animation: purpleGlow 3s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      /* Add a second glow for more effect */
+      .team-section::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: radial-gradient(
+          circle at center,
+          rgba(74, 20, 140, 0.1) 0%,
+          rgba(74, 20, 140, 0.05) 30%,
+          transparent 60%
+        );
+        animation: purpleGlow 4s ease-in-out infinite reverse;
+        pointer-events: none;
+      }
+
+      /* Ensure cards stay above the glow */
+      .swiper {
+        position: relative;
+        z-index: 2;
+      }
+
+      .team-single-box {
+        position: relative;
+        z-index: 3;
+        backdrop-filter: blur(5px);
+      }
+      .center-description{
+        display: flex;
+        justify-content: center;
+      }
+      .center-description p{
+        width: 55%;
+        font-weight: 800;
+        color: rebeccapurple;
+        font-size: 14px;
+      }
+    </style>
+    <style>
+      .section_title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+
+      .title_wrap {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .slider_arrows {
+        display: flex;
+        gap: 10px;
+      }
+
+      .slider_arrow {
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background: transparent;
+        color: #6B4CE6;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .slider_arrow:hover {
+        color: #2D1857;
+      }
+
+      .slider_arrow i {
+        font-size: 32px;
+      }
+
+      /* Hide the old carousel arrows */
+      .carousel_arrow {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="body_wrap">
+      
+      <div class="backtotop">
+        <a href="#" class="scroll"><i class="far fa-arrow-up"></i></a>
+      </div>
+      <header class="header_section header_boxed">
+        <div class="container">
+          <div class="box_wrap d-flex justify-content-center">
+            <nav class="main_menu navbar navbar-expand-lg">
+              <div
+                class="main_menu_inner collapse navbar-collapse"
+                id="main_menu_dropdown"
+              >
+                <ul class="main_menu_list unorder_list_center d-flex align-items-center">
+                  <li class="active dropdown">
+                    <a
+                      class="nav-link"
+                      href="#"
+                      id="home_submenu"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      >Home</a
+                    >
+                    <ul class="dropdown-menu" aria-labelledby="home_submenu">
+                      <li class="active">
+                        <a href="index_1.html">Home V.1</a>
+                      </li>
+                      <li><a href="index_2.html">Home V.2</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a
+                      class="nav-link"
+                      href="#"
+                      id="service_submenu"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      >Services</a
+                    >
+                    <ul class="dropdown-menu" aria-labelledby="service_submenu">
+                      <li><a href="service.html">Our Service</a></li>
+                      <li>
+                        <a href="service_details.html">Service Details</a>
+                      </li>
+                      <li><a href="gallery.html">Our Gallery</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <div class="site_logo mx-4">
+                      <a href="index.html"
+                        ><img
+                          class="logo_before"
+                          src="assets/images/logo/Untitled-3.png"
+                          alt="Petopia Logo"
+                      /></a>
+                    </div>
+                  </li>
+                  <li class="dropdown">
+                    <a
+                      class="nav-link"
+                      href="#"
+                      id="shop_submenu"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      >Shop</a
+                    >
+                    <ul class="dropdown-menu" aria-labelledby="shop_submenu">
+                      <li><a href="shop.html">Our Shop</a></li>
+                      <li><a href="shop_details.html">Shop Details</a></li>
+                      <li><a href="sales.html">Sales Page</a></li>
+                      <li><a href="cart.html">Shopping Cart</a></li>
+                      <li><a href="shipping_info.html">Shipping Info</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a
+                      class="nav-link"
+                      href="#"
+                      id="blog_submenu"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      >Blog</a
+                    >
+                    <ul class="dropdown-menu" aria-labelledby="blog_submenu">
+                      <li><a href="blog.html">Our Blogs</a></li>
+                      <li><a href="blog_details.html">Blog Details</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a
+                      class="nav-link"
+                      href="#"
+                      id="pages_submenu"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      >Pages</a
+                    >
+                    <ul class="dropdown-menu" aria-labelledby="pages_submenu">
+                      <li><a href="about.html">About Us</a></li>
+                      <li><a href="contact.html">Contact Us</a></li>
+                      <li><a href="faq.html">FAQ</a></li>
+                      <li><a href="error.html">Error 404</a></li>
+                      <li><a href="team.html">Our Team</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+            <ul class="header_btns_group unorder_list_right">
+              <li>
+                <button
+                  class="mobile_menu_btn"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#main_menu_dropdown"
+                  aria-controls="main_menu_dropdown"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <i class="far fa-bars"></i>
+                </button>
+              </li>
+              <li class="dropdown">
+                <button
+                  class="cart_btn"
+                  type="button"
+                  id="cart_dropdown"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-shopping-cart"></i>
+                  <small class="cart_counter">2</small> <span>item</span>
+                </button>
+                <div
+                  class="cart_dropdown dropdown-menu"
+                  aria-labelledby="cart_dropdown"
+                >
+                  <ul class="cart_items_list unorder_list_block">
+                    <li>
+                      <a class="item_image" href="shop_details.html"
+                        ><img
+                          src="assets/images/cart/cart_img_1.jpg"
+                          alt="Pet Care Service"
+                      /></a>
+                      <div class="item_content">
+                        <h3 class="item_title">
+                          <a href="shop_details.html"
+                            >Flying Fish Cat Scratching</a
+                          >
+                        </h3>
+                        <span class="item_price">1 × $12.35</span>
+                      </div>
+                      <button class="remove_btn" type="button">
+                        <i class="fal fa-times"></i>
+                      </button>
+                    </li>
+                    <li>
+                      <a class="item_image" href="shop_details.html"
+                        ><img
+                          src="assets/images/cart/cart_img_2.jpg"
+                          alt="Pet Care Service"
+                      /></a>
+                      <div class="item_content">
+                        <h3 class="item_title">
+                          <a href="shop_details.html">Pet Bed</a>
+                        </h3>
+                        <span class="item_price">1 × $58.16</span>
+                      </div>
+                      <button class="remove_btn" type="button">
+                        <i class="fal fa-times"></i>
+                      </button>
+                    </li>
+                  </ul>
+                  <hr />
+                  <div class="total_price">
+                    <span>Total</span> <strong>$70.51</strong>
+                  </div>
+                  <a class="btn border_primary" href="cart.html">Update Cart</a>
+                  <a class="btn btn_primary" href="cart.html">Checkout</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <main>
+        <section
+          class="banner_section banner_style_1 decoration_wrap"
+          style="
+            background-image: url('assets/images/background/shape_bg_1.png');
+          "
+        >
+          <div
+            class="section_overlay"
+            style="
+              background-image: url('assets/images/overlay/shapes_overlay_1.svg');
+            "
+          ></div>
+          <div class="container">
+            <div class="banner_content">
+              <h1 class="banner_title">
+                Expert Veterinary Care, Tailored to Your Pet's Needs
+              </h1>
+              <p class="banner_description">
+                A Pioneering Veterinary Clinic, Providing Exceptional Care Every Step of the Way
+              </p>
+              <a class="btn btn_primary" href="service.html"
+                ><i class="fas fa-paw"></i> Book an Appointment</a
+              >
+              <div class="banner_services_wrap row">
+                <div class="col">
+                  <div class="iconbox_item iconbox_overicon">
+                    <div class="item_icon">
+                      <svg
+                        width="31"
+                        height="30"
+                        viewBox="0 0 31 30"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.291 10.3611C16.1191 10.3611 11.0215 10.4783 7.79883 15.4001V10.3611C7.79883 7.31421 5.2207 4.73608 2.17383 4.73608C1.11914 4.73608 0.298828 5.61499 0.298828 6.61108C0.298828 7.66577 1.11914 8.48608 2.17383 8.48608C3.16992 8.48608 4.04883 9.36499 4.04883 10.3611V25.3611C4.04883 27.4705 5.68945 29.1111 7.79883 29.1111H18.1113C18.5801 29.1111 19.0488 28.7009 19.0488 28.1736V27.2361C19.0488 26.24 18.1699 25.3611 17.1738 25.3611H15.2988L22.7988 19.7361V28.1736C22.7988 28.7009 23.209 29.1111 23.7363 29.1111H25.6113C26.0801 29.1111 26.5488 28.7009 26.5488 28.1736V16.1033C25.9043 16.2791 25.3184 16.3962 24.6738 16.3962C21.041 16.3962 17.9941 13.8181 17.291 10.3611ZM26.5488 4.73608H22.7988L19.0488 0.986084V8.89624C19.0488 12.0017 21.5098 14.5212 24.6738 14.5212C27.7793 14.5212 30.2988 12.0017 30.2988 8.89624V0.986084L26.5488 4.73608ZM22.3301 9.42358C21.8027 9.42358 21.3926 9.01343 21.3926 8.48608C21.3926 8.01733 21.8027 7.54858 22.3301 7.54858C22.7988 7.54858 23.2676 8.01733 23.2676 8.48608C23.2676 9.01343 22.7988 9.42358 22.3301 9.42358ZM27.0176 9.42358C26.4902 9.42358 26.0801 9.01343 26.0801 8.48608C26.0801 8.01733 26.4902 7.54858 27.0176 7.54858C27.4863 7.54858 27.9551 8.01733 27.9551 8.48608C27.9551 9.01343 27.4863 9.42358 27.0176 9.42358Z"
+                          fill="#7C58D3"
+                        />
+                      </svg>
+                    </div>
+                    <div class="item_content">
+                      <h3 class="item_title mb-0">Vet services</h3>
+                    </div>
+                    <a class="item_global_link" href="service.html"></a>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="iconbox_item iconbox_overicon">
+                    <div class="item_icon">
+                      <svg
+                        width="39"
+                        height="20"
+                        viewBox="0 0 39 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M35.6465 9.46655C35.373 9.58374 35.2363 9.79858 35.2363 10.1111C35.2363 10.4236 35.373 10.6384 35.6465 10.7556C36.3887 11.1462 36.9746 11.6931 37.4043 12.3962C37.834 13.0994 38.0488 13.8611 38.0488 14.6814V15.1501C38.0488 16.322 37.6191 17.3376 36.7598 18.197C35.9004 19.0564 34.8848 19.4861 33.7129 19.4861C32.7754 19.4861 31.916 19.2126 31.1348 18.6658C30.3926 18.1189 29.8652 17.3962 29.5527 16.4978C29.5527 16.4587 29.4941 16.283 29.377 15.9705C29.2598 15.6189 29.1816 15.4041 29.1426 15.3259C29.1035 15.2087 29.0254 15.033 28.9082 14.7986C28.791 14.5251 28.6543 14.3494 28.498 14.2712C28.3809 14.1931 28.2246 14.115 28.0293 14.0369C27.834 13.9197 27.5996 13.8611 27.3262 13.8611H11.2715C11.0762 13.8611 10.9004 13.8806 10.7441 13.9197C10.5879 13.9587 10.4512 14.0173 10.334 14.0955C10.2168 14.1345 10.0996 14.2322 9.98242 14.3884C9.9043 14.5056 9.82617 14.6033 9.74805 14.6814C9.66992 14.7595 9.5918 14.8962 9.51367 15.0916C9.43555 15.2869 9.37695 15.4431 9.33789 15.5603C9.33789 15.6384 9.29883 15.7947 9.2207 16.0291C9.14258 16.2634 9.08398 16.4197 9.04492 16.4978C8.73242 17.3962 8.18555 18.1189 7.4043 18.6658C6.66211 19.2126 5.82227 19.4861 4.88477 19.4861C3.71289 19.4861 2.69727 19.0564 1.83789 18.197C0.978516 17.3376 0.548828 16.322 0.548828 15.1501V14.6814C0.548828 13.8611 0.763672 13.0994 1.19336 12.3962C1.62305 11.6931 2.20898 11.1462 2.95117 10.7556C3.22461 10.6384 3.36133 10.4236 3.36133 10.1111C3.36133 9.79858 3.22461 9.58374 2.95117 9.46655C2.20898 9.07593 1.62305 8.52905 1.19336 7.82593C0.763672 7.1228 0.548828 6.36108 0.548828 5.54077V5.07202C0.548828 3.90015 0.978516 2.88452 1.83789 2.02515C2.69727 1.16577 3.71289 0.736084 4.88477 0.736084C5.50977 0.736084 6.0957 0.872803 6.64258 1.14624C7.22852 1.38062 7.7168 1.73218 8.10742 2.20093C8.53711 2.63062 8.84961 3.13843 9.04492 3.72437C9.04492 3.76343 9.10352 3.95874 9.2207 4.3103C9.33789 4.6228 9.41602 4.83765 9.45508 4.95483C9.49414 5.03296 9.57227 5.20874 9.68945 5.48218C9.80664 5.71655 9.92383 5.8728 10.041 5.95093C10.1973 6.02905 10.373 6.12671 10.5684 6.2439C10.7637 6.32202 10.998 6.36108 11.2715 6.36108H27.3262C27.5215 6.36108 27.6973 6.34155 27.8535 6.30249C28.0488 6.26343 28.2051 6.1853 28.3223 6.06812C28.4785 5.95093 28.5957 5.85327 28.6738 5.77515C28.791 5.69702 28.8887 5.54077 28.9668 5.3064C29.084 5.07202 29.1426 4.91577 29.1426 4.83765C29.1816 4.75952 29.2598 4.56421 29.377 4.25171C29.4941 3.93921 29.5527 3.76343 29.5527 3.72437C29.8652 2.82593 30.3926 2.10327 31.1348 1.5564C31.916 1.00952 32.7754 0.736084 33.7129 0.736084C34.8848 0.736084 35.9004 1.16577 36.7598 2.02515C37.6191 2.88452 38.0488 3.90015 38.0488 5.07202V5.54077C38.0488 6.36108 37.834 7.1228 37.4043 7.82593C36.9746 8.52905 36.3887 9.07593 35.6465 9.46655Z"
+                          fill="#7C58D3"
+                        />
+                      </svg>
+                    </div>
+                    <div class="item_content">
+                      <h3 class="item_title mb-0">Special care</h3>
+                    </div>
+                    <a class="item_global_link" href="service.html"></a>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="iconbox_item iconbox_overicon">
+                    <div class="item_icon">
+                      <svg
+                        width="35"
+                        height="32"
+                        viewBox="0 0 35 32"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16.5371 15.7595L10.1504 9.07983C9.25195 8.14233 8.82227 6.97046 8.86133 5.56421C8.93945 4.15796 9.48633 3.02515 10.502 2.16577C11.4004 1.38452 12.4355 1.05249 13.6074 1.16968C14.8184 1.2478 15.834 1.71655 16.6543 2.57593L17.2988 3.27905L17.9434 2.57593C18.8027 1.71655 19.8184 1.2478 20.9902 1.16968C22.1621 1.05249 23.1973 1.38452 24.0957 2.16577C25.1504 3.02515 25.6973 4.15796 25.7363 5.56421C25.8145 6.97046 25.3848 8.14233 24.4473 9.07983L18.0605 15.7595C17.8262 15.9939 17.5723 16.1111 17.2988 16.1111C17.0254 16.1111 16.7715 15.9939 16.5371 15.7595ZM33.5293 20.3298C33.998 20.7205 34.2129 21.2087 34.1738 21.7947C34.1738 22.3806 33.9395 22.8494 33.4707 23.2009L24.623 30.2908C23.9199 30.8376 23.1387 31.1111 22.2793 31.1111H1.36133C1.08789 31.1111 0.853516 31.0134 0.658203 30.8181C0.501953 30.6619 0.423828 30.447 0.423828 30.1736V24.5486C0.423828 24.2751 0.501953 24.0603 0.658203 23.9041C0.853516 23.7087 1.08789 23.6111 1.36133 23.6111H4.58398L7.33789 21.3845C8.58789 20.3689 10.0332 19.8611 11.6738 19.8611H21.0488C21.6348 19.8611 22.1035 20.0955 22.4551 20.5642C22.8457 20.9939 23.002 21.4822 22.9238 22.0291C22.8457 22.4978 22.6113 22.8884 22.2207 23.2009C21.8301 23.4744 21.4004 23.6111 20.9316 23.6111H16.3613C16.0879 23.6111 15.8535 23.7087 15.6582 23.9041C15.502 24.0603 15.4238 24.2751 15.4238 24.5486C15.4238 24.822 15.502 25.0564 15.6582 25.2517C15.8535 25.408 16.0879 25.4861 16.3613 25.4861H23.2754C24.1738 25.4861 24.9551 25.2126 25.6191 24.6658L31.0684 20.3298C31.4199 20.0173 31.8301 19.8611 32.2988 19.8611C32.7676 19.8611 33.1777 20.0173 33.5293 20.3298Z"
+                          fill="#7C58D3"
+                        />
+                      </svg>
+                    </div>
+                    <div class="item_content">
+                      <h3 class="item_title mb-0">High quality</h3>
+                    </div>
+                    <a class="item_global_link" href="service.html"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="decoration_item shape_1">
+            <svg
+              width="385"
+              height="384"
+              viewBox="0 0 385 384"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="192.243"
+                cy="192"
+                r="190"
+                stroke="url(#shape_circle_1)"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-dasharray="107 107"
+              />
+              <circle cx="192.243" cy="192" r="170" fill="#8E7AB5" />
+              <defs>
+                <linearGradient
+                  id="shape_circle_1"
+                  x1="-30.159"
+                  y1="-153.951"
+                  x2="-30.159"
+                  y2="290.853"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="1" stop-color="#B784B7" />
+                  <stop offset="1" stop-color="#B784B7" stop-opacity="0.01" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="decoration_item shape_2">
+            <svg
+              width="385"
+              height="384"
+              viewBox="0 0 385 384"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="192.243"
+                cy="192"
+                r="190"
+                stroke="url(#shape_circle_2)"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-dasharray="107 107"
+              />
+              <circle cx="192.243" cy="192" r="170" fill="#CDF0EA" />
+              <defs>
+                <linearGradient
+                  id="shape_circle_2"
+                  x1="-30.159"
+                  y1="-153.951"
+                  x2="-30.159"
+                  y2="290.853"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="1" stop-color="#CDF0EA" />
+                  <stop offset="1" stop-color="#CDF0EA" stop-opacity="0.01" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="decoration_item chat_img_1">
+            <img src="assets/images/banner/cat_img_1.png" alt="Cat Image" />
+          </div>
+          <div class="decoration_item chat_img_2">
+            <img src="assets/images/banner/cat_img_2.png" alt="Cat Image" />
+          </div>
+        </section>
+        <section class="medical_services_section section_space_lg position-relative">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-lg-6">
+                <div class="medical_image_wrapper">
+                  <img src="assets/images/banner/_A7A9402.jpg" alt="Medical Consultation" class="img-fluid" />
+                </div>
+              </div>
+              <div class="col-lg-6 ps-lg-5">
+                <div class="medical_services_card">
+                  <span class="medical_label">Welcome to Elite Vet</span>
+                  <h2 class="display-5 fw-bold text-navy mb-4">Your trusted pet<br>veterinary clinic</h2>
+                  <p class="text-secondary mb-5">
+                    We are committed to providing top-quality care for your pets using<br>
+                    the latest technology & under the care of the best veterinarians.
+                  </p>
+                  
+                  <div class="services_list">
+                    <div class="service_item d-flex align-items-start">
+                      <div class="service_icon me-3" style="color: #6B4CE6; font-size: 24px;">
+                        <i class="fas fa-stethoscope"></i>
+                      </div>
+                      <div class="service_content">
+                        <h5 class="fw-bold mb-2">PRIMARY VETERINARY CARE</h5>
+                        <p class="text-secondary mb-0">Our veterinary clinic offers routine check-ups and vaccinations to keep your pets healthy and happy</p>
+                      </div>
+                    </div>
+                    
+                    <div class="service_item d-flex align-items-start">
+                      <div class="service_icon me-3" style="color: #6B4CE6; font-size: 24px;">
+                        <i class="fas fa-syringe"></i>
+                      </div>
+                      <div class="service_content">
+                        <h5 class="fw-bold mb-2">SPECIALIZED TREATMENTS</h5>
+                        <p class="text-secondary mb-0">Advanced surgical procedures and comprehensive dental care services for your beloved pets</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="text-start mt-5">
+                    <a href="about.html" class="btn_purple">
+                      Read More
+                      <i class="fas fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="shape_top">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="20" fill="#6b4ce6" opacity="0.1"/>
+            </svg>
+          </div>
+          <div class="shape_bottom">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+              <circle cx="25" cy="25" r="25" fill="#6b4ce6" opacity="0.1"/>
+            </svg>
+          </div>
+        </section>
+
+                <!-- Video Section Start --> 
+                <section class="video_section">
+                  <div class="container">
+                    <div class="video_content">
+                      <div class="play_button_wrapper">
+                        <div class="play_button" onclick="openVideoModal()">
+                          <i class="fas fa-play"></i>
+                        </div>
+                      </div>
+                      <div class="text_content">
+                        <h2 class="video_title">What we offer?</h2>
+                        <p class="video_description">
+                          As a leading Riyadh veterinary clinic, we offer a comprehensive range of veterinary services to keep your furry companions happy and healthy.
+                        </p>
+                        <a href="service.html" class="read_more_btn">
+                          Read more <i class="fas fa-arrow-right"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <!-- Video Section End -->
+        
+                <!-- Video Modal -->
+                <div class="video_modal" id="videoModal">
+                  <div class="video_modal_content">
+                    <button class="video_modal_close" onclick="closeVideoModal()">
+                      <i class="fas fa-times"></i>
+                    </button>
+                    <iframe id="videoFrame" src="" title="Video Player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                </div>
+        
+                <script>
+                  function openVideoModal() {
+                    const modal = document.getElementById('videoModal');
+                    const videoFrame = document.getElementById('videoFrame');
+                    videoFrame.src = 'https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1';
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                  }
+
+                  function closeVideoModal() {
+                    const modal = document.getElementById('videoModal');
+                    const videoFrame = document.getElementById('videoFrame');
+                    videoFrame.src = '';
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                  }
+                </script>
+
+
+
+<section class="why_choose_section">
+  <div class="container">
+    <div class="section_header">
+      <span class="section_subtitle" style="color: #7C58D3 !important; background: rgba(124, 88, 211, 0.1) !important;">Services</span>
+      <h2 class="section_title">WHY CHOOSE US?</h2>
+      <p class="section_description">
+        As a trusted name in the Riyadh veterinary community since 2013, we've helped more than 200,000,000 pets through:
+      </p>
+      <a href="#" class="all-services-btn" style="background: #7C58D3 !important; color: #fff !important;">All Services</a>
+    </div>
+    
+    <div class="process_steps">
+
+      <div class="grid_wrapper">
+        <div class="process_step">
+          <div class="step_icon">
+            <img src="assets/images/icons/man.png" alt="Personalized Care">
+          </div>
+          <h3 class="step_title">Personalized Care</h3>
+          <p class="step_description">Tailored treatment plans for each pet.</p>
+          <a href="#" class="view-more-btn">View More</a>
+        </div>
+
+        <div class="process_step">
+          <div class="step_icon">
+            <img src="assets/images/icons/lifeline.png" alt="Latest Technology">
+          </div>
+          <h3 class="step_title">Latest Technology</h3>
+          <p class="step_description">Cutting-edge equipment for accurate diagnosis.</p>
+          <a href="#" class="view-more-btn">View More</a>
+        </div>
+
+        <div class="process_step">
+          <div class="step_icon">
+            <img src="assets/images/icons/doctors.png" alt="Compassionate Staff">
+          </div>
+          <h3 class="step_title">Compassionate Staff</h3>
+          <p class="step_description">A dedicated team that loves animals.</p>
+          <a href="#" class="view-more-btn">View More</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<style>
+  .section_divider {
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+    margin-top: -50px;
+    margin-bottom: -50px;
+    z-index: 1;
+  }
+
+  .section_divider svg {
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    fill: #7C58D3;
+  }
+</style>
+
+<div class="section_divider">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+    <path d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+  </svg>
+</div>
+
+<section class="team-section section_space_lg" style="padding-top: 120px;">
+  <div class="container">
+    <div class="top-mediic-section">
+      <div class="mediic-section-title">
+        <h1>MEET OUR DOCTORS</h1>
+      </div>
+      <div class="center-description">
+        <p>Our team of highly skilled veterinarians is committed to providing top-notch care for your furry companions. They're passionate about animal health & dedicated to providing the best possible medical services.</p>
+      </div>
+      <div class="counter-single-box">
+        <div class="counter-box-title">
+          <h1>38+</h1>
+          <span class="counter-text">Professional Doctors</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="team-description text-center mb-5">
+      <!-- <p class="lead">Our veterinary team brings together passionate professionals with decades of combined experience in animal care. Each specialist is committed to providing the highest standard of medical care while treating your pets with the gentleness and compassion they deserve. From routine check-ups to complex procedures, our doctors are here to ensure your pet's health and happiness.</p> -->
+    </div>
+
+    <div class="team-slider-wrapper">
+      <div class="purple-glow-effect"></div>
+      <div class="swiper team">
+        <div class="swiper-wrapper">
+          <!-- Team members slider content -->
+          <div class="swiper-slide">
+            <div class="team-single-box" data-aos="fade-up">
+              <div class="team-thumb">
+                <img src="assets/images/resource/team.jpg" alt="" />
+                <div class="social-icon">
+                  <ul>
+                    <li>
+                      <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="team-content">
+                <h5>CARDIOLOGY</h5>
+                <h2>Dr. David Luis</h2>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="team-single-box" data-aos="zoom-in">
+              <div class="team-thumb">
+                <img src="assets/images/resource/team.jpg" alt="" />
+                <div class="social-icon">
+                  <ul>
+                    <li>
+                      <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="team-content">
+                <h5>DENTISTRY</h5>
+                <h2>Dr. Sarah Smith</h2>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="team-single-box" data-aos="fade-up">
+              <div class="team-thumb">
+                <img src="assets/images/resource/team.jpg" alt="" />
+                <div class="social-icon">
+                  <ul>
+                    <li>
+                      <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="team-content">
+                <h5>NEUROLOGY</h5>
+                <h2>Dr. Michael Chen</h2>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="team-single-box" data-aos="fade-up">
+              <div class="team-thumb">
+                <img src="assets/images/resource/team.jpg" alt="" />
+                <div class="social-icon">
+                  <ul>
+                    <li>
+                      <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="team-content">
+                <h5>PEDIATRICS</h5>
+                <h2>Dr. Emily Brown</h2>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="team-single-box" data-aos="fade-up">
+              <div class="team-thumb">
+                <img src="assets/images/resource/team.jpg" alt="" />
+                <div class="social-icon">
+                  <ul>
+                    <li>
+                      <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="team-content">
+                <h5>ORTHOPEDICS</h5>
+                <h2>Dr. James Wilson</h2>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="team-single-box" data-aos="fade-up">
+              <div class="team-thumb">
+                <img src="assets/images/resource/team.jpg" alt="" />
+                <div class="social-icon">
+                  <ul>
+                    <li>
+                      <a href="team-details.html"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </li>
+                    <li>
+                      <a href="team-details.html"><i class="fa-brands fa-behance"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="team-content">
+                <h5>DERMATOLOGY</h5>
+                <h2>Dr. Sofia Martinez</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .team-section {
+    background: #f0f4ff;
+    position: relative;
+    padding: 120px 0 100px;
+    overflow: hidden;
+  }
+
+  .team-description {
+    max-width: 900px;
+    margin: 0 auto 60px;
+  }
+
+  .team-description p {
+    color: #4a4a4a;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .purple-glow-effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(111, 66, 193, 0.15) 0%, rgba(111, 66, 193, 0.1) 25%, rgba(111, 66, 193, 0.05) 50%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .team-slider-wrapper {
+    position: relative;
+    padding: 40px 0;
+  }
+
+  .top-mediic-section {
+    margin-bottom: 40px;
+  }
+
+  .mediic-section-title h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #2D1857;
+    margin: 0;
+  }
+
+  .counter-box-title {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .counter-box-title h1 {
+    font-size: 48px;
+    color: #6f42c1;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+  }
+
+  .counter-text {
+    color: #4a4a4a;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .top-mediic-section {
+      flex-direction: column;
+      text-align: center;
+      gap: 20px;
+    }
+    
+    .counter-box-title {
+      justify-content: center;
+    }
+    
+    .mediic-section-title h1 {
+      font-size: 32px;
+    }
+    
+    .team-description p {
+      font-size: 16px;
+    }
+  }
+</style>
+
+<style>
+  /* Product Section Styles */
+  .product_section {
+    background: #fff;
+    padding: 80px 0;
+  }
+  
+  .product_carousel {
+    position: relative;
+    padding: 40px 0;
+  }
+  
+  .product_item {
+    background-color: transparent;
+    border-radius: 15px;
+    padding: 0;
+    margin: 10px;
+    box-shadow: none;
+    transition: all 0.3s ease;
+  }
+
+  .product_item:hover {
+    box-shadow: none;
+    transform: translateY(-5px);
+  }
+
+  .item_image {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 300px;
+  }
+
+  .image_wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .product_item:hover .image_wrap img {
+    transform: scale(1.1);
+  }
+
+  .cart_btns_group {
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+  }
+
+  .product_item:hover .cart_btns_group {
+    bottom: 0;
+  }
+
+  .cart_btns_group li a {
+    background: #8E7AB5;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+
+  .cart_btns_group li a:hover {
+    background: #6B4CE6;
+  }
+
+  .badge_group {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+  }
+
+  .badge_sale {
+    background: #FF497C;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+
+  .item_content {
+    padding: 20px 10px 10px;
+    text-align: center;
+    background: transparent;
+  }
+
+  .item_title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .item_title a {
+    color: #2D1857;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .item_title a:hover {
+    color: #6B4CE6;
+  }
+
+  .rating_star {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+
+  .rating_star li i {
+    color: #FFA800;
+    font-size: 18px;
+  }
+
+  .item_price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #6B4CE6;
+  }
+
+  .item_price del {
+    color: #8E7AB5;
+    margin-right: 8px;
+    font-weight: 700;
+  }
+
+  .badge_group {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .badge_sale {
+    background: #FF6B6B;
+    color: #fff;
+  }
+
+  .carousel_arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    z-index: 1;
+  }
+
+  .carousel_arrow button {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    border: none;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .carousel_arrow button:hover {
+    background: #6B4CE6;
+    color: #fff;
+  }
+
+  .carousel_arrow button i {
+    font-size: 20px;
+  }
+
+  .cc4c_left_arrow {
+    left: -20px;
+  }
+
+  .cc4c_right_arrow {
+    right: -20px;
+  }
+</style>
+
+<section class="product_section section_space_md">
+  <div class="container">
+    <div class="section_title">
+      <div class="title_wrap">
+        <h2 class="title_text mb-0">
+          <span class="sub_title">Our Products</span> Top Products
+        </h2>
+      </div>
+      <div class="slider_arrows">
+        <button type="button" class="slider_arrow cc4c_left_arrow">
+          <i class="fas fa-chevron-circle-left"></i>
+        </button>
+        <button type="button" class="slider_arrow cc4c_right_arrow">
+          <i class="fas fa-chevron-circle-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="product_carousel">
+    <div class="row common_carousel_4col" data-slick='{"dots": false, "centerMode": true}'>
+      <div class="col carousel_item">
+        <div class="product_item">
+          <div class="item_image">
+            <a class="image_wrap" href="shop_details.html">
+              <img src="assets/images/shop/product_img_1.jpg" alt="Pink Spiked Collar" />
+            </a>
+            <ul class="cart_btns_group">
+              <li><a href="#!">Add To Cart</a></li>
+              <li><a href="#!"><i class="far fa-heart"></i></a></li>
+              <li><a href="#!" data-bs-toggle="modal" data-bs-target="#quick_view_popup"><i class="far fa-eye"></i></a></li>
+            </ul>
+          </div>
+          <div class="item_content">
+            <h3 class="item_title">
+              <a href="shop_details.html">Pink Spiked Collar</a>
+            </h3>
+            <ul class="rating_star">
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+            </ul>
+            <div class="item_price"><span>$22.99</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="col carousel_item">
+        <div class="product_item">
+          <ul class="badge_group unorder_list_right">
+            <li><a class="badge badge_sale" href="#!">Sale</a></li>
+          </ul>
+          <div class="item_image">
+            <a class="image_wrap" href="shop_details.html">
+              <img src="assets/images/shop/product_img_2.jpg" alt="Squeezz Ball Dog Toy" />
+            </a>
+            <ul class="cart_btns_group">
+              <li><a href="#!">Add To Cart</a></li>
+              <li><a href="#!"><i class="far fa-heart"></i></a></li>
+              <li><a href="#!" data-bs-toggle="modal" data-bs-target="#quick_view_popup"><i class="far fa-eye"></i></a></li>
+            </ul>
+          </div>
+          <div class="item_content">
+            <h3 class="item_title">
+              <a href="shop_details.html">Squeezz Ball Dog Toy</a>
+            </h3>
+            <ul class="rating_star">
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+            </ul>
+            <div class="item_price">
+              <del>$12.39</del> <span>$7.99</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col carousel_item">
+        <div class="product_item">
+          <div class="item_image">
+            <a class="image_wrap" href="shop_details.html">
+              <img src="assets/images/shop/product_img_3.jpg" alt="Hydrolyzed Dry Dog Food" />
+            </a>
+            <ul class="cart_btns_group">
+              <li><a href="#!">Add To Cart</a></li>
+              <li><a href="#!"><i class="far fa-heart"></i></a></li>
+              <li><a href="#!" data-bs-toggle="modal" data-bs-target="#quick_view_popup"><i class="far fa-eye"></i></a></li>
+            </ul>
+          </div>
+          <div class="item_content">
+            <h3 class="item_title">
+              <a href="shop_details.html">Hydrolyzed Dry Dog Food</a>
+            </h3>
+            <ul class="rating_star">
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+            </ul>
+            <div class="item_price"><span>$12.39</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="col carousel_item">
+        <div class="product_item">
+          <div class="item_image">
+            <a class="image_wrap" href="shop_details.html">
+              <img src="assets/images/shop/product_img_4.jpg" alt="Flying Fish Cat Scratching" />
+            </a>
+            <ul class="cart_btns_group">
+              <li><a href="#!">Add To Cart</a></li>
+              <li><a href="#!"><i class="far fa-heart"></i></a></li>
+              <li><a href="#!" data-bs-toggle="modal" data-bs-target="#quick_view_popup"><i class="far fa-eye"></i></a></li>
+            </ul>
+          </div>
+          <div class="item_content">
+            <h3 class="item_title">
+              <a href="shop_details.html">Flying Fish Cat Scratching</a>
+            </h3>
+            <ul class="rating_star">
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+            </ul>
+            <div class="item_price"><span>$25.89</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="col carousel_item">
+        <div class="product_item">
+          <ul class="badge_group unorder_list_right">
+            <li><a class="badge badge_sale" href="#!">Sale</a></li>
+          </ul>
+          <div class="item_image">
+            <a class="image_wrap" href="shop_details.html">
+              <img src="assets/images/shop/product_img_5.jpg" alt="Pet Carrier Bag" />
+            </a>
+            <ul class="cart_btns_group">
+              <li><a href="#!">Add To Cart</a></li>
+              <li><a href="#!"><i class="far fa-heart"></i></a></li>
+              <li><a href="#!" data-bs-toggle="modal" data-bs-target="#quick_view_popup"><i class="far fa-eye"></i></a></li>
+            </ul>
+          </div>
+          <div class="item_content">
+            <h3 class="item_title">
+              <a href="shop_details.html">Pet Carrier Bag</a>
+            </h3>
+            <ul class="rating_star">
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+            </ul>
+            <div class="item_price">
+              <del>$45.99</del> <span>$35.99</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col carousel_item">
+        <div class="product_item">
+          <div class="item_image">
+            <a class="image_wrap" href="shop_details.html">
+              <img src="assets/images/shop/product_img_6.jpg" alt="Cat Bed Luxury" />
+            </a>
+            <ul class="cart_btns_group">
+              <li><a href="#!">Add To Cart</a></li>
+              <li><a href="#!"><i class="far fa-heart"></i></a></li>
+              <li><a href="#!" data-bs-toggle="modal" data-bs-target="#quick_view_popup"><i class="far fa-eye"></i></a></li>
+            </ul>
+          </div>
+          <div class="item_content">
+            <h3 class="item_title">
+              <a href="shop_details.html">Cat Bed Luxury</a>
+            </h3>
+            <ul class="rating_star">
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+            </ul>
+            <div class="item_price"><span>$29.99</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="col carousel_item">
+        <div class="product_item">
+          <ul class="badge_group unorder_list_right">
+            <li><a class="badge badge_sale" href="#!">Sale</a></li>
+          </ul>
+          <div class="item_image">
+            <a class="image_wrap" href="shop_details.html">
+              <img src="assets/images/shop/product_img_7.jpg" alt="Dog Training Leash" />
+            </a>
+            <ul class="cart_btns_group">
+              <li><a href="#!">Add To Cart</a></li>
+              <li><a href="#!"><i class="far fa-heart"></i></a></li>
+              <li><a href="#!" data-bs-toggle="modal" data-bs-target="#quick_view_popup"><i class="far fa-eye"></i></a></li>
+            </ul>
+          </div>
+          <div class="item_content">
+            <h3 class="item_title">
+              <a href="shop_details.html">Dog Training Leash</a>
+            </h3>
+            <ul class="rating_star">
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+            </ul>
+            <div class="item_price">
+              <del>$18.99</del> <span>$14.99</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col carousel_item">
+        <div class="product_item">
+          <div class="item_image">
+            <a class="image_wrap" href="shop_details.html">
+              <img src="assets/images/shop/product_img_8.jpg" alt="Bird Cage Large" />
+            </a>
+            <ul class="cart_btns_group">
+              <li><a href="#!">Add To Cart</a></li>
+              <li><a href="#!"><i class="far fa-heart"></i></a></li>
+              <li><a href="#!" data-bs-toggle="modal" data-bs-target="#quick_view_popup"><i class="far fa-eye"></i></a></li>
+            </ul>
+          </div>
+          <div class="item_content">
+            <h3 class="item_title">
+              <a href="shop_details.html">Bird Cage Large</a>
+            </h3>
+            <ul class="rating_star">
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+            </ul>
+            <div class="item_price"><span>$89.99</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="col carousel_item">
+        <div class="product_item">
+          <div class="item_image">
+            <a class="image_wrap" href="shop_details.html">
+              <img src="assets/images/shop/product_img_9.jpg" alt="Fish Tank Filter" />
+            </a>
+            <ul class="cart_btns_group">
+              <li><a href="#!">Add To Cart</a></li>
+              <li><a href="#!"><i class="far fa-heart"></i></a></li>
+              <li><a href="#!" data-bs-toggle="modal" data-bs-target="#quick_view_popup"><i class="far fa-eye"></i></a></li>
+            </ul>
+          </div>
+          <div class="item_content">
+            <h3 class="item_title">
+              <a href="shop_details.html">Fish Tank Filter</a>
+            </h3>
+            <ul class="rating_star">
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+            </ul>
+            <div class="item_price"><span>$34.99</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="col carousel_item">
+        <div class="product_item">
+          <ul class="badge_group unorder_list_right">
+            <li><a class="badge badge_sale" href="#!">Sale</a></li>
+          </ul>
+          <div class="item_image">
+            <a class="image_wrap" href="shop_details.html">
+              <img src="assets/images/shop/product_img_10.jpg" alt="Hamster Exercise Wheel" />
+            </a>
+            <ul class="cart_btns_group">
+              <li><a href="#!">Add To Cart</a></li>
+              <li><a href="#!"><i class="far fa-heart"></i></a></li>
+              <li><a href="#!" data-bs-toggle="modal" data-bs-target="#quick_view_popup"><i class="far fa-eye"></i></a></li>
+            </ul>
+          </div>
+          <div class="item_content">
+            <h3 class="item_title">
+              <a href="shop_details.html">Hamster Exercise Wheel</a>
+            </h3>
+            <ul class="rating_star">
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+              <li><i class="fas fa-star"></i></li>
+            </ul>
+            <div class="item_price">
+              <del>$15.99</del> <span>$11.99</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel_arrow">
+      <div class="container">
+        <button type="button" class="cc4c_left_arrow">
+          <i class="far fa-arrow-left"></i>
+        </button>
+        <button type="button" class="cc4c_right_arrow">
+          <i class="far fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quick View Modal -->
+<div class="modal fade" id="quick_view_popup" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-body">
+        <div class="product_details">
+          <div class="row">
+            <div class="col col-lg-6">
+              <div class="details_image">
+                <img src="assets/images/shop/product_img_1.jpg" alt="Product">
+              </div>
+            </div>
+            <div class="col col-lg-6">
+              <div class="details_content">
+                <h2 class="item_title">Product Name</h2>
+                <div class="rating_review">
+                  <ul class="rating_star">
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                  </ul>
+                  <span class="review_text">3 Reviews</span>
+                </div>
+                <div class="item_price"><span class="price_text">$22.99</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="appoinment-section">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="mediic-section-title text-center">
+                  <h1>MAKE APPOINTMENT</h1>
+              </div>
+          </div>
+          <div class="mediic-shape-cntr">
+              <img src="assets/images/resource/crcle-bg.png" alt="" />
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="mediic-appoinment">
+  <div class="container">
+      <div class="row appoinment align-items-center">
+          <div class="col-lg-6"></div>
+          <div class="col-lg-6">
+              <div class="mediic-section-title2">
+                  <h4>ONLINE APPOINTMENT</h4>
+                  <h3>Make an Online Appointment Booking For Treatment</h3>
+              </div>
+              <div class="contact-form-box">
+                  <form action="https://formspree.io/f/myyleorq" method="POST" id="appointment-form">
+                      <div class="row">
+                          <div class="col-lg-6 col-md-6">
+                              <div class="form-box">
+                                  <input type="text" name="name" placeholder="Your Name*" required="" />
+                              </div>
+                          </div>
+                          <div class="col-lg-6 col-md-6">
+                              <div class="form-box">
+                                  <input type="email" name="email" placeholder="Your E-Mail*" required="" />
+                              </div>
+                          </div>
+                          <div class="col-lg-6 col-md-6">
+                              <div class="form-box">
+                                  <input type="text" name="subject" placeholder="Pet Type*" required="" />
+                              </div>
+                          </div>
+                          <div class="col-lg-6 col-md-6">
+                              <div class="form-box">
+                                  <input type="tel" name="phone" placeholder="Phone" required="" />
+                              </div>
+                          </div>
+                          <div class="col-lg-12">
+                              <div class="form-box">
+                                  <textarea name="message" placeholder="Type Your Message" required=""></textarea>
+                              </div>
+                          </div>
+                          <div class="col-lg-12 col-md-6">
+                              <div class="submit-button">
+                                  <button type="submit" class="submit-btn">
+                                      Book Appointment <i class="fas fa-arrow-right"></i>
+                                  </button>
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+          <div class="appointment-shape">
+              <div class="mediic-shape-2">
+                  <img src="assets/images/resource/heart2.png" alt="" />
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<style>
+  .appoinment-section {
+      padding: 100px 0 48px;
+      position: relative;
+  }
+
+  .mediic-shape-cntr {
+      position: absolute;
+      top: -260px;
+      z-index: -1;
+  }
+
+  .mediic-appoinment {
+      background-image: url('assets/images/resource/appoinment.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      padding: 100px 0 100px;
+      border-radius: 30px;
+      background-size: contain;
+  }
+
+  .row.appoinment {
+      position: relative;
+      z-index: 1;
+  }
+
+  .contact-form-box {
+      padding: 35px 0 0;
+  }
+
+  .form-box input::placeholder {
+      font-size: 17px;
+      color: #6B4CE6;
+  }
+
+  .form-box input {
+      width: 100%;
+      height: 60px;
+      margin-bottom: 20px;
+      padding: 0 20px;
+      outline: 0;
+      display: inline-block;
+      border-radius: 15px;
+      background-color: rgba(255, 255, 255, 0);
+      border: 1px solid rgba(107, 76, 230, 0.5);
+      font-weight: 500;
+      font-family: "DM Sans";
+  }
+
+  .form-box textarea {
+      width: 100%;
+      padding: 15px 22px;
+      outline: 0;
+      margin-bottom: 25px;
+      outline: 0;
+      display: inline-block;
+      height: 150px;
+      border-radius: 25px;
+      background-color: rgba(255, 255, 255, 0);
+      border: 1px solid rgba(107, 76, 230, 0.5);
+      font-weight: 500;
+      font-family: "DM Sans";
+  }
+
+  .form-box textarea::placeholder {
+      color: #6B4CE6;
+      font-size: 17px;
+  }
+
+  .mediic-shape-2 {
+      position: absolute;
+      top: 0;
+      left: 450px;
+      animation: wooo 3.5s infinite;
+  }
+
+  .submit-btn {
+      padding: 16px 40px;
+      font-size: 18px;
+      color: #fff;
+      display: inline-block;
+      font-weight: 500;
+      font-family: "Albert Sans";
+      border-radius: 32px;
+      position: relative;
+      z-index: 1;
+      transition: 0.5s;
+      overflow: hidden;
+      border: 1px solid #6B4CE6;
+      background-color: #6B4CE6;
+  }
+
+  .submit-btn:hover {
+      background-color: #4C0070;
+      border-color: #4C0070;
+  }
+
+  .submit-btn i {
+      margin-left: 8px;
+  }
+
+  .mediic-section-title {
+      text-align: center;
+      margin-bottom: 50px;
+  }
+
+  .mediic-section-title h1 {
+      font-size: 48px;
+      font-weight: 700;
+      color: #4C0070;
+  }
+
+  .mediic-section-title2 h4 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #6B4CE6;
+      margin-bottom: 15px;
+  }
+
+  .mediic-section-title2 h3 {
+      font-size: 36px;
+      font-weight: 700;
+      color: #4C0070;
+      margin-bottom: 30px;
+  }
+
+  @keyframes wooo {
+      0%, 100% {
+          transform: translateY(0);
+      }
+      50% {
+          transform: translateY(-20px);
+      }
+  }
+
+  body {
+      background: #f8f9fa;
+  }
+
+  .container {
+      max-width: 1200px;
+      margin: 0 auto;
+  }
+</style>
+
+      <footer class="footer_section">
+        <div class="footer_widget_area section_space_lg">
+          <div class="container">
+            <div class="row justify-content-lg-between">
+              <div class="col col-lg-3 col-md-6 col-sm-6">
+                <div class="footer_widget footer_about">
+                  <div class="site_logo">
+                    <a href="index.html"
+                      ><img
+                        class="logo_before"
+                        src="assets/images/logo/logo.svg"
+                        alt="Petopia Logo"
+                    /></a>
+                  </div>
+                  <p>
+                    Tristique nulla aliquet enim tortor at auctor urna nunc.
+                    Massa enim nec dui nunc mattis enim ut tellus. Sed ut
+                    perspiciatis unde ...
+                  </p>
+                  <div class="footer_hotline iconbox_item iconbox_lefticon">
+                    <div class="item_icon"><i class="fas fa-phone"></i></div>
+                    <div class="item_content">
+                      <h3 class="item_title">
+                        <a href="tel:(913)756-3126">(913) 756-3126</a>
+                      </h3>
+                      <p class="mb-0">Got Questions? Call us 24/7</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col col-lg-3 col-md-6 col-sm-6">
+                <div class="footer_widget">
+                  <h3 class="footer_widget_title">Working Hours</h3>
+                  <div class="office_hour">
+                    <ul class="unorder_list_block">
+                      <li><span>Mon - Fri:</span> <span>7am – 6pm</span></li>
+                      <li><span>Saturday:</span> <span>9am – 4pm</span></li>
+                      <li>
+                        <span>Sunday:</span>
+                        <span><strong>Closed</strong></span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col col-lg-2 col-md-6 col-sm-6">
+                <div class="footer_widget">
+                  <h3 class="footer_widget_title">Useful Links</h3>
+                  <div class="page_list">
+                    <ul class="unorder_list_block">
+                      <li>
+                        <a href="index.html"
+                          ><i class="fas fa-circle"></i>Home</a
+                        >
+                      </li>
+                      <li>
+                        <a href="about.html"
+                          ><i class="fas fa-circle"></i>About</a
+                        >
+                      </li>
+                      <li>
+                        <a href="service.html"
+                          ><i class="fas fa-circle"></i>Services</a
+                        >
+                      </li>
+                      <li>
+                        <a href="shop.html"
+                          ><i class="fas fa-circle"></i>Shop</a
+                        >
+                      </li>
+                    </ul>
+                    <ul class="unorder_list_block">
+                      <li>
+                        <a href="faq.html"><i class="fas fa-circle"></i>FAQ</a>
+                      </li>
+                      <li>
+                        <a href="gallery.html"
+                          ><i class="fas fa-circle"></i>Gallery</a
+                        >
+                      </li>
+                      <li>
+                        <a href="shipping_info.html"
+                          ><i class="fas fa-circle"></i>Delivery</a
+                        >
+                      </li>
+                      <li>
+                        <a href="deals.html"
+                          ><i class="fas fa-circle"></i>Sales</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col col-lg-3 col-md-6 col-sm-6">
+                <div class="footer_widget">
+                  <h3 class="footer_widget_title">Newsletter</h3>
+                  <form action="#">
+                    <div class="footer_newslatter">
+                      <p>
+                        Be first in the queue! Get our latest news straight to
+                        your inbox.
+                      </p>
+                      <div class="form_item">
+                        <input
+                          type="text"
+                          name="newsletter-email"
+                          placeholder="Email"
+                        />
+                        <button type="submit">
+                          <i class="far fa-arrow-right"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer_bottom">
+          <div class="container">
+            <p class="copyrights_text text-center">
+              <a target="_blank" href="https://themeforest.net/user/merkulove"
+                >Merkulove</a
+              >
+              &copy; Petopia Template All rights reserved Copyrights 2022
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap-dropdown-ml-hack.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+    <script src="assets/js/magnific-popup.min.js"></script>
+    <script src="assets/js/nice-select.min.js"></script>
+    <script src="assets/js/jquery-ui.js"></script>
+    <script src="assets/js/vanilla-calendar.min.js"></script>
+    <script src="assets/js/countdown.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-TSZFRP5V2X"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-TSZFRP5V2X");
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".team", {
+        effect: "coverflow",
+        slidesPerView: 3,
+        spaceBetween: 30,
+        centeredSlides: true,
+        loop: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        coverflowEffect: {
+          rotate: 15,
+          stretch: 0,
+          depth: 100,
+          modifier: 1.5,
+          slideShadows: true,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+          1920: {
+            slidesPerView: 3,
+          },
+        }
+      });
+    </script>
+    <script>
+      // Product Carousel
+      $('.common_carousel_4col').slick({
+        dots: false,
+        infinite: true,
+        speed: 800,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: '0px',
+        prevArrow: $('.cc4c_left_arrow'),
+        nextArrow: $('.cc4c_right_arrow'),
+        responsive: [
+          {
+            breakpoint: 1200,
+            settings: {
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 992,
+            settings: {
+              slidesToShow: 2
+            }
+          },
+          {
+            breakpoint: 576,
+            settings: {
+              slidesToShow: 1,
+              centerMode: false
+            }
+          }
+        ]
+      });
+
+      // Quick View Modal
+      $('#quick_view_popup').on('show.bs.modal', function (e) {
+        const button = $(e.relatedTarget);
+        const product = button.closest('.product_item');
+        const modal = $(this);
+        
+        const title = product.find('.item_title a').text();
+        const price = product.find('.item_price').html();
+        const image = product.find('.item_image img').attr('src');
+        
+        modal.find('.details_image img').attr('src', image);
+        modal.find('.details_content .item_title').text(title);
+        modal.find('.details_content .item_price').html(price);
+      });
+
+      // Quantity Input
+      $('.input_number_increment').on('click', function() {
+        const input = $(this).siblings('input');
+        const value = parseInt(input.val()) + 1;
+        input.val(value);
+        updateTotalPrice(input);
+      });
+
+      $('.input_number_decrement').on('click', function() {
+        const input = $(this).siblings('input');
+        const value = parseInt(input.val()) - 1;
+        if (value >= 1) {
+          input.val(value);
+          updateTotalPrice(input);
+        }
+      });
+
+      function updateTotalPrice(input) {
+        const quantity = parseInt(input.val());
+        const price = parseFloat($('.price_text').text().replace('$', ''));
+        const total = (quantity * price).toFixed(2);
+        $('.total_price span').text('$' + total);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Doctors Section</title>
+    
+    <!-- CSS Dependencies -->
+    <link rel="stylesheet" type="text/css" href="assets/css/all.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    
+    <style>
+        /* Team Section Styles */
+        .team-section {
+            background: #f0f4ff;
+            position: relative;
+            padding: 120px 0 100px;
+            overflow: hidden;
+        }
+
+        .purple-glow-effect {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(111, 66, 193, 0.15) 0%, rgba(111, 66, 193, 0.1) 25%, rgba(111, 66, 193, 0.05) 50%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Add gradient overlay styles */
+        .swiper-slide {
+            position: relative;
+        }
+
+        .swiper-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            z-index: 2;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        /* Gradient for slides on the left */
+        .swiper-slide-prev::before {
+            right: 0;
+            background: linear-gradient(to left, rgba(45, 24, 87, 0.7), transparent);
+            opacity: 1;
+        }
+
+        /* Gradient for slides on the right */
+        .swiper-slide-next::before {
+            left: 0;
+            background: linear-gradient(to right, rgba(45, 24, 87, 0.7), transparent);
+            opacity: 1;
+        }
+
+        /* Other non-active slides */
+        .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-prev):not(.swiper-slide-next)::before {
+            width: 100%;
+            background: linear-gradient(to right, rgba(45, 24, 87, 0.4), rgba(45, 24, 87, 0.4));
+            opacity: 1;
+        }
+
+        .mediic-section-title h1 {
+            color: #2D1857;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .center-description {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            text-align: center;
+        }
+
+        .center-description p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .counter-single-box {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .counter-box-title h1 {
+            color: #6B4CE6;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .counter-text {
+            color: #666;
+            font-size: 1.2rem;
+        }
+
+        /* Team Cards Styles */
+        .team-thumb {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        .team-thumb img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .team-thumb:hover img {
+            transform: scale(1.05);
+        }
+
+        .social-icon {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            background: rgba(107, 76, 230, 0.9);
+            padding: 15px;
+            transition: bottom 0.3s ease;
+        }
+
+        .team-thumb:hover .social-icon {
+            bottom: 0;
+        }
+
+        .social-icon ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-icon ul li a {
+            color: white;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon ul li a:hover {
+            transform: scale(1.2);
+        }
+
+        .team-content {
+            text-align: center;
+        }
+
+        .team-content h5 {
+            color: #6B4CE6;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-content h2 {
+            color: #2D1857;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        /* Swiper Styles */
+        .swiper-slide {
+            transition: transform 0.3s ease;
+        }
+
+        .swiper-pagination {
+            margin-top: 2rem;
+        }
+
+        .swiper-pagination-bullet {
+            background: #6B4CE6;
+            opacity: 0.5;
+        }
+
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <section class="team-section section_space_lg" style="padding-top: 120px;">
+        <div class="container">
+            <div class="purple-glow-effect"></div>
+            <div class="top-mediic-section">
+                <div class="mediic-section-title">
+                    <h1>MEET OUR DOCTORS</h1>
+                </div>
+                <div class="center-description">
+                    <p>Our team of highly skilled veterinarians is committed to providing top-notch care for your furry companions. They're passionate about animal health & dedicated to providing the best possible medical services.</p>
+                </div>
+                <div class="counter-single-box">
+                    <div class="counter-box-title">
+                        <h1>38+</h1>
+                        <span class="counter-text">Professional Doctors</span>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper team">
+                <div class="swiper-wrapper">
+                    <!-- Team members slider content -->
+                    <div class="swiper-slide">
+                        <div class="team-single-box" data-aos="fade-up">
+                            <div class="team-thumb">
+                                <img src="assets/images/resource/team.jpg" alt="" />
+                                <div class="social-icon">
+                                    <ul>
+                                        <li><a href="team-details.html"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                        <li><a href="team-details.html"><i class="fa-brands fa-behance"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <h5>CARDIOLOGY</h5>
+                                <h2>Dr. David Luis</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-single-box" data-aos="zoom-in">
+                            <div class="team-thumb">
+                                <img src="assets/images/resource/team.jpg" alt="" />
+                                <div class="social-icon">
+                                    <ul>
+                                        <li><a href="team-details.html"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                        <li><a href="team-details.html"><i class="fa-brands fa-behance"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <h5>DENTISTRY</h5>
+                                <h2>Dr. Sarah Smith</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-single-box" data-aos="fade-up">
+                            <div class="team-thumb">
+                                <img src="assets/images/resource/team.jpg" alt="" />
+                                <div class="social-icon">
+                                    <ul>
+                                        <li><a href="team-details.html"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                        <li><a href="team-details.html"><i class="fa-brands fa-behance"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <h5>NEUROLOGY</h5>
+                                <h2>Dr. Michael Chen</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-single-box" data-aos="fade-up">
+                            <div class="team-thumb">
+                                <img src="assets/images/resource/team.jpg" alt="" />
+                                <div class="social-icon">
+                                    <ul>
+                                        <li><a href="team-details.html"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                        <li><a href="team-details.html"><i class="fa-brands fa-behance"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <h5>PEDIATRICS</h5>
+                                <h2>Dr. Emily Brown</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-single-box" data-aos="fade-up">
+                            <div class="team-thumb">
+                                <img src="assets/images/resource/team.jpg" alt="" />
+                                <div class="social-icon">
+                                    <ul>
+                                        <li><a href="team-details.html"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                        <li><a href="team-details.html"><i class="fa-brands fa-behance"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <h5>ORTHOPEDICS</h5>
+                                <h2>Dr. James Wilson</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-single-box" data-aos="fade-up">
+                            <div class="team-thumb">
+                                <img src="assets/images/resource/team.jpg" alt="" />
+                                <div class="social-icon">
+                                    <ul>
+                                        <li><a href="team-details.html"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="team-details.html"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                        <li><a href="team-details.html"><i class="fa-brands fa-behance"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <h5>DERMATOLOGY</h5>
+                                <h2>Dr. Sofia Martinez</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript Dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        // Initialize Swiper
+        var swiper = new Swiper(".team", {
+            effect: "coverflow",
+            slidesPerView: 3,
+            spaceBetween: 30,
+            centeredSlides: true,
+            loop: true,
+            speed: 800,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            coverflowEffect: {
+                rotate: 10,
+                stretch: 0,
+                depth: 100,
+                modifier: 1.5,
+                slideShadows: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                },
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                }
+            },
+            on: {
+                init: function() {
+                    setTimeout(() => {
+                        this.update();
+                    }, 500);
+                },
+            }
+        });
+    </script>
+</body>
+</html>
